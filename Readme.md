@@ -1,12 +1,14 @@
-# grupo_9_granada
+# grupo_9_eclipse
 Trabajo Práctico Integrador Formar-Digital House
+Pagina web- Vinoteca "ECLIPSE"
+
 
 Comisión N°5
 
 Integrantes
 
 Gabriel Ayala
-Giselli Montaña
+Giselli Montania
 Luis Ojeda
 Sergio Mariño
 
