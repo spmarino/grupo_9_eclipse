@@ -38,3 +38,15 @@ Apuntaremos únicamente a mayores de 18 años, con diversidad de genero.
 ⚫ Formulario de Registro
 ⚫ Formulario de carga de Producto
 
+#### **Paleta de colores:**
+#af1236
+#631224
+#d8cfd4
+#c60921
+#010003
+#360711
+
+#### **Fonts:**
+- Cinzel Decorative
+- Gadugi
+
