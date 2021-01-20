@@ -38,6 +38,7 @@ Apuntaremos únicamente a mayores de 18 años, con diversidad de genero.
 ⚫ Formulario de Registro
 ⚫ Formulario de carga de Producto
 
+<<<<<<< HEAD
 #### **Paleta de colores:**
 #af1236
 #631224
@@ -50,3 +51,8 @@ Apuntaremos únicamente a mayores de 18 años, con diversidad de genero.
 - Cinzel Decorative
 - Gadugi
 
+=======
+#### ** Bocetos: **
+
+![Alt text](https://github.com/spmarino/grupo_9_eclipse/blob/master/Sprint%201/Bocetos/443997.JPG?raw=true)
+>>>>>>> 5a6a2854d6e20e835381316eb00a9ae91531dc4a
