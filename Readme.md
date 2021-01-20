@@ -38,3 +38,6 @@ Apuntaremos únicamente a mayores de 18 años, con diversidad de genero.
 ⚫ Formulario de Registro
 ⚫ Formulario de carga de Producto
 
+#### ** Bocetos: **
+
+![Alt text](https://github.com/spmarino/grupo_9_eclipse/blob/master/Sprint%201/Bocetos/443997.JPG?raw=true)
