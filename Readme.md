@@ -6,7 +6,7 @@
 #### **Integrantes:** 
 
 ⚫ Gabriel Ayala
-
+    23 años, secundario completo bachiller en economia, en realizacion de curso de programacion web full stack con digital house y formar.
 ⚫ Giselli Montania Gonzalez
 
 ⚫ Luis Ojeda
