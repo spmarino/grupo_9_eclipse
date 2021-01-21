@@ -10,6 +10,7 @@
 ⚫ Giselli Montania Gonzalez
 
 ⚫ Luis Ojeda
+33 años, secundario completo en ciencia exastas.cursando curso web full stack, curso terminado html,css y javascript con coursera.cursando full stack con udemy. 
 
 ⚫ Sergio Mariño
 
