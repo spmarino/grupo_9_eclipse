@@ -7,7 +7,9 @@
 
 ⚫ Gabriel Ayala
     23 años, secundario completo bachiller en economia, en realizacion de curso de programacion web full stack con digital house y formar.
+    
 ⚫ Giselli Montania Gonzalez
+30 años, Auxiliar Farmacéutica. Estudiante de Programacion Web Full Stack. 
 
 ⚫ Luis Ojeda
 33 años, secundario completo en ciencia exastas.cursando curso web full stack, curso terminado html,css y javascript con coursera.cursando full stack con udemy. 
