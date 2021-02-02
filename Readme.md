@@ -65,3 +65,15 @@ Apuntaremos únicamente a mayores de 18 años, con diversidad de genero.
 ![Alt text](https://github.com/spmarino/grupo_9_eclipse/blob/master/Sprint%201/Bocetos/boceto%202.jpg?raw=true)
 ![Alt text](https://github.com/spmarino/grupo_9_eclipse/blob/master/Sprint%201/Bocetos/bochki-vinograd-shtopor-vino.jpg?raw=true)
 ![Alt text](https://github.com/spmarino/grupo_9_eclipse/blob/master/Sprint%201/Bocetos/wallpapertip_wine-wallpaper-hd_446799.jpg?raw=true)
+
+📌 **Segundo Sprint (03/02)**
+
+⚫ Link de Trello:  https://trello.com/b/0bxnfbXY/grupo9eclipse
+
+#### **Retrospectiva:**
+
+
+
+
+
+    
