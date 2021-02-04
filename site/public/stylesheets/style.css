@@ -31,13 +31,13 @@ body {
 /* HEADER*/
 
 header {
-  top: 0;
-  width: 100%;
-  position: fixed;
-  box-shadow: 0px 0px 5px rgb(0 0 0 / 60%);
-  z-index: 999;
-  padding: 0px 0;
-  background-color: var(--color-gris);
+  top             : 0;
+  width           : 100%;
+  position        : fixed;
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
+  z-index         : 999;
+  padding         : 0px 0;
+  background-color: rgba(194, 190, 190, 0.9);
 }
 
 
@@ -49,6 +49,7 @@ header .header-container {
 
 .conteiner-bienvenida {
   margin-top: 140px;
+  padding   : 0;
 }
 
 /* NAVEGACION */
@@ -70,29 +71,35 @@ header nav ul {
   flex-wrap     : wrap;
   flex-direction: column;
   margin-top    : 30px;
-  
+
 }
 
 header nav ul li a {
   color          : var(--color-grisos);
   text-decoration: none;
   transition     : color .3s ease;
-  font-weight: bold;
-  padding: 5px 0;
+  font-weight    : bold;
+  padding        : 5px 0;
 }
 
 .oferta li a {
-  color:var(--color-rojo);
-  font-weight: bold;
+  color         : var(--color-rojo);
+  font-weight   : bold;
   text-transform: uppercase;
-  padding: 5px 0;
+  padding       : 5px 0;
 }
+
+
 .icons-nav li a i {
   font-size: 20px;
-  padding: 5px 10px 0 0;
-  
+  padding  : 5px 10px 0 0;
 
 }
+
+.icons-nav2 {
+  display: none;
+}
+
 header nav ul li a:hover {
   text-decoration: none;
 }
@@ -106,50 +113,54 @@ header nav ul li a:hover {
 }
 
 .container-logo a img {
-  height: 110px;
-  width : 200px;
+  height : 110px;
+  width  : 200px;
   z-index: 10;
 }
 
-.carrusel-fotos {
-  display: flex;
-}
+
 
 /*PUBLICIDAD*/
+
+.publicidad {
+  padding: 0;
+}
 
 .p-container {
   display         : flex;
   background-color: var(--color-gris);
-  padding         : 15px 0;
+  padding         : 5px 0;
   margin          : 15px 0;
   align-items     : center;
-  box-shadow: 0px 0px 5px rgb(0 0 0 / 60%);
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
 }
 
 .p-container article {
   text-align: center;
+  padding   : 5px 0;
 }
 
 .p-container article i {
   font-size: 35px;
   color    : var(--color-rosa);
-  padding  : 0 0 20px 0;
+  padding  : 0 0 10px 0;
 }
 
 .p-container article h4 {
-  font-size  : 10px;
+  font-size  : 13px;
   color      : var(--color-grisos);
   font-weight: bold;
+  margin     : 0;
 
 }
 
 .p-container article a {
   color    : var(--color-rosa);
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .bordes-derechos {
-  border-right: var(--color-rosa) 2px solid;
+  border-bottom: rgba(80, 78, 78, 0.61) 3px solid;
 }
 
 /* TITULOS */
@@ -194,9 +205,10 @@ header nav ul li a:hover {
 /*Producto*/
 
 .productos-conteiner {
-  display      : flex;
-  flex-wrap    : wrap;
-  margin-bottom: 30px;
+  display        : flex;
+  flex-wrap      : wrap;
+  margin-bottom  : 30px;
+  justify-content: center;
 
 }
 
@@ -206,12 +218,25 @@ header nav ul li a:hover {
   margin          : 15px;
   padding         : 10px;
   color           : var(--color-grisos);
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgb(0 0 0 / 60%);
+  border-radius   : 10px;
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
 
 }
 
-.producto-box h2 {
+.producto-box2 {
+  display         : none;
+  background-color: var(--color-gris);
+  text-align      : center;
+  margin          : 15px;
+  padding         : 10px;
+  color           : var(--color-grisos);
+  border-radius   : 10px;
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
+
+}
+
+.producto-box h2,
+.producto-box2 h2 {
   font-size  : 16px;
   font-weight: bold;
   margin     : 10px 0;
@@ -299,12 +324,16 @@ header nav ul li a:hover {
 
 }
 
+.caja-res {
+  padding: 0;
+}
+
 .resenia {
   position  : relative;
   display   : inline-block;
   text-align: center;
-  padding: 0 0 ;
-  
+  padding   : 0 0;
+
 }
 
 .resenia p {
@@ -462,4 +491,127 @@ ul {
   margin : 30px;
   padding: 0;
   margin : 0;
+}
+
+.caja-display {
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.caja-display2 {
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.vino-b {
+  display: none;
+}
+
+@media (min-width: 768px) {
+
+  .navbar-expand-md .navbar-collapse {
+    height: 50px;
+    margin: 10px;
+  }
+
+  .icons-nav {
+    display: none;
+  }
+
+  .icons-nav2 {
+    display: flex;
+  }
+
+  header nav ul li a {
+    padding  : 12px;
+    font-size: 18px;
+  }
+
+  .oferta li a {
+    padding: 0 20px 0 0;
+  }
+
+  .bordes-derechos {
+    border-right : rgba(80, 78, 78, 0.61) 3px solid;
+    border-bottom: none;
+  }
+
+  .conteiner-bienvenida {
+    margin-top: 180px;
+    padding   : 0;
+  }
+
+
+}
+
+@media (min-width: 1024px) {
+  .producto-box2 {
+    display: inline;
+
+  }
+
+  .caja-display, .caja-display2 {
+    justify-content: space-around;
+    margin         : 50px;
+  }
+
+  
+
+  .vino-b {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 60px 0px 30px 40px;
+
+  }
+
+  .vino-b img {
+    border-radius: 10px;
+    box-shadow   : 0px 0px 5px rgb(0 0 0 / 60%);
+    width        : 100%;
+    filter       : sepia(60%);
+
+
+
+  }
+
+  
+
+  .centrado {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centrado h2 {
+color: var(--color-rojo);
+text-transform: uppercase;
+font-weight: bold;
+font-size: 35px;
+}
+
+  .imagen-vinos {
+    display : block;
+    position: relative;
+  }
+
+  .titulo {
+    display: none;
+  }
+
+  .p-container article i {
+    font-size: 45px;
+  }
+  
+  .p-container article h4 {
+    font-size  : 20px;
+  }
+
+  .p-container article a {
+    font-size: 13px;
+  }
 }
