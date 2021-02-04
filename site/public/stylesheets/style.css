@@ -62,7 +62,16 @@ header nav {
 
 header nav button.burger {
 
-  color: var(--color-grisos);
+  color     : var(--color-grisos);
+  transition: color .3s ease;
+
+}
+
+header nav button.burger:hover {
+
+  color     : var(--color-rojo);
+  transition: color .3s ease;
+
 
 }
 
@@ -89,12 +98,12 @@ header nav ul li a {
   font-weight   : bold;
   text-transform: uppercase;
   padding       : 5px 0;
-  transition     : color .3s ease;
+  transition    : color .3s ease;
 }
 
 .oferta li a:hover {
-  color         : var(--color-grisos);
-  
+  color: var(--color-grisos);
+
 }
 
 
@@ -110,7 +119,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
   text-decoration: none;
-  color: var(--color-rojo);
+  color          : var(--color-rojo);
 }
 
 .container-logo {
@@ -121,12 +130,23 @@ header nav ul li a:hover {
   justify-content: center;
 }
 
-.container-logo a img {
-  height : 110px;
-  width  : 200px;
+.container-logo svg {
+  height : 120px;
+  width  : 250px;
   z-index: 10;
+
 }
 
+.container-logo svg:hover path {
+  fill      : var(--color-rojo);
+  transition: all ease 0.3s;
+
+}
+
+.container-logo svg path {
+  transition: all ease 0.3s;
+
+}
 
 
 /*PUBLICIDAD*/
@@ -164,15 +184,15 @@ header nav ul li a:hover {
 }
 
 .p-container article a {
-  color    : var(--color-rosa);
-  font-size: 10px;
-  transition     : color .3s ease;
+  color      : var(--color-rosa);
+  font-size  : 10px;
+  transition : color .3s ease;
   font-weight: bold;
 
 }
 
 .p-container article a:hover {
-  color: var(--color-grisos);
+  color          : var(--color-grisos);
   text-decoration: none;
 }
 
@@ -239,6 +259,19 @@ header nav ul li a:hover {
   box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
 
 }
+
+.productos-conteiner .producto-box:hover,
+.productos-conteiner .producto-box2:hover {
+  transform : scale(1.1);
+  transition: all 500ms ease-in-out;
+}
+
+
+.producto-box:hover {
+  transform : scale(0.8);
+  transition: all 500ms ease-in-out;
+}
+
 
 .producto-box2 {
   display         : none;
@@ -326,28 +359,28 @@ header nav ul li a:hover {
 }
 
 .button-compra {
-  color: white !important;
-  font-size: 14px;
+  color         : white !important;
+  font-size     : 14px;
   text-transform: uppercase;
-  padding: 0.2em 1.2em;
-  background: rgb(0, 0, 0);
-  border: 2px solid;
-  border-color: var(--color-grisos);
-  transition: all 1s ease;
-  position: relative;
-  border-radius: 10px;
+  padding       : 0.2em 1.2em;
+  background    : rgb(0, 0, 0);
+  border        : 2px solid;
+  border-color  : var(--color-grisos);
+  transition    : all 1s ease;
+  position      : relative;
+  border-radius : 10px;
 }
 
 .button-compra:hover {
-  background: var(--color-gris);
-  color: var(--color-grisos) !important;
+  background    : var(--color-rojo);
+  color         : var(--color-gris) !important;
   text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 10px;
+  font-weight   : bold;
+  border-radius : 10px;
 }
 
-.button-compra:active{
-	box-shadow:2px 2px 1px #000;
+.button-compra:active {
+  box-shadow: 2px 2px 1px #000;
 }
 
 .caja-res {
@@ -392,6 +425,7 @@ header nav ul li a:hover {
   width : 100%;
 }
 
+
 /*FOOTER*/
 
 .container-footer {
@@ -402,6 +436,17 @@ header nav ul li a:hover {
   margin-top      : 40px;
 
 }
+
+.container-footer a {
+text-decoration: none;
+transition    : color .3s ease;
+
+}
+
+.container-footer .tienda-online ul a li:hover, .container-footer .centro-de-ayuda ul a li:hover {
+  color: var(--color-rosa);
+  
+  }
 
 .tienda-online,
 .centro-de-ayuda {
@@ -472,6 +517,11 @@ ul {
   border    : none;
   color     : var(--color-grisos);
   margin    : 0 8px;
+  transition    : color .3s ease;
+}
+
+.newsletter form button:hover {
+  color: var(--color-rosa);
 }
 
 .redes-sociales {
@@ -496,11 +546,18 @@ ul {
   color    : var(--color-grisos);
   font-size: 25px;
   padding  : 5px;
+  transition    : color .3s ease;
+}
+
+.iconos a:hover, .redes-sociales span a:hover {
+  color:var(--color-rosa);
+  text-decoration: none;
 }
 
 .redes-sociales span a {
   font-size: 16px;
   color    : var(--color-grisos);
+  transition    : color .3s ease;
 }
 
 .copyright {
@@ -524,14 +581,14 @@ ul {
 
 .caja-display {
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  margin         : 0;
+  padding        : 0;
 }
 
 .caja-display2 {
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  margin         : 0;
+  padding        : 0;
 }
 
 .vino-b {
@@ -581,18 +638,19 @@ ul {
 
   }
 
-  .caja-display, .caja-display2 {
+  .caja-display,
+  .caja-display2 {
     justify-content: space-around;
     margin         : 50px;
   }
 
-  
+
 
   .vino-b {
-    position: relative;
-    display: inline-block;
+    position  : relative;
+    display   : inline-block;
     text-align: center;
-    padding: 60px 0px 30px 40px;
+    padding   : 60px 0px 30px 40px;
 
   }
 
@@ -601,32 +659,40 @@ ul {
     box-shadow   : 0px 0px 5px rgb(0 0 0 / 60%);
     width        : 100%;
     filter       : sepia(60%);
-
-
+    display      : block;
+    margin-left  : auto;
+    margin-right : auto;
 
   }
 
-  
+  .vino-b img:hover {
+    transform : scale(1.1);
+    transition: all 500ms ease-in-out;
+  }
+
 
   .centrado {
-    
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
-.centrado h2 {
-color: var(--color-rojo);
-text-transform: uppercase;
-font-weight: bold;
-font-size: 35px;
-}
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .centrado h2 {
+    color         : var(--color-rojo);
+    text-transform: uppercase;
+    font-weight   : bold;
+    font-size     : 35px;
+  }
 
   .imagen-vinos {
     display : block;
     position: relative;
   }
+
+
+
 
   .titulo {
     display: none;
@@ -635,9 +701,9 @@ font-size: 35px;
   .p-container article i {
     font-size: 45px;
   }
-  
+
   .p-container article h4 {
-    font-size  : 20px;
+    font-size: 20px;
   }
 
   .p-container article a {
