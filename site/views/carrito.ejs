@@ -103,166 +103,68 @@
 
 
 
+  <body> <!--Inicio Carrito-->
+    <div class="container" style=background-color:#d8cfd4>
+        <h1 style="margin-top:200px;" class="text-center">MI CARRITO</h1>
+        <table border="1" class="table table-hover table-bordered">
+            <thead class="thead-dark"> <!--Encabezado-->
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                </tr>
+            </thead> <!--Fin Encabezado-->
+            <tbody>
+                <tr> <!--Agrego una fila Bressia del Alma-->                  
+                    <td><img src='./images/01BressiadelAlma.jpg' class="img-fluid" style="width:100px; height: 100px;">Bressia del Alma</td>
+                    <td><p class="item-price mb-0 carritoCartItemPrice">$8.400</p></td>
+                    <td><input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
+                            value="1"></td>
+                    <td><button class="btn btn-outline-dark buttonDelete" type="button">X</button></td>
+                </tr>
+                <tr> <!--Agrego una fila Chateau Monbousquet-->                  
+                    <td><img src='./images/02ChateauMonbousquet.jpg' class="img-fluid" style="width:100px; height: 100px;">Chateau Monbousque</td>
+                    <td><p class="item-price mb-0 carritoCartItemPrice">$55.000</p></td>
+                    <td><input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
+                        value="1"></td>
+                    <td><button class="btn btn-outline-dark buttonDelete" type="button">X</button></td>
+                </tr>
+                <tr> <!--Agrego una fila Bremare-->                  
+                    <td><img src='./images/03Bremare.png' class="img-fluid" style="width:100px; height: 100px;">Bremare</td>
+                    <td><p class="item-price mb-0 carritoCartItemPrice">$6.200</p></td>
+                    <td><input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
+                        value="1"></td>
+                    <td><button class="btn btn-outline-dark buttonDelete" type="button">X</button></td>
+                </tr>
+                <tr> <!--Agrego una fila Luigi Bosca-->                  
+                    <td><img src='./images/04LuigiBosca.jpg' class="img-fluid" style="width:100px; height: 100px;">Luigi Bosca</td>
+                    <td><p class="item-price mb-0 carritoCartItemPrice">$4.500</p></td>
+                    <td><input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
+                        value="1"></td>
+                    <td><button class="btn btn-outline-dark buttonDelete" type="button">X</button></td>
+                </tr>    
+                <tr> <!--Agrego una fila Lagarde Guarda-->                  
+                    <td><img src='./images/05LagardeGuarda.jpg' class="img-fluid" style="width:100px; height: 100px;">Lagarde Guarda</td>
+                    <td><p class="item-price mb-0 carritoCartItemPrice">$8.200</p></td>
+                    <td><input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
+                        value="1"></td>
+                    <td><button class="btn btn-outline-dark buttonDelete" type="button">X</button></td>
+                </tr> 
+                <tr> <!--Agrego una fila Cordero Piel Lobo-->                  
+                    <td><img src='./images/06CorderoPiel Lobo.jpg' class="img-fluid" style="width:100px; height: 100px;">Cordero Piel Lobo</td>
+                    <td><p class="item-price mb-0 carritoCartItemPrice">$1.800</p></td>
+                    <td><input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
+                        value="1"></td>
+                    <td><button class="btn btn-outline-dark buttonDelete" type="button">X</button></td>
+                </tr>                                            
+            </tbody>
+        </table>
+    </div> 
 
-<body>
-    <!-- Comienzo Carrito de Compra -->
-    <section class="carrito-cart">
-        <div class="container">
-            <h1 class="text-center">MI CARRITO 🌙</h1>
-            <hr>
-            <div class="row">
-                <div class="col-6">
-                    <div class="carrito-cart-header">
-                        <h6>Producto</h6>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="carrito-cart-header">
-                        <h6 class="text-truncate">Precio</h6>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="carrito-cart-header">
-                        <h6>Cantidad</h6>
-                    </div>
-                </div>
+  </div>            <!-- Fin Ejemplos -->
                 
-            </div>
-            <!-- comienzo Productos en carrito -->
-            <div class="carrito-cart-items carritoCartItemsContainer">
-                <!-- MOCKUP EXAMPLE (DELETE) -->
-                <div class="row carritoCartItem">
-                    <div class="col-6">
-                        <div class="carrito-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <img src='./img/01Bressia del Alma.jpg' class="carrito-cart-image">
-                            <h6 class="carrito-cart-item-title carritoCartItemTitle text-truncate ml-3 mb-0">Bressia del Alma
-                            </h6>
-                            
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="carrito-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <p class="item-price mb-0 carritoCartItemPrice">$8.400</p> <!-- P es para Párrafos-->
-                        </div>
-                    </div>
-                    
-                    <div class="col-4">
-                        <div
-                            class="carrito-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                            <input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
-                                value="1">
-                            <button class="btn btn-danger buttonDelete" type="button">X</button>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="carrito-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <img src='./img/02Chateau Monbousquet.jpg' class="carrito-cart-image">
-                            <h6 class="carrito-cart-item-title carritoCartItemTitle text-truncate ml-3 mb-0">Chateau Monbousquet
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="carrito-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <p class="item-price mb-0 carritoCartItemPrice">$55.000</p> <!-- P es para Párrafos-->
-                        </div>
-                    </div>
-                    
-                    <div class="col-4">
-                        <div
-                            class="carrito-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                            <input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
-                                value="1">
-                            <button class="btn btn-danger buttonDelete" type="button">X</button>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="carrito-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <img src='./img/03Bremare.png' class="carrito-cart-image">
-                            <h6 class="carrito-cart-item-title carritoCartItemTitle text-truncate ml-3 mb-0">Bremare
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="carrito-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <p class="item-price mb-0 carritoCartItemPrice">$6.200</p> <!-- P es para Párrafos-->
-                        </div>
-                    </div>
-                    
-                    <div class="col-4">
-                        <div
-                            class="carrito-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                            <input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
-                                value="1">
-                            <button class="btn btn-danger buttonDelete" type="button">X</button>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="carrito-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <img src='./img/04Lagarde Guarda.jpg' class="carrito-cart-image">
-                            <h6 class="carrito-cart-item-title carritoCartItemTitle text-truncate ml-3 mb-0">Lagarde Guarda
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="carrito-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <p class="item-price mb-0 carritoCartItemPrice">$8.200</p> <!-- P es para Párrafos-->
-                        </div>
-                    </div>
-                    
-                    <div class="col-4">
-                        <div
-                            class="carrito-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                            <input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
-                                value="1">
-                            <button class="btn btn-danger buttonDelete" type="button">X</button>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="carrito-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <img src='./img/05Luigi Bosca.jpg' class="carrito-cart-image">
-                            <h6 class="carrito-cart-item-title carritoCartItemTitle text-truncate ml-3 mb-0">Luigi Bosca
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="carrito-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <p class="item-price mb-0 carritoCartItemPrice">$4.500</p> <!-- P es para Párrafos-->
-                        </div>
-                    </div>
-                    
-                    <div class="col-4">
-                        <div
-                            class="carrito-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                            <input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
-                                value="1">
-                            <button class="btn btn-danger buttonDelete" type="button">X</button>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="carrito-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <img src='./img/06Cordero Piel Lobo.jpg' class="carrito-cart-image">
-                            <h6 class="carrito-cart-item-title carritoCartItemTitle text-truncate ml-3 mb-0">Cordero Piel Lobo
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="carrito-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <p class="item-price mb-0 carritoCartItemPrice">$1.800</p> <!-- P es para Párrafos-->
-                        </div>
-                    </div>
-                    
-                    <div class="col-4">
-                        <div
-                            class="carrito-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                            <input class="carrito-cart-quantity-input carritoCartItemQuantity" type="number"
-                                value="1">
-                            <button class="btn btn-danger buttonDelete" type="button">X</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Fin Ejemplos -->
-                
-            </div>
+            
             <!-- Fin items del carrito -->
 
             <!-- Comienzo Total -->

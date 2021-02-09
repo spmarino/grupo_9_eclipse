@@ -22,7 +22,7 @@
 
 body {
   background-color: var(--color-grisos);
-  color           : var(--color-gris);
+  color           : var(--color-grisos);
   font-family     : var(--fuente);
   position        : relative;
 
@@ -713,25 +713,6 @@ ul {
 
 
 
-.carrito-cart-header {
-  background-color: #222121;
-  border-bottom: 1px solid #d8cfd4;
-  padding: 20px;
-}
-
-.carrito-cart-image {
-  background-color: #af1236;
-  max-width: 80px; /* WIDTH atributo de ancho*/
-  border-radius: 20px;
-}
-
-.carrito-cart-quantity-input {
-  max-width: 45px;
-  border: 1px soli#af1236;
-  border-radius: 5px;
-  background: #f7f1f1;
-  padding: 5px;
-}
 
 
 .carrito-cart-total { /*Contenedor del total*/
@@ -739,9 +720,4 @@ ul {
   color: #010101; /*Color letra*/
   min-height: 150px; /* HEIGHT Atributo de altura*/
   padding: 20px;
-}
-
-.carrito-cart-items {
-  background-color:#d8cfd4;  /*Color Fondo*/
-  padding: 20px 20px;
 }
