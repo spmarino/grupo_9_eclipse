@@ -2,16 +2,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #d8cfd4;
 
   }
+
    .container-login{
-  
+
     width: 100%;
     margin-top: 100px;
-    margin: auto;
     padding:20px;
     border-radius: 5px; 
+  
   }
 
  
@@ -51,4 +51,36 @@
     border: 1px solid ;
     font-family: "Lato";
     font-weight: 18px;
+  }
+  @media (min-width: 768px)
+  {
+    
+  
+    .container-login{
+   
+      width: 100%;
+      margin-top: 50px;
+     margin: auto;
+      padding:60px;
+      border-radius: 5px; 
+    }
+
+    .title {
+      text-decoration:underline;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      margin-bottom: 15px;
+      
+     } 
+     .controls{
+      width: 100%;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 1px solid ;
+      font-family: "Lato";
+      font-weight: 18px;
+    }
+  
   }
