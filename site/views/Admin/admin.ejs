@@ -1,45 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Load font awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/stylesheets/styleAdmin.css">
+<!-- Load font awesome icons -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
- 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eclipse</title>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-<body>
-  <div class="navbar">
-    <a href="#home">Home</a>
-    <div class="subnav">
-      <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
-      <div class="subnav-content">
-        <a href="#company">Company</a>
-        <a href="#team">Team</a>
-        <a href="#careers">Careers</a>
-      </div>
+
+<header>
+  <div class=".header-container">
+    <div class="col-12 container-logo">
+      <a href="/"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 960 560"
+          style="enable-background:new 0 0 960 560;" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: none;
+            }
+
+            .st1 {
+              fill: #212222;
+            }
+
+            .st2 {
+              font-family: 'CinzelDecorative-Bold';
+            }
+
+            .st3 {
+              font-size: 110px;
+            }
+
+            .st4 {
+              font-family: 'Verdana';
+            }
+
+            .st5 {
+              font-size: 55px;
+            }
+          </style>
+          <g id="Capa_1_1_">
+
+            <image style="display:none;overflow:visible;enable-background:new    ;" width="819" height="372"
+              xlink:href="8822EC64.png" transform="matrix(1.1294 0 0 1.1667 24 31)">
+            </image>
+            <rect x="149" y="248" class="st0" width="495" height="95" />
+            <text transform="matrix(1 0 0 1 149 325)" class="st1 st2 st3">ECLIPSE</text>
+            <rect x="89" y="370" class="st0" width="644" height="88" />
+            <text transform="matrix(1 0 0 1 89 411.7998)" class="st1 st4 st5">BODEGAS Y VIÑEDOS</text>
+          </g>
+          <g id="Capa_2">
+            <path class="st1" d="M503.5,119.5c12.6-7.1,110.7-60.6,208-15.5c36.8,17,60.9,42.3,75,60.5c12.6,16.2,57.7,78.5,51,165.5
+     c-4.2,54.2-26.5,93.6-39.5,113c12.5-13.2,62.7-69.1,62-152.5c-0.4-47.3-17-83.3-27.5-102c7.8,7.3,15.7,14.7,23.5,22l-41-49l41,17.5
+     l-42.5-26h69l-65-6.5l42-18.5l-43,13.5L862,93l-51.5,43l18-40.5L806,137l-1-66l-5.5,64.5l-19.5-49l15,47.5l-45-48.5l23,31.5
+     c-11.7-9.6-72.8-57.6-158-47.5C557.3,76.4,518.6,106.3,503.5,119.5z" />
+          </g>
+        </svg></a>
     </div>
-    <div class="subnav">
-      <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
-      <div class="subnav-content">
-        <a href="#bring">Bring</a>
-        <a href="#deliver">Deliver</a>
-        <a href="#package">Package</a>
-        <a href="#express">Express</a>
+
+    <div class="navbar">
+      <a href="/">Inicio</a>
+      <div class="subnav">
+        <button class="subnavbtn">Productos<i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="#company">Crear Productos</a>
+          <a href="#team">Administrar Productos</a>
+          <a href="#careers">Actualización de Productos</a>
+        </div>
       </div>
-    </div>
-    <div class="subnav">
-      <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
-      <div class="subnav-content">
-        <a href="#link1">Link 1</a>
-        <a href="#link2">Link 2</a>
-        <a href="#link3">Link 3</a>
-        <a href="#link4">Link 4</a>
+      <div class="subnav">
+        <button class="subnavbtn">Ordenes<i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="#bring">Administrar Ordenes</a>
+          <a href="#deliver">Estado de Ordenes</a>
+        </div>
       </div>
+      <div class="subnav">
+        <button class="subnavbtn">Reportes y Pagos<i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="#link1">Reporte de cuenta</a>
+          <a href="#link2">Estado de cuenta</a>
+          <a href="#link3">Facturas Electrónicas</a>
+
+        </div>
+      </div>
+      <div class="subnav">
+        <button class="subnavbtn">Configuración General<i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          
+          <a href="#link1">Mi perfil</a>
+          <a href="#link2">Administrar Usuarios</a>
+          <a href="#link3">Mensajes</a>
+
+        </div>
+      </div>
+</header>
+
+<body style="background-color:gray;">
+<div class="contenedor-formulario-admin">
+  <form action="" class="form-admin">
+    <div class="form-header">
+      <h1 class="form-title">C<span>rear Producto</span></h1>
     </div>
-    <a href="#contact">Contact</a>
-  </div>
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" id="nombre" class="form-input" placeholder="Nombre del producto" required>
+    <label for="precio" class="form-label">Precio:</label>
+    <input type="number" id="precio" min="1" step="any" class="form-input" placeholder="Precio del producto" required>
+    <label for="descripcio" class="form-label">Descripción:</label>
+    <textarea class="form-textarea" name="descripcion" id="descripcion" placeholder="Breve descripción del producto"></textarea>
+    <label for="clase-de-vino" class="form-label">Tipo de Vino:</label>
+    <select class="form-select" name="clase-de-vino" id="clase-de-vino" required>
+      <option class="form-option" value="0">Vinos Tintos</option>
+      <option class="form-option" value="1">Vinos Blancos</option>
+      <option class="form-option" value="2">Espumantes</option>
+    </select>
+    <label for="descuento" class="form-label">Descuento:</label>
+    <select class="form-select" name="descuento" id="descuento" required>
+      <option class="form-option" value="0">Sin Descuento</option>
+      <option class="form-option" value="1">5% OFF</option>
+      <option class="form-option" value="2">10% OFF</option>
+      <option class="form-option" value="3">15% OFF</option>
+      <option class="form-option" value="4">20% OFF</option>
+      <option class="form-option" value="5">25% OFF</option>
+      <option class="form-option" value="6">35% OFF</option>
+           </select>
+     <div class="form-checkbox"><label for="envio" class="form-label">Envío gratis:</label>
+          <input class="form-radio" type="checkbox" name="envio" id="envio-gratis" value="si"></div>
+          <h2 class="form-title">C<span>aracterísticas</span></h2>
+          <label for="varietal" class="form-label">Varietal:</label>
+          <input type="text" id="varietal" class="form-input" placeholder="Tipo de uva" required>
+          <label for="number" class="form-label">Añada:</label>
+          <input type="anio" id="añada" min="1900" step="any" class="form-input" placeholder="Año de cosecha" required>
+          <label for="barrica" class="form-label">Tipo de Barrica:</label>
+          <input type="text" id="barrica" class="form-input" placeholder="Tipo de barrica" required>
+          <label for="tiempo" class="form-label">Tiempo en botella:</label>
+          <input type="tiempo" id="tiempo" class="form-input" placeholder="Tiempo en botella" required>
+          <label for="cosecha" class="form-label">Tipo de Cosecha:</label>
+          <select class="form-select" name="cosecha" id="cosecha" required>
+            <option class="form-option" value="0">Manual</option>
+            <option class="form-option" value="1">Mecánica</option>
+                           </select>
+          <label for="terroir" class="form-label">Terroir:</label>
+          <input type="text" id="terroir" class="form-input" placeholder="Lugar Geográfico" required>
+
+
+          <h2 class="form-title">N<span>otas de Cata</span></h2>
+    <label for="color" class="form-label">Color:</label>
+    <textarea class="form-textarea" name="color" id="color" placeholder="Breve descripción del producto"></textarea>
+    <label for="aroma" class="form-label">Aroma:</label>
+    <textarea class="form-textarea" name="aroma" id="aroma" placeholder="Breve descripción del producto"></textarea>
+    <label for="sabor" class="form-label">Sabor:</label>
+    <textarea class="form-textarea" name="sabor" id="sabor" placeholder="Breve descripción del producto"></textarea>
+
+
+
+
+
+
+
+
+     <div class="contenedor-form-file">
+     <span class="form-file">
+       <input type="file" name="cargar-imagen" id="cargar-imagen">
+            </span>
+            <label for="cargar-imagen" class="form-label-file">
+              <span>Cargar imagen</span>
+            </label></div>
+     
+     
+     <input type="submit" class="btn-submit-admin" value="Cargar producto nuevo">
+     
+  
+  </form>
+</div>
+
+<script type="application/javascript">
+  jQuery('input[type=file]').change(function(){
+   var filename = jQuery(this).val().split('\\').pop();
+   var idname = jQuery(this).attr('id');
+   console.log(jQuery(this));
+   console.log(filename);
+   console.log(idname);
+   jQuery('span.'+idname).next().find('span').html(filename);
+  });
+  </script>
 </body>
+
 </html>
