@@ -4,13 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var carritoRouter = require('./routes/carrito');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/loginRouter')
 var registerRouter = require ('./routes/registerRouter')
 
 var detailRouter = require('./routes/detailRouter');
+var adminRouter = require('./routes/adminRouter');
+
 
 var app = express();
 
@@ -29,7 +31,12 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter)
 app.use('/register',registerRouter)
 app.use('/detailProduct', detailRouter);
+<<<<<<< HEAD
 app.use('/carrito', carritoRouter);
+=======
+app.use('/admin', adminRouter);
+
+>>>>>>> home-header-footer/sergio
 
 
 // catch 404 and forward to error handler

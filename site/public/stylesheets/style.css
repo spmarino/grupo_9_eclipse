@@ -9,7 +9,7 @@
   --color-header : #575355;
   --color-grisos : #222121;
   --color-rojo   : #c60921;
-  --color-rosa   : #af1236;
+  --color-rosa   : #ad2444;
   --color-violeta: #631224;
   --fuente       : 'Lato';
 }
@@ -1095,3 +1095,196 @@ text-decoration: none;
   padding-top: 20px;
 }
 }
+
+/*===============Css PRODUCT DETAILS ===================*/
+
+/*Menu admin*/
+
+.container-navbar-admin {
+
+  display: block;
+}
+
+
+
+
+/* The navigation menu */
+.navbar {
+  overflow: hidden;
+  background-color: rgba(194, 190, 190, 0.9);
+}
+
+/* Navigation links */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: var(--color-grisos);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The subnavigation menu */
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: var(--color-rosa);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Add a red background color to navigation links on hover */
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: var(--color-gris);
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: var(--color-gris);
+  width: 100%;
+  z-index: 1;
+}
+
+/* Style the subnav links */
+.subnav-content a {
+  float: left;
+  color: var(--color-grisos);
+  text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+  background-color: var(--color-grisos);
+  color: var(--color-gris);
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+.contenedor-formulario-admin {
+  display: flex;
+  margin-top: 200px;
+  flex-wrap: wrap;
+  
+}
+
+.form-title {
+  font-weight: normal;
+  color: var(--color-rosa);
+  text-align: center;
+  padding: 14px 0;
+  
+}
+
+.form-title span {
+  color: var(--color-gris);
+}
+
+.form-admin {
+  background-color: rgba(0,0,0,0.6);
+  color: var(--color-grisos);
+  width: 90%;
+  max-width: 650px;
+  margin:auto;
+  padding: 5px 35px;
+  margin-top: 38px;
+  margin-bottom: 30px;
+  border-radius: 3px;
+}
+
+.form-label {
+  display: block;
+  color: var(--color-gris);
+  font-size: 16px;
+  position: relative;
+  padding-bottom: 5px;
+  
+}
+
+.form-input, .form-textarea, .form-select {
+  background-color: rgba(0,0,0,.7);
+  border:none;
+  outline: none;
+  border-bottom: 2px solid var(--color-rosa);
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  font-size: 14px;
+  color:white;
+
+}
+
+.form-textarea {
+resize: vertical;
+max-height: 150px;
+min-height: 50px;
+
+}
+
+.btn-submit-admin {
+  width: 100%;
+  outline: none;
+  background: var(--color-rosa);
+  font-size: 16px;
+  border: none;
+  color:white;
+  padding: 15px 0;
+  cursor:pointer;
+  transition: all .5s ease;
+}
+
+.btn-submit-admin:hover {
+  background: #ca375a;
+  
+
+}
+
+.contenedor-form-file {
+  display: block;
+  text-align: center;
+  padding: 14px;
+}
+
+.form-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  }
+
+  label[for="cargar-imagen"] {
+    font-size: 14px;
+        color: #fff;
+    background: var(--color-rosa);
+    display: inline-block;
+    transition: all .5s ease;
+    cursor: pointer;
+    padding: 15px 40px !important;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+    }
+
+    label[for="cargar-imagen"]:hover {
+  background: #ca375a;
+  
+    }
+
+  
