@@ -711,13 +711,3 @@ ul {
   }
 }
 
-
-
-
-
-.carrito-cart-total { /*Contenedor del total*/
-  background-color: #f7f1f1; /*Color Fondo*/
-  color: #010101; /*Color letra*/
-  min-height: 150px; /* HEIGHT Atributo de altura*/
-  padding: 20px;
-}
