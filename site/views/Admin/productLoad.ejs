@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Load font awesome icons -->
+
+  <!-- Include Head -->
+  <%- include('./partials/head')%>
+  <body>
+  <!-- Header -->
+	<%- include('./partials/header') %>
+	<!-- /Header -->
+
+<body style="background-color:gray;">
+  <div class="contenedor-formulario-admin">
+    <form action="" class="form-admin">
+      <div class="form-header">
+        <h1 class="form-title">C<span>rear Producto</span></h1>
+      </div>
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input type="text" id="nombre" class="form-input" placeholder="Nombre del producto" required>
+      <label for="precio" class="form-label">Precio:</label>
+      <input type="number" id="precio" min="1" step="any" class="form-input" placeholder="Precio del producto" required>
+      <label for="descripcio" class="form-label">Descripción:</label>
+      <textarea class="form-textarea" name="descripcion" id="descripcion"
+        placeholder="Breve descripción del producto"></textarea>
+      <label for="clase-de-vino" class="form-label">Tipo de Vino:</label>
+      <select class="form-select" name="clase-de-vino" id="clase-de-vino" required>
+        <option class="form-option" value="0">Vinos Tintos</option>
+        <option class="form-option" value="1">Vinos Blancos</option>
+        <option class="form-option" value="2">Espumantes</option>
+      </select>
+      <label for="descuento" class="form-label">Descuento:</label>
+      <select class="form-select" name="descuento" id="descuento" required>
+        <option class="form-option" value="0">Sin Descuento</option>
+        <option class="form-option" value="1">5% OFF</option>
+        <option class="form-option" value="2">10% OFF</option>
+        <option class="form-option" value="3">15% OFF</option>
+        <option class="form-option" value="4">20% OFF</option>
+        <option class="form-option" value="5">25% OFF</option>
+        <option class="form-option" value="6">35% OFF</option>
+      </select>
+      <div class="form-checkbox"><label for="envio" class="form-label">Envío gratis:</label>
+        <input class="form-radio" type="checkbox" name="envio" id="envio-gratis" value="si">
+      </div>
+      <h2 class="form-title">C<span>aracterísticas</span></h2>
+      <label for="varietal" class="form-label">Varietal:</label>
+      <input type="text" id="varietal" class="form-input" placeholder="Tipo de uva" required>
+      <label for="number" class="form-label">Añada:</label>
+      <input type="anio" id="añada" min="1900" step="any" class="form-input" placeholder="Año de cosecha" required>
+      <label for="barrica" class="form-label">Tipo de Barrica:</label>
+      <input type="text" id="barrica" class="form-input" placeholder="Tipo de barrica" required>
+      <label for="tiempo" class="form-label">Tiempo en botella:</label>
+      <input type="tiempo" id="tiempo" class="form-input" placeholder="Tiempo en botella" required>
+      <label for="cosecha" class="form-label">Tipo de Cosecha:</label>
+      <select class="form-select" name="cosecha" id="cosecha" required>
+        <option class="form-option" value="0">Manual</option>
+        <option class="form-option" value="1">Mecánica</option>
+      </select>
+      <label for="terroir" class="form-label">Terroir:</label>
+      <input type="text" id="terroir" class="form-input" placeholder="Lugar Geográfico" required>
+      <label for="terroir" class="form-label">Finca:</label>
+      <input type="text" id="finca" class="form-input" placeholder="Finca" required>
+
+
+      <h2 class="form-title">N<span>otas de Cata</span></h2>
+      <label for="color" class="form-label">Color:</label>
+      <textarea class="form-textarea" name="color" id="color" placeholder="Breve descripción del producto"></textarea>
+      <label for="aroma" class="form-label">Aroma:</label>
+      <textarea class="form-textarea" name="aroma" id="aroma" placeholder="Breve descripción del producto"></textarea>
+      <label for="sabor" class="form-label">Sabor:</label>
+      <textarea class="form-textarea" name="sabor" id="sabor" placeholder="Breve descripción del producto"></textarea>
+
+
+
+
+
+
+
+
+      <div class="contenedor-form-file">
+        <span class="form-file">
+          <input type="file" name="cargar-imagen" id="cargar-imagen">
+        </span>
+        <label for="cargar-imagen" class="form-label-file">
+          <span>Cargar imagen</span>
+        </label>
+      </div>
+
+
+      <input type="submit" class="btn-submit-admin" value="Cargar producto nuevo">
+
+
+    </form>
+  </div>
+
+  <%- include('./partials/footer')  %> 
+</body>
+
+</html>
