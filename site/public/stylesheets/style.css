@@ -1,5 +1,12 @@
+
+
+
+
 /*Fonts "Lato" */
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* imports*/
+@import 'users.css';
 
 /*VARIABLES*/
 
@@ -1096,151 +1103,3 @@ text-decoration: none;
 }
 }
 
-
-/*-----------LOGIN------------------ */ 
-.container-log{
-  background-color: #222121;
-}
-
-   .container-login {
-background-color:#575355a4 ;
-    width: 100%;
-    margin-top: 147px;
-    padding:10px;
-    border-radius: 5px; 
-  
-  }
-
- 
-  .title-login {
-    text-decoration:underline;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    
-   } 
-  .login-description{
-    height: 50px;
-    text-align: center;
-    font-size: 20px;
-    font-family: "Lato";
-    margin-bottom: 25px;
-    margin-top: 25px;
-  
-  
-  }
-  .button-login {
-    width: 100%;
-    background-color: #631224;
-    padding: 15px;
-    margin: 16px 0;
-    font-size: 20px;
-    color: #d3d2d2;
-    
-  }
-  
-  .controls-login{
-    width: 100%;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border: 1px solid ;
-    font-family: "Lato";
-    font-weight: 18px;
-  }
-  @media (min-width: 768px)
-  {
-  
-    
-    .container-login{
-      background-color: #575355a4 ;
-      width: 100%;
-      margin-top:185px;
-      padding:50px;
-      border-radius: 5px; 
-    }
-
-    .title-login {
-      text-decoration:underline;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-      margin-bottom: 15px;
-      
-     } 
-     .login-description{
-      height: 50px;
-      text-align: center;
-      font-size: 22px;
-      font-style: var(--color-negro);
-      font-family: "Lato";
-      margin-bottom: 25px;
-      margin-top: 25px;
-    
-    
-    }
-     .controls-login{
-      width: 100%;
-      padding: 20px;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      border: 1px solid ;
-      font-family: "Lato";
-      font-weight: 18px;
-    }
-  
-  }
-
-
-  @media (min-width: 1024px){
-   
-    .container-login{
-      background-color: #575355;
-      width: 100%;
-      margin-top:185px;
-      padding:50px;
-      border-radius: 5px; 
-      flex-direction: row-reverse;
-    }
-
-    .title-login {
-      text-decoration:underline;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-      margin-bottom: 15px;
-      
-     } 
-     .login-description{
-      height: 50px;
-      text-align: center;
-      font-size: 22px;
-      font-style: var(--color-negro);
-      font-family: "Lato";
-      margin-bottom: 25px;
-      margin-top: 25px;
-    
-    
-    }
-     .controls-login{
-      width: 100%;
-      padding: 20px;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      border: 1px solid ;
-      font-family: "Lato";
-      font-weight: 18px;
-    }
-    .button-login{
-      width: 100%;
-      background-color: #631224;
-      padding: 15px;
-      margin: 16px 0;
-      font-size: 20px;
-      color: #d3d2d2;
-      
-    }
-  
-  }
