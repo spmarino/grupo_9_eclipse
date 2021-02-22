@@ -1,0 +1,24 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+        
+      <!-- Include Head -->
+      <%- include('./partials/head')%>
+      <body>
+      <!-- Header -->
+        <%- include('./partials/header') %>
+        <!-- /Header -->
+    
+    
+    <body style="background-color:gray;">
+    <div class="conteiner-index-admin">
+      <form action="/admin/search" method="GET"><div class="wrapper">
+        <input type="text" name= "search" class="input" 
+        placeholder="Ingrese nombre del producto">
+        <button type="submit" class="searchbtn"><i class="fa fa-search"></i></button>
+      </div></form>
+    </div>
+    <%- include('./partials/footer')  %> 
+    </body>
+    
+    </html> 

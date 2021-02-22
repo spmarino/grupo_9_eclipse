@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Load font awesome icons -->
+
+<!-- Include Head -->
+<%- include('./partials/head')%>
+
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+      <!-- /Header -->
+
+      <body style="background-color:gray;">
+
+
+        <div class="contenedor-formulario-admin">
+
+          <form action="/admin/products/delete/<%- product.id %>?_method=DELETE " method="POST" class="form-admin">
+            <div class="form-header">
+              <h1 class="form-title">D<span>etalle Producto</span> ID <%- product.id %>
+              </h1>
+            </div>
+            <img src="/images/<%- product.imagen %> " alt="">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <p class="form-input">
+              <%- product.title %>
+            </p>
+            <label for="precio" class="form-label">Precio:</label>
+            <p class="form-input">$<%- toThousand(product.price) %>
+            </p>
+            <label for="descripcio" class="form-label">Descripción:</label>
+            <p class="form-input">
+              <%- product.description %>
+            </p>
+            <label for="clase-de-vino" class="form-label">Tipo de Vino:</label>
+            <p class="form-input">
+              <%- product.tipo %>
+            </p>
+            <label for="descuento" class="form-label">Descuento:</label>
+            <p class="form-input">
+              <%- product.descuento %> 
+            </p>
+            <label for="descuento" class="form-label">Envío Gratis</label>
+            <% if (product.envio > 0) { %>
+              
+              <p class="form-input">Si</p>
+              <% } else { %>
+                
+                <p class="form-input">No</p>
+              <% } %>
+                
+                <h2 class="form-title">C<span>aracterísticas</span></h2>
+                <label for="varietal" class="form-label">Varietal:</label>
+                <p class="form-input"><%- product.varietal %> </p>
+                <label for="number" class="form-label">Añada:</label>
+                <p class="form-input"><%- product.añada %> </p>
+                <label for="barrica" class="form-label">Tipo de Barrica:</label>
+                <p class="form-input"><%- product.barrica %> </p>
+                <label for="tiempo" class="form-label">Tiempo en botella:</label>
+                <p class="form-input"><%- product.tiempo %> </p>
+                <label for="tiempo" class="form-label">Tipo de Cosecha:</label>
+                <p class="form-input"><%- product.tipoCosecha %> </p>
+                <label for="terroir" class="form-label">Terroir:</label>
+                <p class="form-input"><%- product.terroir %> </p>
+
+
+                <h2 class="form-title">N<span>otas de Cata</span></h2>
+                <label for="color" class="form-label">Color:</label>
+                <p class="form-input"><%- product.color %> </p>
+                <label for="aroma" class="form-label">Aroma:</label>
+                <p class="form-input"><%- product.aroma %> 
+                </p>
+                <label for="sabor" class="form-label">Sabor:</label>
+                <p class="form-input"><%- product.sabor %> 
+                </p>
+
+                <div class="btn-edit-admin"><a href="/admin/products/edit/<%- product.id %>">Editar</a></div>
+
+                <div class="container-btn-delete" action="">
+                  <input type="submit" class="btn-delete-admin" value="Eliminar"></div>
+          </form>
+        </div>
+
+        <%- include('./partials/footer') %>
+      </body>
+
+</html>

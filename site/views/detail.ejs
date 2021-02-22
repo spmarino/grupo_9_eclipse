@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head') %>
+
+	<body>
+		<!-- Header -->
+		<%- include('partials/header') %>
+			<!-- /Header -->
+			>
+			<div class="container">
+				<div class="d-flex justify-content-around ">
+					<div class="col-10 col-md-12 caja-detailProduct">
+						<div class=" parte-img-producto">
+							<img src="/images/<%- product.imagen %> " alt="">
+						</div>
+						<div class=" parte-descripcion-producto">
+							<div class="title-product-detail">
+								<h4><%-product.title%></h4>
+							</div>
+							<% if (product.descuento> 0) { %>
+							<div class="tachado">
+								<h4>$<%- toThousand(product.price) %></h4>
+							</div><% } %>
+							<div class="precio">
+								<h2>$<%- toThousand(product.price - Math.round(product.price / 100 * product.descuento)) %></h4>
+									<% if (product.descuento> 0) { %><div class="descuento-detail"><span><%- product.descuento %> % off</span>
+									</div><% } %>
+							</div>
+							<div class="medios-de-pago">
+								<div class="title-medios-de-pago">
+									<i class="fas fa-credit-card"></i>
+									<h4>Medios de Pago</h4>
+									<a href="">
+										<p>Ver medios de pago</p>
+									</a>
+								</div>
+								<div class="iconos-medios-de-pago">
+									<i class="fab fa-cc-visa"></i>
+									<i class="fab fa-cc-mastercard"></i>
+									<i class="fab fa-cc-amex"></i>
+								</div>
+
+							</div>
+							<div class="tiempo-de-envio">
+								<div class="title-tiempos-de-envio">
+									<i class="far fa-clock"></i>
+									<h4>Tiempos de Envio</h4>
+									<a href="">
+										<p>Tiempos de envio</p>
+									</a>
+								</div>
+							</div>
+							<div class="agregar-cantidad">
+								<div class="selector-de-cantidad">
+									<div class="number-input">
+										<button
+											onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+										<input class="quantity" min="0" name="quantity" value="1" type="number">
+										<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+											class="plus"></button>
+									</div>
+								</div>
+							</div>
+							<div class="button-confirma-producto">
+								<button type="button" class="button-compra">Agregar al carrito</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+
+
+
+
+			<section class="datos-producto">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 descripcion">
+							<p><%- product.description%></p>
+						</div>
+						<section class="col-12 especificaciones">
+							<table class="table table-sm table-dark tabla-especificaciones">
+
+								<tbody>
+									<tr>
+										<td class="title-table">varietal</td>
+										<td class="contenido-table"><%- product.varietal%></td>
+									</tr>
+									<tr>
+										<td class="title-table">añada</td>
+										<td class="contenido-table"><%- product.añada %></td>
+									</tr>
+
+									<tr>
+										<td class="title-table">tipo de barrica</td>
+										<td class="contenido-table"><%- product.barrica%></td>
+									</tr>
+
+									<tr>
+										<td class="title-table">tiempo en barrica</td>
+										<td class="contenido-table"><%-product.tiempo%> Meses</td>
+									</tr>
+
+									<tr>
+										<td class="title-table">tipo de cosecha</td>
+										<td class="contenido-table"><%-product.tipoCosecha%></td>
+									</tr>
+									<tr>
+										<td class="title-table">terroir</td>
+										<td class="contenido-table"><%-product.terroir%></td>
+									</tr>
+
+									<tr>
+										<td class="title-table">finca</td>
+										<td class="contenido-table"><%- product.finca%></td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+			</section>
+
+			<section class="contenedor-cata">
+
+				<table class="table table-dark cata-producto">
+					<thead>
+						<tr>
+							<th scope="col"></th>
+							<th class="title-table" scope="col">Notas de cata</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="title-table" scope="row"><i class="far fa-eye"></i></th>
+							<td><%-product.color%></td>
+
+						</tr>
+						<tr>
+							<th class="title-table" scope="row"><img src="/images/nose.png" alt=""> </th>
+							<td><%-product.aroma%>
+							</td>
+
+						<tr>
+							<th class="title-table" scope="row"><img src="/images/lips.png" alt=""> </th>
+							<td><%-product.sabor%></td>
+
+						</tr>
+					</tbody>
+				</table>
+
+			</section>
+
+
+
+			<!-- footer -->
+			<%- include('partials/footer') %>
+				<!-- /footer -->
+	</body>
+
+</html>

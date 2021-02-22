@@ -1,0 +1,970 @@
+
+   .container-login {
+background-color:#575355a4 ;
+    width: 100%;
+    margin-top: 147px;
+    padding:10px;
+    border-radius: 5px; 
+  
+  }
+
+ 
+  .title {
+    text-decoration:underline;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    
+   } 
+  .login-description{
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Lato";
+    margin-bottom: 25px;
+    margin-top: 25px;
+  
+  
+  }
+  .button {
+    width: 100%;
+    background-color: #631224;
+    padding: 15px;
+    margin: 16px 0;
+    font-size: 20px;
+    color: #d3d2d2;
+    
+  }
+  
+  .controls{
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid ;
+    font-family: "Lato";
+    font-weight: 18px;
+  }
+  @media (min-width: 768px)
+  {
+   
+    
+    .container-login{
+      background-color: #575355a4 ;
+      width: 100%;
+      margin-top:185px;
+      padding:50px;
+      border-radius: 5px; 
+    }
+
+    .title {
+      text-decoration:underline;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      
+     } 
+     .login-description{
+      height: 50px;
+      text-align: center;
+      font-size: 22px;
+      font-style: var(--color-negro);
+      font-family: "Lato";
+      margin-bottom: 25px;
+      margin-top: 25px;
+    
+    
+    }
+     .controls{
+      width: 100%;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 1px solid ;
+      font-family: "Lato";
+      font-weight: 18px;
+    }
+  
+  }
+
+
+  @media (min-width: 1024px){
+    .container-login{
+      background-color: #ffffffa4 ;
+      width: 100%;
+      margin-top:185px;
+      padding:50px;
+      border-radius: 5px; 
+      flex-direction: row-reverse;
+    }
+
+    .title {
+      text-decoration:underline;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      
+     } 
+     .login-description{
+      height: 50px;
+      text-align: center;
+      font-size: 22px;
+      font-style: var(--color-negro);
+      font-family: "Lato";
+      margin-bottom: 25px;
+      margin-top: 25px;
+    
+    
+    }
+     .controls{
+      width: 100%;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 1px solid ;
+      font-family: "Lato";
+      font-weight: 18px;
+    }
+    .button{
+      width: 100%;
+      background-color: #631224;
+      padding: 15px;
+      margin: 16px 0;
+      font-size: 20px;
+      color: #d3d2d2;
+      
+    }
+  
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*Fonts "Lato" */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/*VARIABLES*/
+
+:root {
+  --color-negro  : #010003;
+  --color-gris   : #d8cfd4;
+  --color-header : #575355;
+  --color-grisos : #222121;
+  --color-rojo   : #c60921;
+  --color-rosa   : #af1236;
+  --color-violeta: #631224;
+  --fuente       : 'Lato';
+}
+
+/* GENERALES */
+* {
+  box-sizing: border-box;
+  margin    : 0;
+}
+
+body {
+  background-color: var(--color-grisos);
+  color           : var(--color-gris);
+  font-family     : var(--fuente);
+  position        : relative;
+
+}
+
+/* HEADER*/
+
+header {
+  top             : 0;
+  width           : 100%;
+  position        : fixed;
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
+  z-index         : 999;
+  padding         : 0px 0;
+  background-color: rgba(194, 190, 190, 0.9);
+}
+
+
+header .header-container {
+  max-width      : 1140px;
+  justify-content: center;
+  display        : fixed;
+}
+
+.conteiner-bienvenida {
+  margin-top: 140px;
+  padding   : 0;
+}
+
+/* NAVEGACION */
+
+header nav {
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: left;
+}
+
+header nav button.burger {
+
+  color     : var(--color-grisos);
+  transition: color .3s ease;
+
+}
+
+header nav button.burger:hover {
+
+  color     : var(--color-rojo);
+  transition: color .3s ease;
+
+
+}
+
+header nav ul {
+  display       : flex;
+  flex-wrap     : wrap;
+  flex-direction: column;
+  margin-top    : 30px;
+
+}
+
+header nav ul li a {
+  color          : var(--color-grisos);
+  text-decoration: none;
+  transition     : color .3s ease;
+  font-weight    : bold;
+  padding        : 5px 0;
+}
+
+
+
+.oferta li a {
+  color         : var(--color-rojo);
+  font-weight   : bold;
+  text-transform: uppercase;
+  padding       : 5px 0;
+  transition    : color .3s ease;
+}
+
+.oferta li a:hover {
+  color: var(--color-grisos);
+
+}
+
+
+.icons-nav li a i {
+  font-size: 20px;
+  padding  : 5px 10px 0 0;
+
+}
+
+.icons-nav2 {
+  display: none;
+}
+
+header nav ul li a:hover {
+  text-decoration: none;
+  color          : var(--color-rojo);
+}
+
+.container-logo {
+  display        : flex;
+  flex-wrap      : wrap;
+  width          : 100%;
+  height         : 110px;
+  justify-content: center;
+}
+
+.container-logo svg {
+  height : 120px;
+  width  : 250px;
+  z-index: 10;
+
+}
+
+.container-logo svg:hover path {
+  fill      : var(--color-rojo);
+  transition: all ease 0.3s;
+
+}
+
+.container-logo svg path {
+  transition: all ease 0.3s;
+
+}
+
+
+/*PUBLICIDAD*/
+
+.publicidad {
+  padding: 0;
+}
+
+.p-container {
+  display         : flex;
+  background-color: var(--color-gris);
+  padding         : 5px 0;
+  margin          : 15px 0;
+  align-items     : center;
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
+}
+
+.p-container article {
+  text-align: center;
+  padding   : 5px 0;
+}
+
+.p-container article i {
+  font-size: 35px;
+  color    : var(--color-rosa);
+  padding  : 0 0 10px 0;
+}
+
+.p-container article h4 {
+  font-size  : 13px;
+  color      : var(--color-grisos);
+  font-weight: bold;
+  margin     : 0;
+
+}
+
+.p-container article a {
+  color      : var(--color-rosa);
+  font-size  : 10px;
+  transition : color .3s ease;
+  font-weight: bold;
+
+}
+
+.p-container article a:hover {
+  color          : var(--color-grisos);
+  text-decoration: none;
+}
+
+.bordes-derechos {
+  border-bottom: rgba(80, 78, 78, 0.61) 3px solid;
+}
+
+/* TITULOS */
+.titulo {
+  padding       : 20px 0;
+  text-align    : center;
+  text-transform: uppercase;
+  font-weight   : bold;
+  width         : 100%;
+
+
+}
+
+.lines-effect h2 {
+  display  : inline-block;
+  position : relative;
+  color    : var(--color-gris);
+  font-size: 25px;
+
+
+}
+
+.lines-effect h2::after,
+.lines-effect h2::before {
+  content         : '';
+  position        : absolute;
+  width           : 80px;
+  height          : 3px;
+  background-color: currentColor;
+  top             : 0.6em;
+
+}
+
+.lines-effect h2::before {
+  left: -90px;
+}
+
+.lines-effect h2::after {
+  right: -90px;
+}
+
+/*Producto*/
+
+.productos-conteiner {
+  display        : flex;
+  flex-wrap      : wrap;
+  margin-bottom  : 30px;
+  justify-content: center;
+
+}
+
+.producto-box {
+  background-color: var(--color-gris);
+  text-align      : center;
+  margin          : 15px;
+  padding         : 10px;
+  color           : var(--color-grisos);
+  border-radius   : 10px;
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
+
+}
+
+.productos-conteiner .producto-box:hover,
+.productos-conteiner .producto-box2:hover {
+  transform : scale(1.1);
+  transition: all 500ms ease-in-out;
+}
+
+
+.producto-box:hover {
+  transform : scale(0.8);
+  transition: all 500ms ease-in-out;
+}
+
+
+.producto-box2 {
+  display         : none;
+  background-color: var(--color-gris);
+  text-align      : center;
+  margin          : 15px;
+  padding         : 10px;
+  color           : var(--color-grisos);
+  border-radius   : 10px;
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
+
+}
+
+.producto-box h2,
+.producto-box2 h2 {
+  font-size  : 16px;
+  font-weight: bold;
+  margin     : 10px 0;
+  height     : 30px;
+}
+
+.imagen-producto img {
+
+  width: 100%;
+
+}
+
+.envio-promo,
+.descuento {
+  display : flex;
+  position: relative;
+
+}
+
+.envio-promo span {
+  display         : inline-block;
+  background-color: rgb(187, 139, 6);
+  font-size       : 11px;
+  text-transform  : uppercase;
+  margin          : 10px;
+  width           : 50px;
+  height          : 35px;
+  border-radius   : 5px;
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 30%);
+  top             : -50px;
+  font-weight     : bold;
+  color           : var(--color-gris);
+  position        : absolute;
+
+}
+
+.descuento span {
+  position        : absolute;
+  bottom          : 150px;
+  right           : 3px;
+  height          : 50px;
+  text-align      : center;
+  width           : 50px;
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 30%);
+  border-radius   : 50%;
+  display         : inline-block;
+  text-transform  : uppercase;
+  font-size       : 13px;
+  background-color: var(--color-rojo);
+  color           : var(--color-gris);
+  font-weight     : bold;
+  padding         : 5px;
+
+
+}
+
+.precio-real {
+  color          : var(--color-grisos);
+  font-size      : 13px;
+  color          : var(--color-grisos);
+  text-decoration: line-through;
+}
+
+.precio-desc {
+  color      : var(--color-rosa);
+  font-weight: bold;
+  font-size  : 16px;
+  padding    : 5px;
+
+}
+
+.button-compra {
+  color         : white !important;
+  font-size     : 14px;
+  text-transform: uppercase;
+  padding       : 0.2em 1.2em;
+  background    : rgb(0, 0, 0);
+  border        : 2px solid;
+  border-color  : var(--color-grisos);
+  transition    : all 1s ease;
+  position      : relative;
+  border-radius : 10px;
+}
+
+.button-compra:hover {
+  background    : var(--color-rojo);
+  color         : var(--color-gris) !important;
+  text-transform: uppercase;
+  font-weight   : bold;
+  border-radius : 10px;
+}
+
+.button-compra:active {
+  box-shadow: 2px 2px 1px #000;
+}
+
+.caja-res {
+  padding: 0;
+}
+
+.resenia {
+  position  : relative;
+  display   : inline-block;
+  text-align: center;
+  padding   : 0 0;
+
+}
+
+.resenia p {
+  position : absolute;
+  top      : 50%;
+  left     : 50%;
+  transform: translate(-50%, -50%);
+  z-index  : 2;
+  color    : white;
+  width    : 85%;
+  font-size: 15px;
+
+}
+
+.resenia h2 {
+  position   : absolute;
+  top        : 5%;
+  z-index    : 1;
+  text-align : center;
+  color      : white;
+  font-size  : 2.1em;
+  font-weight: bold;
+  width      : 100%;
+  right      : 1%;
+}
+
+
+.resenia img {
+  filter: brightness(0.4);
+  width : 100%;
+}
+
+
+/*FOOTER*/
+
+.container-footer {
+  display         : flex;
+  background-color: var(--color-gris);
+  padding         : 20px;
+  flex-wrap       : wrap;
+  margin-top      : 40px;
+
+}
+
+.container-footer a {
+  text-decoration: none;
+  transition     : color .3s ease;
+
+}
+
+.container-footer .tienda-online ul a li:hover,
+.container-footer .centro-de-ayuda ul a li:hover {
+  color: var(--color-rosa);
+
+}
+
+.tienda-online,
+.centro-de-ayuda {
+  color: var(--color-grisos);
+  width: 100%;
+
+}
+
+
+.tienda-online,
+.centro-de-ayuda ul {
+  font-size : 13px;
+  text-align: left;
+
+}
+
+.tienda-online h4,
+.centro-de-ayuda h4,
+.newsletter h4 {
+  text-align    : left;
+  font-weight   : bold;
+  font-size     : 15px;
+  text-transform: uppercase;
+  color         : var(--color-grisos);
+}
+
+
+
+.container-footer ul a li,
+.newsletter p {
+  text-decoration: none;
+  color          : var(--color-grisos);
+  text-emphasis  : none;
+  list-style     : none;
+  padding        : 3px 0;
+  font-size      : 13px;
+  transition     : color .3s ease;
+
+}
+
+
+
+ul {
+  padding: 0;
+}
+
+.newsletter form {
+  background-color: #fff;
+  border          : 1px solid var(--color-gris);
+  border-radius   : 5px;
+  padding         : 5px 0;
+  display         : flex;
+  flex-wrap       : wrap;
+  justify-content : space-between;
+}
+
+.newsletter form input {
+  background-color: none;
+  border          : none;
+  border-right    : 2px solid var(--color-gris);
+  padding         : 0px 10px;
+  width           : 50%;
+  flex-grow       : 1;
+}
+
+.newsletter form button {
+  background: none;
+  border    : none;
+  color     : var(--color-grisos);
+  margin    : 0 8px;
+  transition: color .3s ease;
+}
+
+.newsletter form button:hover {
+  color: var(--color-rosa);
+}
+
+.redes-sociales {
+  text-align: center;
+  width     : 100%;
+  padding   : 20px;
+}
+
+.redes-sociales h4 {
+
+  color         : var(--color-grisos);
+  text-transform: uppercase;
+  font-size     : 15px;
+  font-weight   : bold;
+}
+
+.iconos {
+  width: 100%;
+}
+
+.iconos a {
+  color     : var(--color-grisos);
+  font-size : 25px;
+  padding   : 5px;
+  transition: color .3s ease;
+}
+
+.iconos a:hover,
+.redes-sociales span a:hover {
+  color          : var(--color-rosa);
+  text-decoration: none;
+}
+
+.redes-sociales span a {
+  font-size : 16px;
+  color     : var(--color-grisos);
+  transition: color .3s ease;
+}
+
+.copyright {
+  background-color: var(--color-grisos);
+  width           : 100%;
+
+}
+
+.copyright h4 {
+  font-size: 10px;
+  color    : var(--color-gris);
+  margin   : 0;
+
+}
+
+.carrusel {
+  margin : 30px;
+  padding: 0;
+  margin : 0;
+}
+
+.caja-display {
+  justify-content: center;
+  margin         : 0;
+  padding        : 0;
+}
+
+.caja-display2 {
+  justify-content: center;
+  margin         : 0;
+  padding        : 0;
+}
+
+.vino-b {
+  display: none;
+}
+
+@media (min-width: 768px) {
+
+  /*===============HOME===================*/
+  .navbar-expand-md .navbar-collapse {
+    height: 50px;
+    margin: 10px;
+  }
+
+  .icons-nav {
+    display: none;
+  }
+
+  .icons-nav2 {
+    display: flex;
+  }
+
+  header nav ul li a {
+    padding  : 12px;
+    font-size: 18px;
+  }
+
+  .oferta li a {
+    padding: 0 20px 0 0;
+  }
+
+  .bordes-derechos {
+    border-right : rgba(80, 78, 78, 0.61) 3px solid;
+    border-bottom: none;
+  }
+
+  .conteiner-bienvenida {
+    margin-top: 180px;
+    padding   : 0;
+  }
+
+
+
+}
+
+@media (min-width: 1024px) {
+  .producto-box2 {
+    display: inline;
+
+  }
+
+  .caja-display,
+  .caja-display2 {
+    justify-content: space-around;
+    margin         : 50px;
+  }
+
+
+
+  .vino-b {
+    position  : relative;
+    display   : inline-block;
+    text-align: center;
+    padding   : 60px 0px 30px 40px;
+
+  }
+
+  .vino-b img {
+    border-radius: 10px;
+    box-shadow   : 0px 0px 5px rgb(0 0 0 / 60%);
+    width        : 100%;
+    filter       : sepia(60%);
+    display      : block;
+    margin-left  : auto;
+    margin-right : auto;
+
+  }
+
+  .vino-b img:hover {
+    transform : scale(1.1);
+    transition: all 500ms ease-in-out;
+  }
+
+
+  .centrado {
+
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .centrado h2 {
+    color         : var(--color-rojo);
+    text-transform: uppercase;
+    font-weight   : bold;
+    font-size     : 35px;
+  }
+
+  .imagen-vinos {
+    display : block;
+    position: relative;
+  }
+
+
+
+
+  .titulo {
+    display: none;
+  }
+
+  .p-container article i {
+    font-size: 45px;
+  }
+
+  .p-container article h4 {
+    font-size: 20px;
+  }
+
+  .p-container article a {
+    font-size: 13px;
+  }
+
+
+
+}
+

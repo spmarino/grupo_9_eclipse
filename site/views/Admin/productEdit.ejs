@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Load font awesome icons -->
+
+  <!-- Include Head -->
+  <%- include('./partials/head')%>
+  <body>
+  <!-- Header -->
+	<%- include('./partials/header') %>
+	<!-- /Header -->
+
+<body style="background-color:gray;">
+<div class="contenedor-formulario-admin">
+  <form action="/admin/products/edit/<%- product.id %>?_method=PUT" method="POST" class="form-admin">
+    <div class="form-header">
+      <h1 class="form-title">E<span>ditar Producto</span> ID <%- product.id %> </h1>
+    </div>
+    <label for="title" class="form-label">Nombre:</label>
+    <input type="text" id="title" class="form-input" name="title" placeholder="Nombre del producto" value="<%- product.title %> "required>
+    <label for="price" class="form-label">Precio:</label>
+    <input type="number" id="price" min="1" step="any" class="form-input" name="price" placeholder="Precio del producto" value="<%- product.price %>"required>
+    <label for="description" class="form-label">Descripción:</label>
+    <textarea class="form-textarea" name="description" id="description"
+      placeholder="Breve descripción del producto" ><%- product.description %> </textarea>
+    <label for="tipo" class="form-label">Tipo de Vino:</label>
+    <select class="form-select" name="tipo" id="tipo" required>
+      <option class="form-option" value="Tinto" <%- product.tipo === "Tinto" ? "selected" : null %>>Vinos Tintos</option>
+      <option class="form-option" value="Blanco"<%- product.tipo === "Blanco" ? "selected" : null %>>Vinos Blancos</option>
+      <option class="form-option" value="Espumante"<%- product.tipo === "Espumante" ? "selected" : null %>>Espumantes</option>
+    </select>
+    <label for="descuento" class="form-label">Descuento:</label>
+    <select class="form-select" name="descuento" id="descuento" required>
+      <option class="form-option" value="0"<% if (product.descuento == 0) { %>selected<% } %>>Sin Descuento</option>
+      <option class="form-option" value="5"<% if (product.descuento == 5) { %>selected<% } %>>5% OFF</option>
+      <option class="form-option" value="10"<% if (product.descuento == 10) { %>selected<% } %>>10% OFF</option>
+      <option class="form-option" value="15"<% if (product.descuento == 15) { %>selected<% } %>>15% OFF</option>
+      <option class="form-option" value="20"<% if (product.descuento == 20) { %>selected<% } %>>20% OFF</option>
+      <option class="form-option" value="25"<% if (product.descuento == 25) { %>selected<% } %>>25% OFF</option>
+      <option class="form-option" value="35"<% if (product.descuento == 35) { %>selected<% } %>>35% OFF</option>
+    </select>
+    <div class="form-checkbox"><label for="envio" class="form-label">Envío gratis:</label>
+      <input class="form-radio" type="checkbox" name="envio" id="envio" value="1" <% if (product.envio > 0) { %>
+        checked
+       <% } %>>
+      
+      <br>
+      <br>
+      <div class="form-checkbox"><label for="promo" class="form-label">Producto en portada:</label>
+        <input class="form-radio" type="checkbox" name="promo" id="promo" value="cover" <% if (product.promo == 'cover') { %>
+          checked
+         <% } %>>
+    </div>
+    <h2 class="form-title">C<span>aracterísticas</span></h2>
+    <label for="varietal" class="form-label">Varietal:</label>
+    <input type="text" id="varietal" class="form-input" name="varietal" placeholder="Tipo de uva" value="<%- product.varietal %> " required>
+    <label for="number" class="form-label">Añada:</label>
+    <input type="number" id="añada" min="1800" step="any" class="form-input" name="añada" placeholder="Año de cosecha" value="<%- product.añada %>"required>
+    <label for="barrica" class="form-label">Tipo de Barrica:</label>
+    <input type="text" id="barrica" class="form-input" name="barrica" placeholder="Tipo de barrica" value="<%- product.barrica %> "required>
+    <label for="tiempo" class="form-label">Tiempo en botella:</label>
+    <input type="number" id="tiempo" min="1" step="any" class="form-input" name="tiempo" placeholder="Tiempo en botella" value="<%- product.tiempo %>"required>
+    <label for="tipoCosecha" class="form-label">Tipo de Cosecha:</label>
+    <select class="form-select" name="tipoCosecha" id="tipoCosecha" required>
+      <option class="form-option" value="Manual"<%- product.tipoCosecha === "Manual" ? "selected" : null %> >Manual</option>
+      <option class="form-option" value="Mecánica"<%- product.tipoCosecha === "Mecánica" ? "selected" : null %>>Mecánica</option>
+    </select>
+    <label for="terroir" class="form-label">Terroir:</label>
+    <input type="text" id="terroir" class="form-input" name="terroir" placeholder="Lugar Geográfico" value="<%- product.terroir %> "required>
+    <label for="finca" class="form-label">Finca:</label>
+    <input type="text" id="finca" class="form-input" name="finca"placeholder="Finca" value="<%- product.finca %> "required>
+
+
+    <h2 class="form-title">N<span>otas de Cata</span></h2>
+    <label for="color" class="form-label">Color:</label>
+    <textarea class="form-textarea" name="color" id="color" placeholder="Breve descripción del producto"><%- product.color %> </textarea>
+    <label for="aroma" class="form-label">Aroma:</label>
+    <textarea class="form-textarea" name="aroma" id="aroma" placeholder="Breve descripción del producto"><%- product.aroma %> </textarea>
+    <label for="sabor" class="form-label">Sabor:</label>
+    <textarea class="form-textarea" name="sabor" id="sabor" placeholder="Breve descripción del producto"><%- product.sabor %> </textarea>
+
+
+
+
+
+
+
+
+    <div class="contenedor-form-file">
+      <span class="form-file">
+        <input type="file" name="imagen" id="cargar-imagen">
+      </span>
+      <label for="cargar-imagen" class="form-label-file">
+        <span>Cargar imagen</span>
+      </label>
+    </div>
+
+
+    <input type="submit" class="btn-submit-admin" value="Cargar producto nuevo">
+
+
+  </form>
+</div>
+<%- include('./partials/footer')  %> 
+</body>
+
+</html>
