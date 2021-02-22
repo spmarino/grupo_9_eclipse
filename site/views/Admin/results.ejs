@@ -31,8 +31,9 @@
       <p class="form-input">$<%- toThousand(product.price - Math.round(product.price / 100 * product.descuento)) %></p>
       <h4 class="form-label">Tipo</h4>
       <p class="form-input"><%- product.tipo %> </p>
-      <input type="submit" class="btn-edit-admin" value="Editar">
-      <input type="submit" class="btn-delete-admin" value="Eliminar">
+      <div class="btn-edit-admin"><a href="/admin/products/edit/<%- product.id %>">Editar</a></div>
+      <div class="container-btn-delete"><form action="/admin/products/delete/<%- product.id %>?_method=DELETE " method="POST">
+        <input type="submit" class="btn-delete-admin" value="Eliminar"></form></div>
 
     </div>
     <% }) %>
