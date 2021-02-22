@@ -3,16 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const methodOverride = require("method-override");
 
-
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/indexRouter');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/loginRouter')
 var registerRouter = require ('./routes/registerRouter')
 var carritoRouter = require('./routes/carritoRouter');
-var detailRouter = require('./routes/detailRouter');
-var adminRouter = require('./routes/adminRouter');
 
+var adminRouter = require('./routes/adminRouter');
+var productsRouter = require('./routes/productsRouter')
 
 var app = express();
 
@@ -25,14 +25,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride("_method"));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter)
 app.use('/register',registerRouter)
-app.use('/detailProduct', detailRouter);
+
 app.use('/carrito', carritoRouter);
 app.use('/admin', adminRouter);
+app.use('/products', productsRouter);
 
 
 
