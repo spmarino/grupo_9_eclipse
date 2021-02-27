@@ -1,5 +1,12 @@
+
+
+
+
 /*Fonts "Lato" */
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* imports*/
+@import 'users.css';
 
 /*VARIABLES*/
 
@@ -1471,6 +1478,7 @@ color: white;
       width: 60%;
      
     }
+  }
 
 /*===============Css RESULTS ===================*/
 .container-title-result {
@@ -1478,4 +1486,4 @@ width: 100%;
 padding-left: 30px;
 
 }
-}
+
