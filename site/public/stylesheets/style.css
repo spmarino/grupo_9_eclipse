@@ -389,6 +389,7 @@ header nav ul li a:hover {
 
 .caja-res {
   padding: 0;
+  
 }
 
 .resenia {
@@ -396,12 +397,12 @@ header nav ul li a:hover {
   display   : inline-block;
   text-align: center;
   padding   : 0 0;
-
+    
 }
 
 .resenia p {
   position : absolute;
-  top      : 50%;
+  top      : 60%;
   left     : 50%;
   transform: translate(-50%, -50%);
   z-index  : 2;
@@ -636,6 +637,7 @@ ul {
     padding   : 0;
   }
 
+  
 
 
 }
