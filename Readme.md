@@ -6,15 +6,12 @@
 #### **Integrantes:** 
 
 ⚫ Gabriel Ayala
-
     23 años, secundario completo bachiller en economia, en realizacion de curso de programacion web full stack con digital house y formar.
     
 ⚫ Giselli Montania Gonzalez
-
     30 años, Auxiliar Farmacéutica. Estudiante de Programacion Web Full Stack (Formar con Digital House) y estudiante de Licenciatura en Sistemas (UNLa).  
 
 ⚫ Sergio Mariño
-
     28 años Técnico de Mantenimiento, cursando programación web full stack, data analycs, marketing digital, estudiante de economía actuarial (UBA).
 
 📌 **Primer Sprint (18/01)** 🔵
@@ -71,10 +68,6 @@ Apuntaremos únicamente a mayores de 18 años, con diversidad de genero.
 
 ⚫ https://trello.com/b/0bxnfbXY/grupo9eclipse
 
-#### **Retrospectiva:**
-
-![Alt text](https://github.com/spmarino/grupo_9_eclipse/blob/master/Sprint%202/retro%20sprint%202.jpg)
-
 #### **Entregables:** 
 
 ⚫ Archivo ​retro.md​ con el resultado de la retrospectiva  
@@ -91,6 +84,27 @@ Apuntaremos únicamente a mayores de 18 años, con diversidad de genero.
                     
                     ○ Formulario de carga de producto (productAdd.html) 
 
+📌 **Tercer Sprint (18/01)** 🔵
+
+#### **Entregables:**
+  
+★ Archivo ​retro.md​ con el resultado de la retrospectiva 
+★ (Opcional) Archivo ​daily.md​ con sus opiniones sobre las dailies / weeklies 
+★ Tablero de trabajo actualizado 
+★ Archivos ​products.json​ y ​users.json​ con datos de productos y usuarios 
+★ Aplicación Node + Express + EJS con: ○ Home ○ Listado de productos ○ Detalle del producto ○ Formulario de carga y edición de productos ○ Formulario de registro y login 
+★ Funcionalidad de listado, detalle, alta, modificación y baja de productos.
+
+📌 **Cuarto Sprint (01/03)** 🔵
+
+#### **Entregables:**  
+
+★ Archivo ​retro.md​ con el resultado de la retrospectiva 
+★ (Opcional) Archivo ​daily.md​ con sus opiniones sobre las dailies / weeklies 
+★ Tablero de trabajo actualizado 
+★ Formulario de registro con: ○ Los campos mínimos mencionados en el sprint anterior ○ Subida de una imagen de perfil ○ Guardado en JSON con encriptación de contraseña 
+★ Formulario de login con: ○ Campos de email y password ○ (Opcional) Función de recordar al usuario 
+★ Rutas de huéspedes y usuarios ○ Las de huéspedes deberán redireccionar al perfil si el usuario está logeado ○ Las de usuarios deberán redireccionar al login si el usuario no está logeado
 
 
 
