@@ -20,11 +20,19 @@
                     Si ya estas registrado en Bodegas Eclipse, ingresa con tu correo electronico y contraseña.
           
                   </div>
-                  <form class="login" action="" method="POST">
+                  <form action="/ingreso/login" class="login" action="" method="POST">
             
                       <input class="controls-login" type="email" name="email" id="email" placeholder="CORREO ELECTRONICO">
-                      <input class="controls-login" type="password" name="email" id="password" placeholder="CONTRASEÑA">
-                      <input class="controls-login" type="password" name="email" id="password" placeholder="CONTRASEÑA">
+                      <input class="controls-login" type="password" name="password" id="password" placeholder="CONTRASEÑA">
+                      <input type="checkbox" name= "recordar" id="recordar">
+                      <label for="recordar">Recordar</label>
+                      <% if (typeof errores != "undefined") { %>
+                        <ul>
+                          <% errores.forEach(error => { %>
+                           <li><%= error.msg %> </li>
+                          <% }) %>
+                        </ul>
+                       <% } %>
                       <input type="submit" class="button-login" value="INGRESAR">
                    
       
@@ -47,13 +55,24 @@
                         registrate en BODEGAS ECLIPSE ingresando tus datos.
               
                       </div>
-                      <form class="login" action="" method="POST">
+                      <form action="/ingreso/register" action="" method="POST" enctype="multipart/form-data">
 
 
                         <input class="controls-login" type="text" name="name" id="name" placeholder="NOMBRE">
-                        <input class="controls-login" type="text" name="last-name" id="last-name" placeholder="APELLIDO">
+                        <input class="controls-login" type="text" name="lastName" id="lastName" placeholder="APELLIDO">
                         <input class="controls-login" type="email" name="email" id="email" placeholder="CORREO ELECTRONICO">
-                        <input class="controls-login" type="password" name="email" id="password" placeholder="CONTRASEÑA">
+                        <input class="controls-login" type="date" name="date" id="date" placeholder="FECHA DE NACIMIENTO">
+                        <label for="avatar">Foto de perfil</label><br>
+                        <input type="file" name= "avatar" id="avatar">
+                        <input class="controls-login" type="password" name="password" id="password" placeholder="CONTRASEÑA">
+                        <input class="controls-login" type="password" name="password2" id="password" placeholder="REINGRESE SU CONTRASEÑA">
+                        <% if (typeof errores != "undefined") { %>
+                         <ul>
+                           <% errores.forEach(error => { %>
+                            <li><%= error.msg %> </li>
+                           <% }) %>
+                         </ul>
+                        <% } %>
                         <input type="submit" class="button-login" value="REGISTRARSE">
               
                        
@@ -69,17 +88,6 @@
           
           
           
-          <!-- JQUERY -->
-          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-          crossorigin="anonymous"></script>
-          <!-- POPPER JS -->
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-          crossorigin="anonymous"></script>
-          <!-- BOOTSTRAP -->
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-          integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-          crossorigin="anonymous"></script>
+         
 </body>
 </html>

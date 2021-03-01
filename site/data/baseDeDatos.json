@@ -248,5 +248,26 @@
     "envio": 1,
     "imagen": "producto1.png",
     "finca": "Doña Elsa "
+  },
+  {
+    "id": 13,
+    "title": "Lago Oscuro      ",
+    "description": "Nuevo vino bodega eclipse magina sensación de amargura con un sabor a uva intenso.      ",
+    "tipo": "Tinto",
+    "promo": "cover",
+    "color": "Color negro único.      ",
+    "aroma": "Nuevo aroma a hierbas silvestres.      ",
+    "sabor": "Unico intenso amargo.      ",
+    "varietal": "Uva morada      ",
+    "añada": 2020,
+    "barrica": "Roble Francés      ",
+    "tiempo": 2,
+    "tipoCosecha": "Manual",
+    "terroir": "San juan      ",
+    "price": 900,
+    "descuento": 10,
+    "envio": 1,
+    "imagen": "imagen-1614403964178.png",
+    "finca": "San juan      "
   }
 ]
