@@ -84,7 +84,7 @@ Apuntaremos únicamente a mayores de 18 años, con diversidad de genero.
                     
                     ○ Formulario de carga de producto (productAdd.html) 
 
-📌 **Tercer Sprint (18/01)** 🔵
+📌 **Tercer Sprint (17/02)** 🔵
 
 #### **Entregables:**
   
