@@ -4,7 +4,7 @@ if(req.session.user){
     next()
 }else{
 
-res.redirect('/ingreso/users')
+res.redirect('/ingreso')
 }
 }
 
