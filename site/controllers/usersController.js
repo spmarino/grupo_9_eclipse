@@ -55,49 +55,58 @@ const usersController = {
         let errores = validationResult(req);
 
         const { email, password, recordar } = req.body;
-        
-        if(!errores.isEmpty()) {
+
+        if (!errores.isEmpty()) {
             return res.render('login', {
                 errores: errores.errors
             })
 
-        }else{
+        } else {
             let result = readUsers.find(user => user.email === email);
 
-            if(result){
-                if (bcrypt.compareSync(password.trim(), result.password)){
-req.session.user = {
-    id : result.id,
-    email : result.email,
-    admin: result.admin,
-}
-/*if(recordar != undefined){
+            if (result) {
+                if (bcrypt.compareSync(password.trim(), result.password)) {
 
-}*/
+                    req.session.user = {
+                        id: result.id,
+                        name: result.name,
+                        email: result.email,
+                        admin: result.admin,
+                        avatar: result.avatar,
+                    }
+                    if (recordar != 'undefined'){
+                        res.cookie('userConect', req.session.user, {
+                            maxAge: 1000 * 60
+                        })
+                    }
 
-                    res.redirect('/admin')
-            }
-
-        }
-        res.render('login', {
-            errores: [
-                {
-                    msg: 'Credenciales inválidas'
+                    res.redirect('/ingreso/users')
                 }
-            ]
-        })
-    }
-},
+
+            }
+            res.render('login', {
+                errores: [
+                    {
+                        msg: 'Credenciales inválidas'
+                    }
+                ]
+            })
+        }
+    },
 
 
-'profile': function(req, res) {
-    res.render('admin/adminIndex')
+    'logout': function (req, res) {
+        req.session.destroy();
+        if (req.cookies.userConect) {
+            res.cookie('userConect','', { maxAge: -1 })
+        }
+        res.redirect('/');
 
-},
-'logout': function(req, res) {
-    req.session.destroy();
-    res.redirect('/');
 
-}
+    },
+
+    'user': function (req, res) {
+        res.render('Users/usersIndex')
+    },
 };
 module.exports = usersController

@@ -6,12 +6,13 @@ var logger = require('morgan');
 const methodOverride = require("method-override");
 var session = require('express-session');
 
+
 var indexRouter = require('./routes/indexRouter');
 var carritoRouter = require('./routes/carritoRouter');
 var adminRouter = require('./routes/adminRouter');
 var productsRouter = require('./routes/productsRouter');
 var ingresoRouter = require('./routes/ingresoRouter');
-
+var cookieCheck = require('./middlewares/cookieCheck')
 
 var app = express();
 
@@ -28,6 +29,8 @@ app.use(methodOverride("_method"));
 app.use(session({
 secret : 'esto es un secreto!'
 }))
+
+app.use(cookieCheck);
 
 app.use('/', indexRouter);
 app.use('/carrito', carritoRouter);

@@ -40,13 +40,17 @@ body {
 header {
   top             : 0;
   width           : 100%;
-  position        : fixed;
-  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
+  /*position        : fixed;
+  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);*/
   z-index         : 999;
   padding         : 0px 0;
   background-color: rgba(194, 190, 190, 0.9);
 }
 
+.navbar-header {
+  top: 0px;
+  position: sticky;
+}
 
 header .header-container {
   max-width      : 1140px;
@@ -55,7 +59,7 @@ header .header-container {
 }
 
 .conteiner-bienvenida {
-  margin-top: 140px;
+  /*margin-top: 140px;*/
   padding   : 0;
 }
 
@@ -640,7 +644,7 @@ ul {
   }
 
   .conteiner-bienvenida {
-    margin-top: 180px;
+    /*margin-top: 180px;*/
     padding   : 0;
   }
 
@@ -742,7 +746,7 @@ ul {
 
 .caja-detailProduct {
   background-color: var(--color-gris);
-  margin-top      : 116px;
+  /*margin-top      : 116px;*/
   box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
 
 }
@@ -1035,7 +1039,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
   .caja-detailProduct {
-    margin   : 155px 0 0 0;
+    margin   : 0px 0 0 0;
     flex-wrap: wrap;
     display  : flex;
   }
@@ -1413,7 +1417,7 @@ color: white;
     flex-direction: row wrap;
   justify-content: center;
   padding: 0%;
-  margin-top: 250px;
+  margin-top: 100px;
   text-align: center;
 }
 
@@ -1487,3 +1491,18 @@ padding-left: 30px;
 
 }
 
+
+/*===============Css RESULTS ===================*/
+.avatar-usuario {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.avatar-usuario img {
+  height: 120px;
+  border-radius: 10px;
+  margin-top: 25px;
+  border-style:ridge ;
+  border-width: 7px;
+}

@@ -1,24 +1,24 @@
 var express = require('express');
 var router = express.Router();
 let adminController = require('../controllers/adminController')
-let usersController = require('../controllers/usersController')
+const userCheck = require('../middlewares/userCheck')
+
 
 /*MIDDLEWARES*/
 const upload = require('../middlewares/uploadImg');
 
-const adminCheck = require ('../middlewares/adminCheck')
 
 /* GET home page. */
-router.get('/',adminCheck, adminController.adminIndex)
-router.get('/filter',adminCheck, adminController.adminFilter)
-router.get('/search',adminCheck, adminController.adminSearch)
-router.get('/products',adminCheck, adminController.productList)
-router.get('/products/create',adminCheck, adminController.productLoad)
-router.post('/products/create',adminCheck,upload.any(), adminController.productNew)
-router.get('/products/edit/:id',adminCheck, adminController.productEdit)
-router.put('/products/edit/:id',adminCheck,upload.any(), adminController.productUpdate)
-router.get('/products/:id',adminCheck, adminController.productDetailAdmin)
-router.delete('/products/delete/:id',adminCheck, adminController.productDestroit)
-router.get('/logout',usersController.logout)
+router.get('/',userCheck, adminController.adminIndex)
+router.get('/filter',userCheck, adminController.adminFilter)
+router.get('/search',userCheck, adminController.adminSearch)
+router.get('/products',userCheck, adminController.productList)
+router.get('/products/create',userCheck, adminController.productLoad)
+router.post('/products/create',userCheck, upload.any(), adminController.productNew)
+router.get('/products/edit/:id',userCheck,  adminController.productEdit)
+router.put('/products/edit/:id',userCheck, upload.any(), adminController.productUpdate)
+router.get('/products/:id',userCheck,  adminController.productDetailAdmin)
+router.delete('/products/delete/:id',userCheck, adminController.productDestroit)
+
 
 module.exports = router;
