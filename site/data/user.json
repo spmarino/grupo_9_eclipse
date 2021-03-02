@@ -300,36 +300,6 @@
     "avatar": "generico.png"
   },
   {
-    "id": 31,
-    "name": "sergio",
-    "lastName": "marino",
-    "email": "spm@hot.com",
-    "date": "1992-08-23",
-    "password": "$2b$12$.tY4Hd/g41UaSF3dVpPK/ued8sAcA9p0tpftG04yyFn.IT/JjAdoi",
-    "admin": false,
-    "avatar": "avatar-1614487934809.png"
-  },
-  {
-    "id": 32,
-    "name": "sergio",
-    "lastName": "marino",
-    "email": "spm@hotmail.com",
-    "date": "1222-12-12",
-    "password": "$2b$12$a/PlzZZ2i.X0b51LAxPstuBLi.SLxsmQtW3Nk.CeVTc6rGA5OqhNa",
-    "admin": false,
-    "avatar": "avatar-1614491990176.png"
-  },
-  {
-    "id": 33,
-    "name": "toto",
-    "lastName": "salvio",
-    "email": "toto@salvio.com",
-    "date": "1992-08-23",
-    "password": "$2b$12$qacz2pmH.6bttexDTqv3Mu1H6JQERXo8kjwS1250U3FC18GTMVuty",
-    "admin": false,
-    "avatar": "avatar-1614556936599.png"
-  },
-  {
     "id": 34,
     "name": "sergio",
     "lastName": "marino",
@@ -340,16 +310,6 @@
     "avatar": "avatar-1614560422552.png"
   },
   {
-    "id": 35,
-    "name": "nico",
-    "lastName": "marin",
-    "email": "nico@marin.com",
-    "date": "1992-08-23",
-    "password": "$2b$12$XSBm1Ri/vVJ.1w.uPYxMYOz2BgiFB7D2VI5yWDdmOl0MrB1pX4mPi",
-    "admin": true,
-    "avatar": "generico.png"
-  },
-  {
     "id": 36,
     "name": "maria",
     "lastName": "lala",
@@ -358,5 +318,15 @@
     "password": "$2b$12$/Oi5wmEgjmEKuMYwBr8BWOlGWTUfWwxCZErKhdPsgUzMDGNIPDXna",
     "admin": true,
     "avatar": "avatar-1614566673718.png"
+  },
+  {
+    "id": 37,
+    "name": "sergio",
+    "lastName": "marino",
+    "email": "spmarino@hotmail.com",
+    "date": "1992-08-23",
+    "password": "$2b$12$5IT/V1gpz9fVUxiJkBWc3OwFUNvdEj5xlHmyKRsthwnv4iA4jCNxu",
+    "admin": false,
+    "avatar": "generico.png"
   }
 ]

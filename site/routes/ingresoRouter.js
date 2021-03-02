@@ -8,6 +8,7 @@ const registerValidator = require('../validations/registerValidator')
 const upload = require('../middlewares/uploadImg');
 const userNotCheck = require('../middlewares/userNotCheck');
 const userCheck = require('../middlewares/userCheck');
+const adminCheck = require('../middlewares/adminCheck');
 
 
 
@@ -17,7 +18,7 @@ router.get('/',userNotCheck, home)
 router.post('/register',upload.any(),registerValidator, processRegister)
 router.post('/login',loginValidator, processLogin)
 router.get('/logout',logout)
-router.get('/users',userCheck, user)
+router.get('/users',userCheck,adminCheck, user)
 
 
 

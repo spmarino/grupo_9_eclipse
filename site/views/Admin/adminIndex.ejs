@@ -14,8 +14,9 @@
 
 <body style="background-color:gray;">
 <div class="conteiner-index-admin">
-  <h1>BIENVENIDO A LA PAGINA DE ADMINISTRACIÓN</h1>
+  <h1>BIENVENIDO/A ADMINISTRADOR <span style="color: crimson;"><%= user.name.toUpperCase() %></span></h1>
 </div>
+<div class="avatar-usuario"><img src="/images/<%- user.avatar %> " alt=""></div>
 <%- include('./partials/footer')  %> 
 </body>
 
