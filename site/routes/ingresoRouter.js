@@ -17,7 +17,7 @@ const adminCheck = require('../middlewares/adminCheck');
 router.get('/',userNotCheck, home)
 router.post('/register',upload.any(),registerValidator, processRegister)
 router.post('/login',loginValidator, processLogin)
-router.get('/logout',logout)
+router.delete('/logout',logout)
 router.get('/users',userCheck,adminCheck, user)
 
 

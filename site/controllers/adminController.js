@@ -78,7 +78,7 @@ return product.title.toLowerCase().includes(search.toLowerCase());
         price: +price,
         descuento: +descuento,
         envio: +envio,
-        imagen: req.files[0].filename,
+        imagen: req.files[0] ? req.files[0].filename : 'producto1.png',
         finca,
 
     }
@@ -112,7 +112,7 @@ return product.title.toLowerCase().includes(search.toLowerCase());
         price: +price,
         descuento: +descuento,
         envio: +envio,
-        imagen:req.files[0].filename,
+        imagen: req.files[0] ? req.files[0].filename : 'producto1.png',
         finca,
     }
     products.forEach((product, index)=> {

@@ -74,13 +74,13 @@ const usersController = {
                         admin: result.admin,
                         avatar: result.avatar,
                     }
-                    if (recordar != 'undefined'){
+                    if (recordar != undefined){
                         res.cookie('userConect', req.session.user, {
-                            maxAge: 1000 * 60
+                            maxAge: 1000 * 60 * 6000
                         })
                     }
 
-                    res.redirect('/ingreso/users')
+                   return res.redirect('/ingreso/users')
                 }
 
             }
@@ -96,6 +96,7 @@ const usersController = {
 
 
     'logout': function (req, res) {
+        /*delete.req.session.user*/
         req.session.destroy();
         if (req.cookies.userConect) {
             res.cookie('userConect','', { maxAge: -1 })
