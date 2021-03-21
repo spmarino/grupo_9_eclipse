@@ -11,7 +11,7 @@
 
 <body style="background-color:gray;">
 <div class="contenedor-formulario-admin">
-  <form action="/admin/products/edit/<%- product.id %>?_method=PUT" method="POST" class="form-admin">
+  <form action="/admin/products/edit/<%- product.id %>?_method=PUT" method="POST" class="form-admin" enctype="multipart/form-data">
     <div class="form-header">
       <h1 class="form-title">E<span>ditar Producto</span> ID <%- product.id %> </h1>
     </div>

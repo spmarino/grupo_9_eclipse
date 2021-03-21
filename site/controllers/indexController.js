@@ -11,7 +11,7 @@ const indexController = {
         });
 
         const masVendidos = products.filter((product) => {
-            return product.category === 'cover'
+            return product.promo == "cover"
         });
         const toThousand = (n) =>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".");
 

@@ -1,114 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/style-loginRegister.css">
-   <!-- Font Awesome Stylesheet -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <!-- Bootstrap Grid Stylesheet -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-</head>
-<header>
-  <div class=".header-container">
-    <div class="col-12 container-logo">
-      <a href="/"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px" y="0px" viewBox="0 0 960 560" style="enable-background:new 0 0 960 560;" xml:space="preserve">
-        <style type="text/css">
-          .st0 {
-            fill: none;
-          }
+  <%-include("partials/head")%>
 
-          .st1 {
-            fill: #212222;
-          }
-
-          .st2 {
-            font-family: 'CinzelDecorative-Bold';
-          }
-
-          .st3 {
-            font-size: 110px;
-          }
-
-          .st4 {
-            font-family: 'Verdana';
-          }
-
-          .st5 {
-            font-size: 55px;
-          }
-        </style>
-        <g id="Capa_1_1_">
-
-          <image style="display:none;overflow:visible;enable-background:new    ;" width="819" height="372"
-            xlink:href="8822EC64.png" transform="matrix(1.1294 0 0 1.1667 24 31)">
-          </image>
-          <rect x="149" y="248" class="st0" width="495" height="95" />
-          <text transform="matrix(1 0 0 1 149 325)" class="st1 st2 st3">ECLIPSE</text>
-          <rect x="89" y="370" class="st0" width="644" height="88" />
-          <text transform="matrix(1 0 0 1 89 411.7998)" class="st1 st4 st5">BODEGAS Y VIÑEDOS</text>
-        </g>
-        <g id="Capa_2">
-          <path class="st1" d="M503.5,119.5c12.6-7.1,110.7-60.6,208-15.5c36.8,17,60.9,42.3,75,60.5c12.6,16.2,57.7,78.5,51,165.5
-       c-4.2,54.2-26.5,93.6-39.5,113c12.5-13.2,62.7-69.1,62-152.5c-0.4-47.3-17-83.3-27.5-102c7.8,7.3,15.7,14.7,23.5,22l-41-49l41,17.5
-       l-42.5-26h69l-65-6.5l42-18.5l-43,13.5L862,93l-51.5,43l18-40.5L806,137l-1-66l-5.5,64.5l-19.5-49l15,47.5l-45-48.5l23,31.5
-       c-11.7-9.6-72.8-57.6-158-47.5C557.3,76.4,518.6,106.3,503.5,119.5z" />
-        </g>
-      </svg></a>
-    </div>
-
-    <!-- BARRA DE NAVEGACION -->
-    <nav class="navbar-expand-md">
-      <button class="navbar-toggler burger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
-          class="fas fa-stream"></i></button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding: 0 20px 20px 20px;">
-        <ul class="menu navbar-nav mr-auto">
-          <div class="oferta">
-            <li><a href="">Ofertas</a></li>
-          </div>
-          <li><a href="">Vinos Tintos</a></li>
-          <li><a href="">Vinos Blancos</a></li>
-          <li><a href="">Nosotros</a></li>
-          <li><a href="">Contacto</a></li>
-
-
-        </ul>
-        <ul class="usuario navbar-nav ml-auto">
-          <div class="icons-nav">
-
-            <li><a href=""><i class="far fa-user"></i>Ingreso/Registro</a></li>
-            <li><a href=""><i class="fas fa-search"></i>Buscar</a></li>
-            <li><a href=""><i class="fas fa-shopping-cart"></i>Carrito</a></li>
-          </div>
-          <div class="icons-nav2">
-            <li><a href=""><i class="far fa-user"></i></a></li>
-            <li><a href=""><i class="fas fa-search"></i></a></li>
-            <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
-          </div>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  </div>
-</header>
-
-
-
+<%-include("partials/header")%>
 
 
 
 <body>
-
-    <div class="container-lg">
+<!--login  -->
+    <div class="container-log">
         <div class="d-flex justify-content-around">
           <div class="col-10 container-login">
           
-                  <div class="title">
+                  <div class="title-login">
                     <h1> INGRESAR</h1>
                   </div>
                   <div class="login-description">
@@ -116,23 +20,34 @@
                     Si ya estas registrado en Bodegas Eclipse, ingresa con tu correo electronico y contraseña.
           
                   </div>
-                  <form class="login" action="" method="POST">
+                  <form action="/ingreso/login" class="login" action="" method="POST">
             
-                      <input class="controls" type="email" name="email" id="email" placeholder="CORREO ELECTRONICO">
-                      <input class="controls" type="password" name="email" id="password" placeholder="CONTRASEÑA">
-                      <input type="submit" class="button" value="INGRESAR">
+                      <input class="controls-login" type="email" name="email" id="email" placeholder="CORREO ELECTRONICO">
+                      <input class="controls-login" type="password" name="password" id="password" placeholder="CONTRASEÑA">
+                      <input type="checkbox" name= "recordar" id="recordar">
+                      <label for="recordar">Recordar</label>
+                      <% if (typeof errores != "undefined") { %>
+                        <ul>
+                          <% errores.forEach(error => { %>
+                           <li><%= error.msg %> </li>
+                          <% }) %>
+                        </ul>
+                       <% } %>
+                      <input type="submit" class="button-login" value="INGRESAR">
                    
       
                   </form>
                 
           </div>
            </div>
+
+<!--registro -->
           </div>
-          <div class="container-lg">
+          <div class="container-log">
             <div class="d-flex justify-content-around">
               <div class="col-10 container-login">
               
-                      <div class="title">
+                      <div class="title-login">
                         <h1> REGISTRARSE</h1>
                       </div>
                       <div class="login-description">
@@ -140,14 +55,25 @@
                         registrate en BODEGAS ECLIPSE ingresando tus datos.
               
                       </div>
-                      <form class="login" action="" method="POST">
+                      <form action="/ingreso/register" action="" method="POST" enctype="multipart/form-data">
 
 
-                        <input class="controls" type="text" name="name" id="name" placeholder="NOMBRE">
-                        <input class="controls" type="text" name="last-name" id="last-name" placeholder="APELLIDO">
-                        <input class="controls" type="email" name="email" id="email" placeholder="CORREO ELECTRONICO">
-                        <input class="controls" type="password" name="email" id="password" placeholder="CONTRASEÑA">
-                        <input type="submit" class="button" value="REGISTRARSE">
+                        <input class="controls-login" type="text" name="name" id="name" placeholder="NOMBRE">
+                        <input class="controls-login" type="text" name="lastName" id="lastName" placeholder="APELLIDO">
+                        <input class="controls-login" type="email" name="email" id="email" placeholder="CORREO ELECTRONICO">
+                        <input class="controls-login" type="date" name="date" id="date" placeholder="FECHA DE NACIMIENTO">
+                        <label for="avatar">Foto de perfil</label><br>
+                        <input type="file" name= "avatar" id="avatar">
+                        <input class="controls-login" type="password" name="password" id="password" placeholder="CONTRASEÑA">
+                        <input class="controls-login" type="password" name="password2" id="password" placeholder="REINGRESE SU CONTRASEÑA">
+                        <% if (typeof errores != "undefined") { %>
+                         <ul>
+                           <% errores.forEach(error => { %>
+                            <li><%= error.msg %> </li>
+                           <% }) %>
+                         </ul>
+                        <% } %>
+                        <input type="submit" class="button-login" value="REGISTRARSE">
               
                        
           
@@ -157,96 +83,11 @@
                </div>
               </div>
        
-          <footer>
-
-            <div class="col-12 container-footer">
-              <nav class="col-5 tienda-online">
-                <h4>Tienda Online</h4>
-                <ul>
-                  <a href="">
-                    <li>Vinos Tintos</li>
-                  </a>
-                  <a href="">
-                    <li>Vinos Blancos</li>
-                  </a>
-                  <a href="">
-                    <li>Espumantes</li>
-                  </a>
-                  <a href="">
-                    <li>Medios de Pago</li>
-                  </a>
-                  <a href="">
-                    <li>Costos de Envio</li>
-                  </a>
-                  <a href="">
-                    <li>Tiempos de Envio</li>
-                  </a>
-                </ul>
-              </nav>
-          
-              <nav class="col-5 centro-de-ayuda">
-                <h4>Centro de Ayuda</h4>
-                <ul>
-                  <a href="">
-                    <li>Seguimiento de Envíos</li>
-                  </a>
-                  <a href="">
-                    <li>Preguntas Frecuentes</li>
-                  </a>
-                  <a href="">
-                    <li>Dejanos tu mensaje</li>
-                  </a>
-                  <a href="">
-                    <li>Estado del pedido</li>
-                  </a>
-                </ul>
-              </nav>
-          
-              <nav class="col-12 newsletter">
-                <h4>Suscribite a nuestro Newsletter</h4>
-                <p>Enterate de nuestras promociones y novedades</p>
-                <form action="">
-                  <input type="email" placeholder="EMAIL">
-                  <button type="submit">
-                    <i class="far fa-envelope"></i>
-                  </button>
-                </form>
-          
-          
-          
-              </nav>
-          
-              <nav class="redes-sociales">
-                <h4>Seguinos en nuestras redes sociales</h4>
-                <div class="iconos"><a href=""><i class="fab fa-facebook-square"></i></a>
-                  <a href=""><i class="fab fa-instagram"></i></a>
-                  <a href=""><i class="fab fa-twitter"></i></a>
-                </div>
-                <span><a href="mailto:contacto@eclipsebodega.com">contacto@eclipsebodega.com</a></span>
-              </nav>
-          
-            </div>
-          
-            <nav class="col-12 copyright">
-              <h4> BODEGA ECLIPSE . TODOS LOS DERECHOS RESERVADOS</h4>
-            </nav>
-          
-          </footer>
+              <%-include("partials/footer")%>
           
           
           
           
-          <!-- JQUERY -->
-          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-          crossorigin="anonymous"></script>
-          <!-- POPPER JS -->
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-          crossorigin="anonymous"></script>
-          <!-- BOOTSTRAP -->
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-          integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-          crossorigin="anonymous"></script>
+         
 </body>
 </html>

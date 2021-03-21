@@ -1,6 +1,9 @@
 /*Fonts "Lato" */
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+/* imports*/
+@import 'users.css';
+
 /*VARIABLES*/
 
 :root {
@@ -31,15 +34,19 @@ body {
 /* HEADER*/
 
 header {
-  top             : 0;
-  width           : 100%;
-  position        : fixed;
-  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
-  z-index         : 999;
-  padding         : 0px 0;
-  background-color: rgba(194, 190, 190, 0.9);
+  top               : 0;
+  width             : 100%;
+  /*position        : fixed;
+  box-shadow        : 0px 0px 5px rgb(0 0 0 / 60%);*/
+  z-index           : 999;
+  padding           : 0px 0;
+  background-color  : rgba(194, 190, 190, 0.9);
 }
 
+.navbar-header {
+  top     : 0px;
+  position: sticky;
+}
 
 header .header-container {
   max-width      : 1140px;
@@ -48,8 +55,8 @@ header .header-container {
 }
 
 .conteiner-bienvenida {
-  margin-top: 140px;
-  padding   : 0;
+  /*margin-top: 140px;*/
+  padding: 0;
 }
 
 /* NAVEGACION */
@@ -370,8 +377,9 @@ header nav ul li a:hover {
   position      : relative;
   border-radius : 10px;
 }
+
 .button-compra a {
-  color         : white !important;
+  color          : white !important;
   text-decoration: none;
 }
 
@@ -387,47 +395,62 @@ header nav ul li a:hover {
   box-shadow: 2px 2px 1px #000;
 }
 
+/*-------RESENIA--------*/
+
 .caja-res {
-  padding: 0;
+  padding        : 0;
+  height         : 100%;
+  background     : rgba(0, 0, 0, .7);
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+
 }
 
 .resenia {
-  position  : relative;
-  display   : inline-block;
-  text-align: center;
-  padding   : 0 0;
+  position: relative;
+
+  display            : block;
+  text-align         : center;
+  padding            : 0 0;
+  height             : 400px;
+  background-image   : url('../images/fondo1.jpg');
+  background-position: center;
+  background-repeat  : no-repeat;
+  background-size    : cover;
+
+}
+
+.resenia-2 {
+  position: relative;
+  display            : block;
+  text-align         : center;
+  padding            : 0 0;
+  height             : 400px;
+  background-image   : url('../images/fondo2.jpg');
+  background-position: center;
+  background-repeat  : no-repeat;
+  background-size    : cover;
 
 }
 
 .resenia p {
-  position : absolute;
-  top      : 50%;
-  left     : 50%;
-  transform: translate(-50%, -50%);
-  z-index  : 2;
-  color    : white;
-  width    : 85%;
+  z-index: 2;
+  color  : white;
   font-size: 15px;
 
 }
 
 .resenia h2 {
-  position   : absolute;
-  top        : 5%;
   z-index    : 1;
   text-align : center;
   color      : white;
   font-size  : 2.1em;
   font-weight: bold;
   width      : 100%;
-  right      : 1%;
+
 }
 
-
-.resenia img {
-  filter: brightness(0.4);
-  width : 100%;
-}
 
 
 /*FOOTER*/
@@ -632,9 +655,10 @@ ul {
   }
 
   .conteiner-bienvenida {
-    margin-top: 180px;
-    padding   : 0;
+    /*margin-top: 180px;*/
+    padding: 0;
   }
+
 
 
 
@@ -732,9 +756,9 @@ ul {
 /*contenedor producto*/
 
 .caja-detailProduct {
-  background-color: var(--color-gris);
-  margin-top      : 116px;
-  box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
+  background-color  : var(--color-gris);
+  /*margin-top      : 116px;*/
+  box-shadow        : 0px 0px 5px rgb(0 0 0 / 60%);
 
 }
 
@@ -1026,7 +1050,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
   .caja-detailProduct {
-    margin   : 155px 0 0 0;
+    margin   : 0px 0 0 0;
     flex-wrap: wrap;
     display  : flex;
   }
@@ -1068,36 +1092,37 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .title-medios-de-pago i,
-.title-tiempos-de-envio i {
-  font-size: 2rem;
-}
+  .title-tiempos-de-envio i {
+    font-size: 2rem;
+  }
 
-.title-medios-de-pago h4,
-.title-tiempos-de-envio h4 {
-font-size: 1rem;
-}
-.title-medios-de-pago a p,
-.title-tiempos-de-envio a p {
-  font-size: 1rem;
-  padding-left: 43px;
-  
-}
+  .title-medios-de-pago h4,
+  .title-tiempos-de-envio h4 {
+    font-size: 1rem;
+  }
 
-.title-medios-de-pago a,
-.title-tiempos-de-envio a  {
-text-decoration: none;
-}
+  .title-medios-de-pago a p,
+  .title-tiempos-de-envio a p {
+    font-size   : 1rem;
+    padding-left: 43px;
 
-.title-medios-de-pago a p:hover,
-.title-tiempos-de-envio a p:hover {
-  color     : var(--color-grisos);
-  transition: color .3s ease;
-}
+  }
 
-.button-confirma-producto {
-  height: 70px;
-  padding-top: 20px;
-}
+  .title-medios-de-pago a,
+  .title-tiempos-de-envio a {
+    text-decoration: none;
+  }
+
+  .title-medios-de-pago a p:hover,
+  .title-tiempos-de-envio a p:hover {
+    color     : var(--color-grisos);
+    transition: color .3s ease;
+  }
+
+  .button-confirma-producto {
+    height     : 70px;
+    padding-top: 20px;
+  }
 }
 
 /*===============Css ADMIN CARGA PRODUCTO ===================*/
@@ -1113,7 +1138,7 @@ text-decoration: none;
 
 /* The navigation menu */
 .navbar {
-  overflow: hidden;
+  overflow        : hidden;
   background-color: rgba(194, 190, 190, 0.9);
 }
 
@@ -1121,58 +1146,59 @@ text-decoration: none;
 
 /* Navigation links */
 .navbar a {
-  float: left;
-  font-size: 16px;
-  color: var(--color-grisos);
-  text-align: center;
-  padding: 14px 16px;
+  float          : left;
+  font-size      : 16px;
+  color          : var(--color-grisos);
+  text-align     : center;
+  padding        : 14px 16px;
   text-decoration: none;
 }
 
 /* The subnavigation menu */
 .subnav {
-  float: left;
+  float   : left;
   overflow: hidden;
 }
 
 /* Subnav button */
 .subnav .subnavbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: var(--color-rosa);
-  padding: 14px 16px;
+  font-size       : 16px;
+  border          : none;
+  outline         : none;
+  color           : var(--color-rosa);
+  padding         : 14px 16px;
   background-color: inherit;
-  font-family: inherit;
-  margin: 0;
+  font-family     : inherit;
+  margin          : 0;
 }
 
 /* Add a red background color to navigation links on hover */
-.navbar a:hover, .subnav:hover .subnavbtn {
+.navbar a:hover,
+.subnav:hover .subnavbtn {
   background-color: var(--color-gris);
 }
 
 /* Style the subnav content - positioned absolute */
 .subnav-content {
-  display: none;
-  position: absolute;
-  left: 0;
+  display         : none;
+  position        : absolute;
+  left            : 0;
   background-color: var(--color-gris);
-  width: 100%;
-  z-index: 1;
+  width           : 100%;
+  z-index         : 1;
 }
 
 /* Style the subnav links */
 .subnav-content a {
-  float: left;
-  color: var(--color-grisos);
+  float          : left;
+  color          : var(--color-grisos);
   text-decoration: none;
 }
 
 /* Add a grey background color on hover */
 .subnav-content a:hover {
   background-color: var(--color-grisos);
-  color: var(--color-gris);
+  color           : var(--color-gris);
 }
 
 /* When you move the mouse over the subnav container, open the subnav content */
@@ -1185,10 +1211,10 @@ text-decoration: none;
 /*Contenedor Formulario admin*/
 
 .contenedor-formulario-admin {
-  display: flex;
+  display   : flex;
   margin-top: 200px;
-  flex-wrap: wrap;
-  
+  flex-wrap : wrap;
+
 }
 
 
@@ -1196,10 +1222,10 @@ text-decoration: none;
 
 .form-title {
   font-weight: normal;
-  color: var(--color-rosa);
-  text-align: center;
-  padding: 14px 0;
-  
+  color      : var(--color-rosa);
+  text-align : center;
+  padding    : 14px 0;
+
 }
 
 .form-title span {
@@ -1209,131 +1235,133 @@ text-decoration: none;
 /*Fondo formulario*/
 
 .form-admin {
-  background-color: rgba(0,0,0,0.6);
-  color: var(--color-grisos);
-  width: 90%;
-  max-width: 650px;
-  margin:auto;
-  padding: 5px 35px;
-  margin-top: 38px;
-  margin-bottom: 30px;
-  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color           : var(--color-grisos);
+  width           : 90%;
+  max-width       : 650px;
+  margin          : auto;
+  padding         : 5px 35px;
+  margin-top      : 38px;
+  margin-bottom   : 30px;
+  border-radius   : 3px;
 }
 
 /*Labels Formulario*/
 
 .form-label {
-  display: block;
-  color: var(--color-gris);
-  font-size: 16px;
-  position: relative;
+  display       : block;
+  color         : var(--color-gris);
+  font-size     : 16px;
+  position      : relative;
   padding-bottom: 5px;
-  
+
 }
 
 /*Contenedores input formulario*/
 
-.form-input, .form-textarea, .form-select {
-  background-color: rgba(0,0,0,.7);
-  border:none;
-  outline: none;
-  border-bottom: 2px solid var(--color-rosa);
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border-radius: 2px;
-  font-size: 14px;
-  color:white;
+.form-input,
+.form-textarea,
+.form-select {
+  background-color: rgba(0, 0, 0, .7);
+  border          : none;
+  outline         : none;
+  border-bottom   : 2px solid var(--color-rosa);
+  width           : 100%;
+  padding         : 12px;
+  margin-bottom   : 20px;
+  border-radius   : 2px;
+  font-size       : 14px;
+  color           : white;
 
 }
 
 /*Textarea formulario*/
 
 .form-textarea {
-resize: vertical;
-max-height: 150px;
-min-height: 50px;
+  resize    : vertical;
+  max-height: 150px;
+  min-height: 50px;
 
 }
 
 /*Botón Carga producto*/
 
 .btn-submit-admin {
-  width: 100%;
-  outline: none;
+  width     : 100%;
+  outline   : none;
   background: var(--color-rosa);
-  font-size: 16px;
-  border: none;
-  color:white;
-  padding: 15px 0;
-  cursor:pointer;
+  font-size : 16px;
+  border    : none;
+  color     : white;
+  padding   : 15px 0;
+  cursor    : pointer;
   transition: all .5s ease;
 }
 
 .btn-submit-admin:hover {
   background: #ca375a;
-  
+
 
 }
 
 /*Botón adjuntar archivo*/
 
 .contenedor-form-file {
-  display: block;
+  display   : block;
   text-align: center;
-  padding: 14px;
+  padding   : 14px;
 }
 
 .form-file {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
+  width   : 0.1px;
+  height  : 0.1px;
+  opacity : 0;
   overflow: hidden;
   position: absolute;
-  z-index: -1;
-  }
+  z-index : -1;
+}
 
-  label[for="cargar-imagen"] {
-    font-size: 14px;
-        color: #fff;
-    background: var(--color-rosa);
-    display: inline-block;
-    transition: all .5s ease;
-    cursor: pointer;
-    padding: 15px 40px !important;
-    text-transform: uppercase;
-    width: fit-content;
-    text-align: center;
-    }
+label[for="cargar-imagen"] {
+  font-size     : 14px;
+  color         : #fff;
+  background    : var(--color-rosa);
+  display       : inline-block;
+  transition    : all .5s ease;
+  cursor        : pointer;
+  padding       : 15px 40px !important;
+  text-transform: uppercase;
+  width         : fit-content;
+  text-align    : center;
+}
 
-    label[for="cargar-imagen"]:hover {
+label[for="cargar-imagen"]:hover {
   background: #ca375a;
-  
-    }
 
-  
+}
+
+
 /*------------------------------------------------*/
 
 /*===============Css ADMIN PRODUCT LIST ===================*/
 
 .container-product-list-admin {
   display: inline-flex;
-    
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0%;
-    margin-top: 220px;
+
+  flex-wrap      : wrap;
+  justify-content: center;
+  padding        : 0%;
+  margin-top     : 220px;
 }
 
 .box-product-list-admin {
-  background-color: rgba(0,0,0,.7);
-    margin: 20px;
-  padding: 20px;
-  width: 250px;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+  background-color: rgba(0, 0, 0, .7);
+  margin          : 20px;
+  padding         : 20px;
+  width           : 250px;
+  flex-wrap       : wrap;
+  align-items     : center;
+  justify-content : center;
+  display         : flex;
 
 }
 
@@ -1342,138 +1370,155 @@ min-height: 50px;
 }
 
 .box-product-list-admin a img {
-  width: 90%;
-background-color:white;
-padding: 5px;
-margin: 10px 0;
+  width           : 90%;
+  background-color: white;
+  padding         : 5px;
+  margin          : 10px 0;
 }
 
 .btn-edit-admin {
-  width: 100%;
-  outline: none;
+  width     : 100%;
+  outline   : none;
   background: rgb(5, 148, 5);
-  font-size: 16px;
-  border: none;
-  color:white;
-  padding: 15px 0;
-  cursor:pointer;
+  font-size : 16px;
+  border    : none;
+  color     : white;
+  padding   : 15px 0;
+  cursor    : pointer;
   transition: all .5s ease;
-  margin: 5px;
+  margin    : 5px;
   text-align: center;
 }
+
 .btn-edit-admin a {
-text-decoration: none;
-color: white;
+  text-decoration: none;
+  color          : white;
 }
 
 .btn-edit-admin:hover {
   background: #044e01;
-  
+
 
 }
 
 .container-btn-delete {
-  width: 100%;
-    margin-right: 10px;
+  width       : 100%;
+  margin-right: 10px;
 }
 
 
 .btn-delete-admin {
-  width: 100%;
-  outline: none;
+  width     : 100%;
+  outline   : none;
   background: var(--color-rojo);
-  font-size: 16px;
-  border: none;
-  color:white;
-  padding: 15px 0;
-  cursor:pointer;
+  font-size : 16px;
+  border    : none;
+  color     : white;
+  padding   : 15px 0;
+  cursor    : pointer;
   transition: all .5s ease;
-  margin: 5px;
+  margin    : 5px;
 }
 
 .btn-delete-admin:hover {
   background: #8a0303;
-  
+
 
 }
 
 /*===============Css ADMIN PRODUCT LIST ===================*/
 
 .conteiner-index-admin {
-  display: flex;
-    flex-direction: row wrap;
+  display        : flex;
+  flex-direction : row wrap;
   justify-content: center;
-  padding: 0%;
-  margin-top: 250px;
-  text-align: center;
+  padding        : 0%;
+  margin-top     : 100px;
+  text-align     : center;
 }
 
 
 .contenedor-formulario-admin img {
-  display: inline;
-  width: 100%;
-  padding: 30px;
+  display         : inline;
+  width           : 100%;
+  padding         : 30px;
   background-color: grey;
-  margin: 10px 0;
-  display: flex;
+  margin          : 10px 0;
+  display         : flex;
 }
 
 
 /*===============Css SEARCH ===================*/
 
-.wrapper{
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0,0.6);
-    max-width: 550px;
-    width: 100%;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 5px;
+.wrapper {
+  position       : absolute;
+  /*top            : 50%;*/
+  left           : 50%;
+  transform      : translate(-50%, -50%);
+  background     : rgba(0, 0, 0, 0.6);
+  max-width      : 550px;
+  width          : 100%;
+  padding        : 15px;
+  display        : flex;
+  justify-content: space-between;
+  border-radius  : 5px;
 }
 
 .wrapper .input {
-    width: 85%;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
+  width        : 85%;
+  padding      : 15px 20px;
+  border       : none;
+  border-radius: 5px;
+  font-weight  : bold;
 }
 
 .searchbtn {
-    background: var(--color-rojo);
-    width: 10%;
-    border-radius: 5px;
-    position: relative;
-    cursor: pointer;
-    color: white;
-    border: none;
-    font-size: 25px;
+  background   : var(--color-rojo);
+  width        : 10%;
+  border-radius: 5px;
+  position     : relative;
+  cursor       : pointer;
+  color        : white;
+  border       : none;
+  font-size    : 25px;
 }
 
-.searchbtn .fas{
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 18px;
+.searchbtn .fas {
+  position : absolute;
+  top      : 50%;
+  left     : 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
 }
-  
+
 
 @media (min-width: 768px) {
-    .contenedor-formulario-admin img {
-      margin: 0 20%;
-      width: 60%;
-     
-    }
+  .contenedor-formulario-admin img {
+    margin: 0 20%;
+    width : 60%;
+
+  }
+}
 
 /*===============Css RESULTS ===================*/
 .container-title-result {
-width: 100%;
-padding-left: 30px;
+  width       : 100%;
+  padding-left: 30px;
 
 }
+
+
+/*===============Css RESULTS ===================*/
+.avatar-usuario {
+  display        : flex;
+  justify-content: center;
+
+}
+
+.avatar-usuario img {
+  height       : 120px;
+  border-radius: 10px;
+  margin-top   : 25px;
+  border-style : ridge;
+  border-width : 7px;
 }
