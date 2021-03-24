@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     const alias = 'Shippings';
     const cols = {
 id: {
-    type: dataTypes.INTERGER,
+    type: dataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,
@@ -12,7 +12,7 @@ zone : {
     allowNull: false,
 },
 price : {
-    type: dataTypes.INTERGER,
+    type: dataTypes.INTEGER,
     allowNull: false,
 },
 shipping_time : {
@@ -33,7 +33,7 @@ Shipping.associate = (models) => {
     });
 
     Shipping.belongsToMany(models.Users, {
-        as: 'carrito',
+        as: 'carrito2',
         through: 'cars',
         foreignKey: 'shipping_id',
         otherKey: 'user_id',

@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     const alias = 'Products';
     const cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
@@ -16,11 +16,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         price: {
-            type: dataTypes.INTERGER.UNSIGNED,
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false,
         },
         discount: {
-            type: dataTypes.INTERGER.UNSIGNED,
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: true,
         },
         image: {
@@ -40,15 +40,15 @@ module.exports = (sequelize, dataTypes) => {
             defaultValue: false,
         },
         features_id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
         tasting_notes_id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
         product_category_id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
     };

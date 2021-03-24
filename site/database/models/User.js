@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     const alias = 'Users';
     const cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
@@ -33,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
             defaultValue: 'default.png',
         },
         category_id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             allowNull: true,
             defaultValue: 1,
         },
@@ -59,7 +59,7 @@ module.exports = (sequelize, dataTypes) => {
         });
 
         User.belongsToMany(models.Shippings, {
-            as: 'carrito',
+            as: 'carrito2',
             through: 'cars',
             foreignKey: 'user_id',
             otherKey: 'shipping_id',

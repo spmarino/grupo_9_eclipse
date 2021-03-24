@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     const alias = 'Features';
     const cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,

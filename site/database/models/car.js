@@ -2,25 +2,25 @@ module.exports = (sequelize, dataTypes) => {
     const alias = 'Cars';
     const cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
         products_id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
         user_id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
         quantity: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
         shipping_id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
     };
@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const car = sequelize.define(alias, cols, config);
-    car.associate = (models) => {
+   car.associate = (models) => {
         car.belongsTo(models.Products, {
             as: 'products',
             foreignKey: 'products_id',
