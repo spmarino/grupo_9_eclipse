@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = 'Products',
+    const alias = 'Products';
     const cols = {
         id: {
             type: dataTypes.INTERGER,
@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         image: {
             type: dataTypes.STRING(45),
-            allowNull: true,
+            allowNull: false,
             defaultValue: 'default.png',
 
         },
@@ -41,21 +41,21 @@ module.exports = (sequelize, dataTypes) => {
         },
         features_id: {
             type: dataTypes.INTERGER,
-            allowNull: true,
+            allowNull: false,
         },
         tasting_notes_id: {
             type: dataTypes.INTERGER,
-            allowNull: true,
+            allowNull: false,
         },
         product_category_id: {
             type: dataTypes.INTERGER,
-            allowNull: true,
+            allowNull: false,
         },
     };
     const config = {
         tableName: 'products',
         timestamps: false,
-    },
+    }
 
     const Product = sequelize.define(alias, cols, config);
     Product.associate = (models) => {

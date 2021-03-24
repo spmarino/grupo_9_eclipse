@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = 'Users',
+    const alias = 'Users';
     const cols = {
         id: {
             type: dataTypes.INTERGER,
@@ -42,7 +42,7 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'users',
         timestamps: true,
         underscored: true,
-    },
+    }
 
     const User = sequelize.define(alias, cols, config);
     User.associate = (models) => {

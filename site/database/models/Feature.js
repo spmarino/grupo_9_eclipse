@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = 'Features',
+    const alias = 'Features';
     const cols = {
         id: {
             type: dataTypes.INTERGER,
@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
     const config = {
         tableName: 'features',
         timestamps: false,
-    },
+    }
     const Feature = sequelize.define(alias, cols, config);
 
     Feature.associate = (models) => {

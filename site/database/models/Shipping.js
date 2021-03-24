@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = 'Shippings',
+    const alias = 'Shippings';
     const cols = {
 id: {
     type: dataTypes.INTERGER,
@@ -23,7 +23,7 @@ shipping_time : {
 const config = {
 tableName:'shippings',
 timestamps: false,
-},
+}
 
 const Shipping = sequelize.define(alias, cols, config);
 Shipping.associate = (models) => {
