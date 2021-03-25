@@ -1,6 +1,7 @@
 const { readUsers, writeUsers } = require('../data/user');
 const bcrypt = require('bcrypt');
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
+const db = require('../database/models');
 
 
 
@@ -21,6 +22,27 @@ const usersController = {
         } else {
             const { name, lastName, email, password, date } = req.body
             const passHash = bcrypt.hashSync(password, 12);
+
+            db.Users.create({
+                name: name.trim(),
+                lastname: lastName.trim(),
+                email: email.trim(),
+                password: passHash,
+                date_of_birth: date,
+                avatar: req.files[0] ? req.files[0].filename : 'default.png',
+                category_id: 1,
+            
+            })
+            .then(()=>res.redirect('/ingreso'))
+            .catch(error => res.send(error));
+
+
+
+
+            
+            /* 
+            !-----! MÉTODO CON BASE DE DATOS JSON !-----!
+            
             let lastId = 0;
             readUsers.forEach((user) => {
                 if (user.id > lastId) {
@@ -45,6 +67,10 @@ const usersController = {
             readUsers.push(newUser);
             writeUsers(readUsers);
             res.redirect('/ingreso')
+
+            !-----! MÉTODO CON BASE DE DATOS JSON !-----!
+
+            */
         }
     },
 
@@ -74,13 +100,13 @@ const usersController = {
                         admin: result.admin,
                         avatar: result.avatar,
                     }
-                    if (recordar != undefined){
+                    if (recordar != undefined) {
                         res.cookie('userConect', req.session.user, {
                             maxAge: 1000 * 60 * 6000
                         })
                     }
 
-                   return res.redirect('/ingreso/users')
+                    return res.redirect('/ingreso/users')
                 }
 
             }
@@ -99,7 +125,7 @@ const usersController = {
         /*delete.req.session.user*/
         req.session.destroy();
         if (req.cookies.userConect) {
-            res.cookie('userConect','', { maxAge: -1 })
+            res.cookie('userConect', '', { maxAge: -1 })
         }
         res.redirect('/');
 
