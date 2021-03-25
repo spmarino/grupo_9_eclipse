@@ -88,9 +88,46 @@ const usersController = {
             })
 
         } else {
-            let result = readUsers.find(user => user.email === email);
+           /* let result = readUsers.find(user => user.email === email);*/
 
-            if (result) {
+           db.Users.findOne({
+               where:{
+                   email
+               }
+           })
+           .then(user => {
+               if(user&&bcrypt.compareSync(password.trim(),user.password)){
+                req.session.user = {
+                    id: user.id,
+                    name: user.name,
+                    email: user.email,
+                    admin: user.admin,
+                    avatar: user.avatar,
+                    category_id : user.category_id,
+                }
+                if (recordar != undefined) {
+                    res.cookie('userConect', req.session.user, {
+                        maxAge: 1000 * 60 * 6000
+                    })
+                }
+
+                return res.redirect('/ingreso/users')
+               }
+
+               res.render('login', {
+                errores: [
+                    {
+                        msg: 'Credenciales inválidas'
+                    }
+                ]
+            })
+           })
+
+
+
+
+
+           /* if (result) {
                 if (bcrypt.compareSync(password.trim(), result.password)) {
 
                     req.session.user = {
@@ -117,7 +154,7 @@ const usersController = {
                     }
                 ]
             })
-        }
+        */  }
     },
 
 

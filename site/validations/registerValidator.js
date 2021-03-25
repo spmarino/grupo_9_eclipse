@@ -18,7 +18,9 @@ module.exports = [
     body('email').custom(value => {
 
         return db.Users.findOne({
+           where: {
             email : value
+           } 
         })
         .then(user => {
             if(user){
