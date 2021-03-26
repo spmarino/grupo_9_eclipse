@@ -12,19 +12,19 @@
 				<div class="d-flex justify-content-around ">
 					<div class="col-10 col-md-12 caja-detailProduct">
 						<div class=" parte-img-producto">
-							<img src="/images/<%- product.imagen %> " alt="">
+							<img src="/images/<%- product.image %> " alt="">
 						</div>
 						<div class=" parte-descripcion-producto">
 							<div class="title-product-detail">
 								<h4><%-product.title%></h4>
 							</div>
-							<% if (product.descuento> 0) { %>
+							<% if (product.discount> 0) { %>
 							<div class="tachado">
 								<h4>$<%- toThousand(product.price) %></h4>
 							</div><% } %>
 							<div class="precio">
-								<h2>$<%- toThousand(product.price - Math.round(product.price / 100 * product.descuento)) %></h4>
-									<% if (product.descuento> 0) { %><div class="descuento-detail"><span><%- product.descuento %> % off</span>
+								<h2>$<%- toThousand(product.price - Math.round(product.price / 100 * product.discount)) %></h4>
+									<% if (product.discount> 0) { %><div class="descuento-detail"><span><%- product.discount %> % off</span>
 									</div><% } %>
 							</div>
 							<div class="medios-de-pago">
@@ -86,35 +86,35 @@
 								<tbody>
 									<tr>
 										<td class="title-table">varietal</td>
-										<td class="contenido-table"><%- product.varietal%></td>
+										<td class="contenido-table"><%- feature.varietal%></td>
 									</tr>
 									<tr>
 										<td class="title-table">añada</td>
-										<td class="contenido-table"><%- product.añada %></td>
+										<td class="contenido-table"><%- feature.añada %></td>
 									</tr>
 
 									<tr>
 										<td class="title-table">tipo de barrica</td>
-										<td class="contenido-table"><%- product.barrica%></td>
+										<td class="contenido-table"><%- feature.barrica%></td>
 									</tr>
 
 									<tr>
 										<td class="title-table">tiempo en barrica</td>
-										<td class="contenido-table"><%-product.tiempo%> Meses</td>
+										<td class="contenido-table"><%-feature.tiempo%> Meses</td>
 									</tr>
 
 									<tr>
 										<td class="title-table">tipo de cosecha</td>
-										<td class="contenido-table"><%-product.tipoCosecha%></td>
+										<td class="contenido-table"><%-feature.tipoCosecha%></td>
 									</tr>
 									<tr>
 										<td class="title-table">terroir</td>
-										<td class="contenido-table"><%-product.terroir%></td>
+										<td class="contenido-table"><%-feature.terroir%></td>
 									</tr>
 
 									<tr>
 										<td class="title-table">finca</td>
-										<td class="contenido-table"><%- product.finca%></td>
+										<td class="contenido-table"><%- feature.finca%></td>
 									</tr>
 								</tbody>
 							</table>
@@ -134,17 +134,17 @@
 					<tbody>
 						<tr>
 							<th class="title-table" scope="row"><i class="far fa-eye"></i></th>
-							<td><%-product.color%></td>
+							<td><%-tastingNote.color%></td>
 
 						</tr>
 						<tr>
 							<th class="title-table" scope="row"><img src="/images/nose.png" alt=""> </th>
-							<td><%-product.aroma%>
+							<td><%-tastingNote.smell%>
 							</td>
 
 						<tr>
 							<th class="title-table" scope="row"><img src="/images/lips.png" alt=""> </th>
-							<td><%-product.sabor%></td>
+							<td><%-tastingNote.taste%></td>
 
 						</tr>
 					</tbody>

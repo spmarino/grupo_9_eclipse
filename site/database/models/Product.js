@@ -66,7 +66,7 @@ module.exports = (sequelize, dataTypes) => {
 
         Product.belongsTo(models.Features, {
             as: 'feature',
-            foreignKey: 'feautures_id',
+            foreignKey: 'features_id',
         });
 
         Product.belongsTo(models.TastingNotes, {

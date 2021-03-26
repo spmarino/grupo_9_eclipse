@@ -94,14 +94,14 @@
           <% masVendidos.forEach(product=> { %>
             <section class="col-5 col-md-3 col-lg-2 producto-box">
               <figure class="imagen-producto">
-                <img src="/images/<%- product.imagen %> " alt="">
+                <img src="/images/<%- product.image %> " alt="">
               </figure>
-              <% if (product.envio> 0) { %>
+              <% if (product.free_shipping> 0) { %>
                 <div class="envio-promo"><span>Envio gratis</span></div>
                 <% } %>
-                  <% if (product.descuento> 0) { %>
+                  <% if (product.discount> 0) { %>
                     <div class="descuento"><span>
-                        <%- product.descuento %> % OFF
+                        <%- product.discount %> % OFF
                       </span></div>
                     <% } %>
                       <article class="datos-articulo">
@@ -109,10 +109,10 @@
                           <%-product.title%>
                         </h2>
                         <div class="precio">
-                          <% if (product.descuento> 0) { %>
+                          <% if (product.discount> 0) { %>
                           <span class="precio-real">$<%- toThousand(product.price) %> </span>
                           <% } %>
-                          <span class="precio-desc">$<%- toThousand(product.price - Math.round(product.price / 100 * product.descuento)) %> </span>
+                          <span class="precio-desc">$<%- toThousand(product.price - Math.round(product.price / 100 * product.discount)) %> </span>
                         </div>
                         <div class="button-agregar">
                           <button type="button" class="button-compra"><a href="/products/detail/<%- product.id %>">Agregar</a></button> 
@@ -197,14 +197,14 @@
                 <div class="carousel-item">
                   <section class="d-block w-80 producto-box">
                     <figure class="imagen-producto">
-                      <img src="/images/<%- product.imagen %> " alt="">
+                      <img src="/images/<%- product.image %> " alt="">
                     </figure>
-                    <% if (product.envio> 0) { %>
+                    <% if (product.free_shipping> 0) { %>
                       <div class="envio-promo"><span>Envio gratis</span></div>
                       <% } %>
-                        <% if (product.descuento> 0) { %>
+                        <% if (product.discount> 0) { %>
                           <div class="descuento"><span>
-                              <%- product.descuento %> % OFF
+                              <%- product.discount %> % OFF
                             </span></div>
                           <% } %>
                             <article class="datos-articulo">
@@ -212,10 +212,10 @@
                                 <%-product.title%>
                               </h2>
                               <div class="precio">
-                              <% if (product.descuento> 0) { %>
+                              <% if (product.discount> 0) { %>
                               <span class="precio-real">$<%- toThousand(product.price) %> </span>
                               <% } %>
-                              <span class="precio-desc">$<%- toThousand(product.price - Math.round(product.price / 100 * product.descuento)) %> </span>
+                              <span class="precio-desc">$<%- toThousand(product.price - Math.round(product.price / 100 * product.discount)) %> </span>
                             </div>
                               <div class="button-agregar">
                                 <button type="button" class="button-compra"><a href="/products/detail/<%- product.id %>">Agregar</a></button>
@@ -293,14 +293,14 @@
                 <div class="carousel-item">
                   <section class="d-block w-80 producto-box">
                     <figure class="imagen-producto">
-                      <img src="/images/<%- product.imagen %> " alt="">
+                      <img src="/images/<%- product.image %> " alt="">
                     </figure>
-                    <% if (product.envio> 0) { %>
+                    <% if (product.free_shipping> 0) { %>
                       <div class="envio-promo"><span>Envio gratis</span></div>
                       <% } %>
-                        <% if (product.descuento> 0) { %>
+                        <% if (product.discount> 0) { %>
                           <div class="descuento"><span>
-                              <%- product.descuento %> % OFF
+                              <%- product.discount %> % OFF
                             </span></div>
                           <% } %>
                             <article class="datos-articulo">
@@ -308,10 +308,10 @@
                                 <%-product.title%>
                               </h2>
                               <div class="precio">
-                          <% if (product.descuento> 0) { %>
+                          <% if (product.discount> 0) { %>
                           <span class="precio-real">$<%- toThousand(product.price) %> </span>
                           <% } %>
-                          <span class="precio-desc">$<%- toThousand(product.price - Math.round(product.price / 100 * product.descuento)) %> </span>
+                          <span class="precio-desc">$<%- toThousand(product.price - Math.round(product.price / 100 * product.discount)) %> </span>
                         </div>
                               <div class="button-agregar">
                                 <button type="button" class="button-compra"><a href="/products/detail/<%- product.id %>">Agregar</a></button>

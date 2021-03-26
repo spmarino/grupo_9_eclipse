@@ -20,7 +20,7 @@
               <h1 class="form-title">D<span>etalle Producto</span> ID <%- product.id %>
               </h1>
             </div>
-            <img src="/images/<%- product.imagen %> " alt="">
+            <img src="/images/<%- product.image %> " alt="">
             <label for="nombre" class="form-label">Nombre:</label>
             <p class="form-input">
               <%- product.title %>
@@ -34,14 +34,18 @@
             </p>
             <label for="clase-de-vino" class="form-label">Tipo de Vino:</label>
             <p class="form-input">
-              <%- product.tipo %>
+              <% if (product.product_category_id == 1) { %>
+                Tinto
+                <% } else { %>   
+                 Blanco
+               <% } %>        
             </p>
             <label for="descuento" class="form-label">Descuento:</label>
             <p class="form-input">
-              <%- product.descuento %> 
+              <%- product.discount %> 
             </p>
             <label for="descuento" class="form-label">Envío Gratis</label>
-            <% if (product.envio > 0) { %>
+            <% if (product.free_shipping) { %>
               
               <p class="form-input">Si</p>
               <% } else { %>
@@ -51,27 +55,30 @@
                 
                 <h2 class="form-title">C<span>aracterísticas</span></h2>
                 <label for="varietal" class="form-label">Varietal:</label>
-                <p class="form-input"><%- product.varietal %> </p>
+                <p class="form-input"><%- feature.varietal %> </p>
                 <label for="number" class="form-label">Añada:</label>
-                <p class="form-input"><%- product.añada %> </p>
+                <p class="form-input"><%- feature.vintage %> </p>
                 <label for="barrica" class="form-label">Tipo de Barrica:</label>
-                <p class="form-input"><%- product.barrica %> </p>
+                <p class="form-input"><%- feature.type_of_barrel %> </p>
                 <label for="tiempo" class="form-label">Tiempo en botella:</label>
-                <p class="form-input"><%- product.tiempo %> </p>
+                <p class="form-input"><%- feature.time_in_bottle %> </p>
                 <label for="tiempo" class="form-label">Tipo de Cosecha:</label>
-                <p class="form-input"><%- product.tipoCosecha %> </p>
+                <p class="form-input"><%- feature.harvest %> </p>
                 <label for="terroir" class="form-label">Terroir:</label>
-                <p class="form-input"><%- product.terroir %> </p>
+                <p class="form-input"><%- feature.terroir %> </p>
+                <label for="terroir" class="form-label">Finca:</label>
+                <p class="form-input"><%- feature.finca %> </p>
+                
 
 
                 <h2 class="form-title">N<span>otas de Cata</span></h2>
                 <label for="color" class="form-label">Color:</label>
-                <p class="form-input"><%- product.color %> </p>
+                <p class="form-input"><%- tastingNote.color %> </p>
                 <label for="aroma" class="form-label">Aroma:</label>
-                <p class="form-input"><%- product.aroma %> 
+                <p class="form-input"><%- tastingNote.smell %> 
                 </p>
                 <label for="sabor" class="form-label">Sabor:</label>
-                <p class="form-input"><%- product.sabor %> 
+                <p class="form-input"><%- tastingNote.taste %> 
                 </p>
 
                 <div class="btn-edit-admin"><a href="/admin/products/edit/<%- product.id %>">Editar</a></div>

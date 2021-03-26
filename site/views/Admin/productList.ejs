@@ -18,13 +18,17 @@
     
     <div class="box-product-list-admin">
       <h4>ID : <%- product.id %> </h4>
-      <a href="products/<%- product.id %>"><img src="/images/<%- product.imagen %> " alt=""></a>
+      <a href="products/<%- product.id %>"><img src="/images/<%- product.image %> " alt=""></a>
       <h4 class="form-label">Nombre</h4>
       <p class="form-input"><%- product.title %></p>
       <h4 class="form-label">Precio</h4>
-      <p class="form-input">$<%- toThousand(product.price - Math.round(product.price / 100 * product.descuento)) %></p>
+      <p class="form-input">$<%- toThousand(product.price - Math.round(product.price / 100 * product.discount)) %></p>
       <h4 class="form-label">Tipo</h4>
-      <p class="form-input"><%- product.tipo %> </p>
+      <p class="form-input"><% if (product.product_category_id == 1) { %>
+       Tinto
+       <% } else { %>   
+        Blanco
+      <% } %>        
       <div class="btn-edit-admin"><a href="/admin/products/edit/<%- product.id %>">Editar</a></div>
       <div class="container-btn-delete"><form action="/admin/products/delete/<%- product.id %>?_method=DELETE " method="POST">
         <input type="submit" class="btn-delete-admin" value="Eliminar"></form></div>

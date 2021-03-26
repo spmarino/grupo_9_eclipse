@@ -22,14 +22,16 @@
       <label for="description" class="form-label">Descripción:</label>
       <textarea class="form-textarea" name="description" id="description"
         placeholder="Breve descripción del producto"></textarea>
-      <label for="tipo" class="form-label">Tipo de Vino:</label>
-      <select class="form-select" name="tipo" id="tipo" required>
-        <option class="form-option" value="Tinto">Vinos Tintos</option>
-        <option class="form-option" value="Blanco">Vinos Blancos</option>
-        <option class="form-option" value="Espumante">Espumantes</option>
+      <label for="product_category_id" class="form-label">Tipo de Vino:</label>
+      <select class="form-select" name="product_category_id" id="product_category_id" required>
+        <% categories.forEach(category => { %>
+          <option class="form-option" value="<%- category.id %> "><%- category.category %> </option>
+        <% }) %>
+               
+     
       </select>
-      <label for="descuento" class="form-label">Descuento:</label>
-      <select class="form-select" name="descuento" id="descuento" required>
+      <label for="discount" class="form-label">Descuento:</label>
+      <select class="form-select" name="discount" id="discount" required>
         <option class="form-option" value="0">Sin Descuento</option>
         <option class="form-option" value="5">5% OFF</option>
         <option class="form-option" value="10">10% OFF</option>
@@ -38,24 +40,24 @@
         <option class="form-option" value="25">25% OFF</option>
         <option class="form-option" value="35">35% OFF</option>
       </select>
-      <div class="form-checkbox"><label for="envio" class="form-label">Envío gratis:</label>
-        <input class="form-radio" type="checkbox" name="envio" id="envio" value="1">
+      <div class="form-checkbox"><label for="free_shipping" class="form-label">Envío gratis:</label>
+        <input class="form-radio" type="checkbox" name="free_shipping" id="free_shipping" value="1">
         <br>
         <br>
-        <div class="form-checkbox"><label for="promo" class="form-label">Producto en portada:</label>
-          <input class="form-radio" type="checkbox" name="promo" id="promo" value="cover">
+        <div class="form-checkbox"><label for="cover_page" class="form-label">Producto en portada:</label>
+          <input class="form-radio" type="checkbox" name="cover_page" id="cover_page" value="1">
       </div>
       <h2 class="form-title">C<span>aracterísticas</span></h2>
       <label for="varietal" class="form-label">Varietal:</label>
       <input type="text" id="varietal" class="form-input" name="varietal" placeholder="Tipo de uva" required>
-      <label for="number" class="form-label">Añada:</label>
-      <input type="number" id="añada" min="1900" step="any" class="form-input" name="añada" placeholder="Año de cosecha" required>
-      <label for="barrica" class="form-label">Tipo de Barrica:</label>
-      <input type="text" id="barrica" class="form-input" name="barrica" placeholder="Tipo de barrica" required>
-      <label for="tiempo" class="form-label">Tiempo en botella:</label>
-      <input type="number" id="tiempo" class="form-input" name="tiempo" placeholder="Tiempo en botella" required>
-      <label for="tipoCosecha" class="form-label">Tipo de Cosecha:</label>
-      <select class="form-select" name="tipoCosecha" id="tipoCosecha" required>
+      <label for="vintage" class="form-label">Añada:</label>
+      <input type="number" id="vintage" min="1900" step="any" class="form-input" name="vintage" placeholder="Año de cosecha" required>
+      <label for="type_of_barrel" class="form-label">Tipo de Barrica:</label>
+      <input type="text" id="type_of_barrel" class="form-input" name="type_of_barrel" placeholder="Tipo de barrica" required>
+      <label for="time_in_bottle" class="form-label">Tiempo en botella:</label>
+      <input type="number" id="time_in_bottle" class="form-input" name="time_in_bottle" placeholder="Tiempo en botella" required>
+      <label for="harvest" class="form-label">Tipo de Cosecha:</label>
+      <select class="form-select" name="harvest" id="harvest" required>
         <option class="form-option" value="Manual">Manual</option>
         <option class="form-option" value="Mecánica">Mecánica</option>
       </select>
@@ -68,10 +70,10 @@
       <h2 class="form-title">N<span>otas de Cata</span></h2>
       <label for="color" class="form-label">Color:</label>
       <textarea class="form-textarea" name="color" id="color" placeholder="Breve descripción del producto"></textarea>
-      <label for="aroma" class="form-label">Aroma:</label>
-      <textarea class="form-textarea" name="aroma" id="aroma" placeholder="Breve descripción del producto"></textarea>
-      <label for="sabor" class="form-label">Sabor:</label>
-      <textarea class="form-textarea" name="sabor" id="sabor" placeholder="Breve descripción del producto"></textarea>
+      <label for="smell" class="form-label">Aroma:</label>
+      <textarea class="form-textarea" name="smell" id="smell" placeholder="Breve descripción del producto"></textarea>
+      <label for="taste" class="form-label">Sabor:</label>
+      <textarea class="form-textarea" name="taste" id="taste" placeholder="Breve descripción del producto"></textarea>
 
 
 
@@ -82,7 +84,7 @@
 
       <div class="contenedor-form-file">
         <span class="form-file">
-          <input type="file" name="imagen" id="cargar-imagen">
+          <input type="file" name="image" id="cargar-imagen">
         </span>
         <label for="cargar-imagen" class="form-label-file">
           <span>Cargar imagen</span>

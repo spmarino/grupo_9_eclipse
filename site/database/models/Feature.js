@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true,
         },
         vintage: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.INTEGER,
             allowNull: true,
         },
         type_of_barrel: {
@@ -20,11 +20,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true,
         },
         time_in_barrel: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.INTEGER,
             allowNull: true,
         },
         time_in_bottle: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.INTEGER,
             allowNull: true,
         },
         harvest: {

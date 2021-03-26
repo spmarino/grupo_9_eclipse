@@ -22,61 +22,60 @@
     <label for="description" class="form-label">Descripción:</label>
     <textarea class="form-textarea" name="description" id="description"
       placeholder="Breve descripción del producto" ><%- product.description %> </textarea>
-    <label for="tipo" class="form-label">Tipo de Vino:</label>
-    <select class="form-select" name="tipo" id="tipo" required>
-      <option class="form-option" value="Tinto" <%- product.tipo === "Tinto" ? "selected" : null %>>Vinos Tintos</option>
-      <option class="form-option" value="Blanco"<%- product.tipo === "Blanco" ? "selected" : null %>>Vinos Blancos</option>
-      <option class="form-option" value="Espumante"<%- product.tipo === "Espumante" ? "selected" : null %>>Espumantes</option>
+    <label for="product_category_id" class="form-label">Tipo de Vino:</label>
+    <select class="form-select" name="product_category_id" id="product_category_id" required>
+      <option class="form-option" value="1" <%- product.product_category_id == 1 ? "selected" : null %>>Vinos Tintos</option>
+      <option class="form-option" value="2"<%- product.product_category_id == 2 ? "selected" : null %>>Vinos Blancos</option>
+          </select>
+    <label for="discount" class="form-label">Descuento:</label>
+    <select class="form-select" name="discount" id="discount" required>
+      <option class="form-option" value="0"<% if (product.discount == 0) { %>selected<% } %>>Sin descuento</option>
+      <option class="form-option" value="5"<% if (product.discount == 5) { %>selected<% } %>>5% OFF</option>
+      <option class="form-option" value="10"<% if (product.discount == 10) { %>selected<% } %>>10% OFF</option>
+      <option class="form-option" value="15"<% if (product.discount == 15) { %>selected<% } %>>15% OFF</option>
+      <option class="form-option" value="20"<% if (product.discount == 20) { %>selected<% } %>>20% OFF</option>
+      <option class="form-option" value="25"<% if (product.discount == 25) { %>selected<% } %>>25% OFF</option>
+      <option class="form-option" value="35"<% if (product.discount == 35) { %>selected<% } %>>35% OFF</option>
     </select>
-    <label for="descuento" class="form-label">Descuento:</label>
-    <select class="form-select" name="descuento" id="descuento" required>
-      <option class="form-option" value="0"<% if (product.descuento == 0) { %>selected<% } %>>Sin Descuento</option>
-      <option class="form-option" value="5"<% if (product.descuento == 5) { %>selected<% } %>>5% OFF</option>
-      <option class="form-option" value="10"<% if (product.descuento == 10) { %>selected<% } %>>10% OFF</option>
-      <option class="form-option" value="15"<% if (product.descuento == 15) { %>selected<% } %>>15% OFF</option>
-      <option class="form-option" value="20"<% if (product.descuento == 20) { %>selected<% } %>>20% OFF</option>
-      <option class="form-option" value="25"<% if (product.descuento == 25) { %>selected<% } %>>25% OFF</option>
-      <option class="form-option" value="35"<% if (product.descuento == 35) { %>selected<% } %>>35% OFF</option>
-    </select>
-    <div class="form-checkbox"><label for="envio" class="form-label">Envío gratis:</label>
-      <input class="form-radio" type="checkbox" name="envio" id="envio" value="1" <% if (product.envio > 0) { %>
+    <div class="form-checkbox"><label for="free_shipping" class="form-label">Envío gratis:</label>
+      <input class="form-radio" type="checkbox" name="free_shipping" id="free_shipping" value="1" <% if (product.free_shipping ) { %>
         checked
        <% } %>>
       
       <br>
       <br>
-      <div class="form-checkbox"><label for="promo" class="form-label">Producto en portada:</label>
-        <input class="form-radio" type="checkbox" name="promo" id="promo" value="cover" <% if (product.promo == 'cover') { %>
+      <div class="form-checkbox"><label for="cover_page" class="form-label">Producto en portada:</label>
+        <input class="form-radio" type="checkbox" name="cover_page" id="cover_page" value="1" <% if (product.cover_page) { %>
           checked
          <% } %>>
     </div>
     <h2 class="form-title">C<span>aracterísticas</span></h2>
     <label for="varietal" class="form-label">Varietal:</label>
-    <input type="text" id="varietal" class="form-input" name="varietal" placeholder="Tipo de uva" value="<%- product.varietal %> " required>
-    <label for="number" class="form-label">Añada:</label>
-    <input type="number" id="añada" min="1800" step="any" class="form-input" name="añada" placeholder="Año de cosecha" value="<%- product.añada %>"required>
-    <label for="barrica" class="form-label">Tipo de Barrica:</label>
-    <input type="text" id="barrica" class="form-input" name="barrica" placeholder="Tipo de barrica" value="<%- product.barrica %> "required>
-    <label for="tiempo" class="form-label">Tiempo en botella:</label>
-    <input type="number" id="tiempo" min="1" step="any" class="form-input" name="tiempo" placeholder="Tiempo en botella" value="<%- product.tiempo %>"required>
-    <label for="tipoCosecha" class="form-label">Tipo de Cosecha:</label>
-    <select class="form-select" name="tipoCosecha" id="tipoCosecha" required>
-      <option class="form-option" value="Manual"<%- product.tipoCosecha === "Manual" ? "selected" : null %> >Manual</option>
-      <option class="form-option" value="Mecánica"<%- product.tipoCosecha === "Mecánica" ? "selected" : null %>>Mecánica</option>
+    <input type="text" id="varietal" class="form-input" name="varietal" placeholder="Tipo de uva" value="<%- feature.varietal %> " required>
+    <label for="vintage" class="form-label">Añada:</label>
+    <input type="number" id="vintage" min="1800" step="any" class="form-input" name="vintage" placeholder="Año de cosecha" value="<%- feature.vintage %>"required>
+    <label for="type_of_barrel" class="form-label">Tipo de Barrica:</label>
+    <input type="text" id="type_of_barrel" class="form-input" name="type_of_barrel" placeholder="Tipo de barrica" value="<%- feature.type_of_barrel %> "required>
+    <label for="time_in_bottle" class="form-label">Tiempo en botella:</label>
+    <input type="number" id="time_in_bottle" min="1" step="any" class="form-input" name="time_in_bottle" placeholder="Tiempo en botella" value="<%- feature.time_in_bottle %>"required>
+    <label for="harvest" class="form-label">Tipo de Cosecha:</label>
+    <select class="form-select" name="harvest" id="harvest" required>
+      <option class="form-option" value="Manual"<%- feature.harvest=== "Manual" ? "selected" : null %> >Manual</option>
+      <option class="form-option" value="Mecánica"<%- feature.harvest === "Mecánica" ? "selected" : null %>>Mecánica</option>
     </select>
     <label for="terroir" class="form-label">Terroir:</label>
-    <input type="text" id="terroir" class="form-input" name="terroir" placeholder="Lugar Geográfico" value="<%- product.terroir %> "required>
+    <input type="text" id="terroir" class="form-input" name="terroir" placeholder="Lugar Geográfico" value="<%- feature.terroir %> "required>
     <label for="finca" class="form-label">Finca:</label>
-    <input type="text" id="finca" class="form-input" name="finca"placeholder="Finca" value="<%- product.finca %> "required>
+    <input type="text" id="finca" class="form-input" name="finca"placeholder="Finca" value="<%- feature.finca %> "required>
 
 
     <h2 class="form-title">N<span>otas de Cata</span></h2>
     <label for="color" class="form-label">Color:</label>
-    <textarea class="form-textarea" name="color" id="color" placeholder="Breve descripción del producto"><%- product.color %> </textarea>
-    <label for="aroma" class="form-label">Aroma:</label>
-    <textarea class="form-textarea" name="aroma" id="aroma" placeholder="Breve descripción del producto"><%- product.aroma %> </textarea>
-    <label for="sabor" class="form-label">Sabor:</label>
-    <textarea class="form-textarea" name="sabor" id="sabor" placeholder="Breve descripción del producto"><%- product.sabor %> </textarea>
+    <textarea class="form-textarea" name="color" id="color" placeholder="Breve descripción del producto"><%- tastingNote.color %> </textarea>
+    <label for="smell" class="form-label">Aroma:</label>
+    <textarea class="form-textarea" name="smell" id="smell" placeholder="Breve descripción del producto"><%- tastingNote.smell %> </textarea>
+    <label for="taste" class="form-label">Sabor:</label>
+    <textarea class="form-textarea" name="taste" id="taste" placeholder="Breve descripción del producto"><%- tastingNote.taste %> </textarea>
 
 
 
@@ -87,7 +86,7 @@
 
     <div class="contenedor-form-file">
       <span class="form-file">
-        <input type="file" name="imagen" id="cargar-imagen">
+        <input type="file" name="image" id="cargar-imagen">
       </span>
       <label for="cargar-imagen" class="form-label-file">
         <span>Cargar imagen</span>
