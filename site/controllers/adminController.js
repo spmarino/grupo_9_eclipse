@@ -1,5 +1,4 @@
-/*const { products, setProducts } = require('../data/products');*/
-/*const { id } = require('date-fns/locale');*/
+
 const db = require('../database/models');
 const { Op } = require('sequelize');
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -7,15 +6,15 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const adminController = {
     'productLoad': function (req, res) {
-     db.ProductsCategories.findAll()
-     .then(categories => {
-         return res.render('Admin/productLoad',{
-         categories
-     })
-     })
-     .catch(error => res.send(error))
+        db.ProductsCategories.findAll()
+            .then(categories => {
+                return res.render('Admin/productLoad', {
+                    categories
+                })
+            })
+            .catch(error => res.send(error))
 
-        
+
     },
     'adminIndex': function (req, res) {
         res.render('Admin/adminIndex')
@@ -33,12 +32,6 @@ const adminController = {
             .catch(error => res.send(error))
 
 
-
-        /*res.render('Admin/productList',
-            {
-                products,
-                toThousand,
-            })*/
     },
     'productEdit': function (req, res) {
         const id = req.params.id
@@ -73,12 +66,7 @@ const adminController = {
 
 
 
-        /*const product = products.find(product => {
-            return product.id === +id
-        })
-        res.render('Admin/productEdit', {
-            product
-        })*/
+
     },
     'productDetailAdmin': function (req, res) {
         const id = req.params.id
@@ -115,23 +103,7 @@ const adminController = {
 
 
 
-        /* const id = req.params.id
-         db.Products.findByPk(id)
-             .then(products => {
-                 res.render('Admin/productDetailAdmin', {
-                     products,
-                     toThousand,
-                 });
-             })
- 
-          const product = products.find(product => {
-              return product.id === +id
-          })
-          const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-          res.render('Admin/productDetailAdmin', {
-              product,
-              toThousand,
-          });*/
+
     },
     'adminSearch': function (req, res) {
         const { search } = req.query
@@ -154,15 +126,6 @@ const adminController = {
 
             .catch(error => res.send(error))
 
-        /*const productsFilter = products.filter((product) => {
-            return product.title.toLowerCase().includes(search.toLowerCase());
-        });
-
-        res.render('Admin/results', {
-            products: productsFilter,
-            search,
-            toThousand,
-        })*/
     },
     'adminFilter': function (req, res) {
         res.render('Admin/adminFilter')
@@ -213,55 +176,7 @@ const adminController = {
 
             .catch(error => res.send(error))
 
-        /*
-              
-           
-    
-        
-        */
 
-
-
-
-
-
-
-
-        /* const { title, description, tipo, promo, color, aroma, sabor, varietal, añada, barrica, tiempo, tipoCosecha, terroir, price, descuento, envio, imagen, finca } = req.body
-         let lastId = 0;
-         products.forEach((product) => {
-             if (product.id > lastId) {
-                 lastId = product.id
-             }
-         });
-         const id = lastId + 1;
-         const newProduct = {
-             id,
-             title,
-             description,
-             tipo,
-             promo,
-             color,
-             aroma,
-             sabor,
-             varietal,
-             añada: +añada,
-             barrica,
-             tiempo: +tiempo,
-             tipoCosecha,
-             terroir,
-             price: +price,
-             descuento: +descuento,
-             envio: +envio,
-             imagen: req.files[0] ? req.files[0].filename : 'producto1.png',
-             finca,
- 
-         }
- 
-         products.push(newProduct);
-         setProducts(products);
- 
-         res.redirect('/admin/products')*/
     },
 
     'productUpdate': function (req, res) {
@@ -330,12 +245,12 @@ const adminController = {
         db.Products.findByPk(id)
             .then(product => {
                 db.Products.destroy({
-                    
+
                     where: {
                         id: id
                     }
-                
-            })
+
+                })
 
                 db.Features.destroy({
                     where: {
@@ -347,7 +262,7 @@ const adminController = {
                         id: product.tasting_notes_id
                     }
                 })
-            
+
 
 
             }).then(product => {
@@ -356,21 +271,6 @@ const adminController = {
             })
             .catch(error => res.send(error))
 
-
-
-
-
-
-
-        /* const { id } = req.params;
-         const productsFilter = products.filter((product) => {
-             return product.id !== +id;
-         });
-
-
-         setProducts(productsFilter);
-
-         res.redirect('/admin/products')*/
     }
 }
 

@@ -1,19 +1,9 @@
-const {products} = require('../data/products');
-const toThousand = (n) =>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".");
+
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models')
 
 const productsController = {
     'detail': function (req, res) {
-/*const id = req.params.id
-const product = products.find(product =>{
-    return product.id === +id
-})
-
-        res.render('detail', {
-            product,
-            toThousand,
-        });*/
-
 
 
         const id = req.params.id
@@ -45,7 +35,7 @@ const product = products.find(product =>{
                     .catch(error => res.send(error))
 
             }).catch(error => res.send(error))
-   
-}
+
+    }
 };
 module.exports = productsController
