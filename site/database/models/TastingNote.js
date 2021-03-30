@@ -8,15 +8,15 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         smell: {
-            type: dataTypes.TEXT('tiny'),
+            type: dataTypes.TEXT,
             allowNull: true,
         },
         taste: {
-            type: dataTypes.TEXT('tiny'),
+            type: dataTypes.TEXT,
             allowNull: true,
         },
         color: {
-            type: dataTypes.TEXT('tiny'),
+            type: dataTypes.TEXT,
             allowNull: true,
         }
     };

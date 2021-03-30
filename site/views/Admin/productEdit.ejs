@@ -83,15 +83,12 @@
 
 
 
-
-    <div class="contenedor-form-file">
-      <span class="form-file">
-        <input type="file" name="image" id="cargar-imagen">
-      </span>
-      <label for="cargar-imagen" class="form-label-file">
-        <span>Cargar imagen</span>
-      </label>
+    <div class="file-upload">
+      <input class="file-upload__input" type="file" name="image" id="myFile" >
+      <button class="file-upload__button" type="button">Seleccione una imagen</button>
+      <span class="file-upload__label"></span>
     </div>
+
 
 
     <input type="submit" class="btn-submit-admin" value="Cargar producto nuevo">
@@ -99,7 +96,8 @@
 
   </form>
 </div>
-<%- include('./partials/footer')  %> 
+<%- include('./partials/footer')  %>
+<script src="/javascripts/ButtonImage.js"></script> 
 </body>
 
 </html>

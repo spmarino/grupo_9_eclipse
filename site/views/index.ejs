@@ -115,7 +115,9 @@
                           <span class="precio-desc">$<%- toThousand(product.price - Math.round(product.price / 100 * product.discount)) %> </span>
                         </div>
                         <div class="button-agregar">
-                          <button type="button" class="button-compra"><a href="/products/detail/<%- product.id %>">Agregar</a></button> 
+                          <form action="/products/detail/<%- product.id %>" method="GET">
+                          <button type="submit" class="button-compra">Agregar</button>
+                        </form>
                         </div>
                       </article>
             </section>

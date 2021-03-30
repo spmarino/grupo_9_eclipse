@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         varietal: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(255),
             allowNull: true,
         },
         vintage: {
@@ -36,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true,
         },
         terroir: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(90),
             allowNull: true,
         }    
     };

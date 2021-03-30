@@ -7,6 +7,18 @@
 /*VARIABLES*/
 
 :root {
+  --color-negro  : #050608;
+  --color-gris   : #EDF2F4;
+  --color-header : #361f27;
+  --color-grisos : #101118;
+  --color-rojo   : #D90429;
+  --color-rosa   : #EF233C;
+  --color-violeta: #631224;
+  --fuente       : 'Lato';
+}
+
+
+/*:root {
   --color-negro  : #010003;
   --color-gris   : #d8cfd4;
   --color-header : #575355;
@@ -15,7 +27,7 @@
   --color-rosa   : #ad2444;
   --color-violeta: #631224;
   --fuente       : 'Lato';
-}
+}*/
 
 /* GENERALES */
 * {
@@ -40,7 +52,7 @@ header {
   box-shadow        : 0px 0px 5px rgb(0 0 0 / 60%);*/
   z-index           : 999;
   padding           : 0px 0;
-  background-color  : rgba(194, 190, 190, 0.9);
+  background-color  : rgba(218, 210, 210, 0.9);
 }
 
 .navbar-header {
@@ -315,7 +327,7 @@ header nav ul li a:hover {
 
 .envio-promo span {
   display         : inline-block;
-  background-color: rgb(187, 139, 6);
+  background-color: #D8CF04;
   font-size       : 11px;
   text-transform  : uppercase;
   margin          : 10px;
@@ -370,7 +382,7 @@ header nav ul li a:hover {
   font-size     : 14px;
   text-transform: uppercase;
   padding       : 0.2em 1.2em;
-  background    : rgb(0, 0, 0);
+  background    : var(--color-grisos);
   border        : 2px solid;
   border-color  : var(--color-grisos);
   transition    : all 1s ease;
@@ -385,9 +397,9 @@ header nav ul li a:hover {
 
 .button-compra:hover {
   background    : var(--color-rojo);
-  color         : var(--color-gris) !important;
+  color         : var(--color-gris);
   text-transform: uppercase;
-  font-weight   : bold;
+  border-color  : var(--color-rojo);
   border-radius : 10px;
 }
 
@@ -422,7 +434,7 @@ header nav ul li a:hover {
 }
 
 .resenia-2 {
-  position: relative;
+  position           : relative;
   display            : block;
   text-align         : center;
   padding            : 0 0;
@@ -435,8 +447,8 @@ header nav ul li a:hover {
 }
 
 .resenia p {
-  z-index: 2;
-  color  : white;
+  z-index  : 2;
+  color    : white;
   font-size: 15px;
 
 }
@@ -1139,7 +1151,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* The navigation menu */
 .navbar {
   overflow        : hidden;
-  background-color: rgba(194, 190, 190, 0.9);
+  background-color: rgba(218, 210, 210, 0.9);
 }
 
 
@@ -1212,7 +1224,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .contenedor-formulario-admin {
   display   : flex;
-  margin-top: 200px;
+  margin-top: 50px;
   flex-wrap : wrap;
 
 }
@@ -1296,48 +1308,54 @@ input[type=number]::-webkit-outer-spin-button {
   padding   : 15px 0;
   cursor    : pointer;
   transition: all .5s ease;
+  margin-top: 30px;
 }
 
 .btn-submit-admin:hover {
-  background: #ca375a;
+  background: var(--color-rojo);
 
 
 }
 
 /*Botón adjuntar archivo*/
-
-.contenedor-form-file {
-  display   : block;
-  text-align: center;
-  padding   : 14px;
+.file-upload {
+  display    : inline-flex;
+  align-items: center;
+  text-align : center;
+  font-size  : 15px;
 }
 
-.form-file {
-  width   : 0.1px;
-  height  : 0.1px;
-  opacity : 0;
-  overflow: hidden;
-  position: absolute;
-  z-index : -1;
+.file-upload__input {
+  display: none;
 }
 
-label[for="cargar-imagen"] {
-  font-size     : 14px;
-  color         : #fff;
-  background    : var(--color-rosa);
-  display       : inline-block;
-  transition    : all .5s ease;
-  cursor        : pointer;
-  padding       : 15px 40px !important;
-  text-transform: uppercase;
-  width         : fit-content;
-  text-align    : center;
+.file-upload__button {
+  -webkit-appearance: none;
+  background        : var(--color-rosa);
+  border-style      : none;
+
+  outline     : none;
+  padding     : 0.5em 0.8em;
+  margin-right: 15px;
+  color       : #ffffff;
+  font-size   : 16px;
+  transition: all .5s ease;
+  cursor      : pointer;
 }
 
-label[for="cargar-imagen"]:hover {
-  background: #ca375a;
-
+.file-upload__button:hover {
+  background: var(--color-rojo);
 }
+
+.file-upload__label {
+  max-width    : 250px;
+  font-size    : 0.95em;
+  text-overflow: ellipsis;
+  overflow     : hidden;
+  white-space  : nowrap;
+  color: var(--color-gris);
+}
+
 
 
 /*------------------------------------------------*/
@@ -1350,11 +1368,12 @@ label[for="cargar-imagen"]:hover {
   flex-wrap      : wrap;
   justify-content: center;
   padding        : 0%;
-  margin-top     : 220px;
+  margin-top     : 30px;
 }
 
 .box-product-list-admin {
   background-color: rgba(0, 0, 0, .7);
+  border-radius   : 10px;
   margin          : 20px;
   padding         : 20px;
   width           : 250px;
@@ -1374,6 +1393,7 @@ label[for="cargar-imagen"]:hover {
   background-color: white;
   padding         : 5px;
   margin          : 10px 0;
+  border-radius   : 10px;
 }
 
 .btn-edit-admin {
@@ -1451,17 +1471,17 @@ label[for="cargar-imagen"]:hover {
 /*===============Css SEARCH ===================*/
 
 .wrapper {
-  position       : absolute;
+  position         : absolute;
   /*top            : 50%;*/
-  left           : 50%;
-  transform      : translate(-50%, -50%);
-  background     : rgba(0, 0, 0, 0.6);
-  max-width      : 550px;
-  width          : 100%;
-  padding        : 15px;
-  display        : flex;
-  justify-content: space-between;
-  border-radius  : 5px;
+  left             : 50%;
+  transform        : translate(-50%, -50%);
+  background       : rgba(0, 0, 0, 0.6);
+  max-width        : 550px;
+  width            : 100%;
+  padding          : 15px;
+  display          : flex;
+  justify-content  : space-between;
+  border-radius    : 5px;
 }
 
 .wrapper .input {
