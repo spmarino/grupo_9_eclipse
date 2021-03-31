@@ -1,0 +1,57 @@
+.carousel__contenedor2 {
+	position: relative;
+}
+
+.carousel__anterior2,
+.carousel__siguiente2 {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: none;
+	top: calc(50% - 35px);
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	background: none;
+	color: #fff;
+	opacity: 20%;
+}
+
+.carousel__anterior2:hover,
+.carousel__siguiente2:hover {
+	opacity: 100%;
+}
+
+.carousel__anterior2 {
+	left: -30px;
+}
+
+.carousel__siguiente2 {
+	right: -30px;
+}
+
+.carousel__lista2 {
+	overflow: hidden;
+}
+
+.carousel__elemento2 {
+	text-align: center;
+}
+
+.carousel__indicadores2 .glider-dot {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background: #fff;
+	opacity: .2;
+	border-radius: 0;
+}
+
+.carousel__indicadores2 .glider-dot:hover {
+	opacity: .5;
+}
+
+.carousel__indicadores2 .glider-dot.active {
+	opacity: 1;
+}

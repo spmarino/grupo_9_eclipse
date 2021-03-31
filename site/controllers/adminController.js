@@ -221,8 +221,8 @@ const adminController = {
                     discount,
                     description,
                     product_category_id,
-                    free_shipping,
-                    cover_page,
+                    free_shipping: free_shipping ? 1 : 0,
+                    cover_page: cover_page ? 1 : 0,
                     image: req.files[0] ? req.files[0].filename : 'producto1.png'
                 },
                     {
