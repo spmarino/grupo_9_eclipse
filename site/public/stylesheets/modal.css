@@ -7,6 +7,7 @@
     height: 100vh;
     top: 0;
     left:0;
+    background-position: center;
    /* background-color: rgba(0, 0, 0, .7);*/
    background-image   : url('../images/fondo5.jpg');
     display: flex;
@@ -43,7 +44,7 @@
     line-height: 25px;
     cursor: pointer;
     border-radius: 5px;
-    transition: 1s ease-in;
+    transition: all 0.3s ease-in;
       }
   
     .acept:hover {
@@ -63,7 +64,7 @@
     line-height: 25px;
     cursor: pointer;
     border-radius: 50%;
-    transition: 1s ease-in;
+    transition: all 0.3s ease-in;
   }
   
   .close2:hover {
@@ -78,7 +79,8 @@
   
   }
   .modal-textos > p {
-    color: var(--color-rojo);
+    color:#D8CF04;
+
   
   }
   

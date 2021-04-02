@@ -8,7 +8,7 @@
 @import 'carruselVinosTintos.css';
 @import 'carruselVinosBlancos.css';
 @import 'modal.css';
-
+@import 'modal2.css';
 /*VARIABLES*/
 
 :root {
@@ -183,7 +183,7 @@ header nav ul li a:hover {
   display         : flex;
   background-color: var(--color-gris);
   padding         : 5px 0;
-  margin          : 15px 0;
+ 
   align-items     : center;
   box-shadow      : 0px 0px 5px rgb(0 0 0 / 60%);
 }
