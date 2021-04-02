@@ -1,5 +1,5 @@
 let cerrar = document.querySelectorAll(".close2")[0];
-
+let aceptar = document.querySelectorAll(".acept")[0];
 let modal = document.querySelectorAll(".modal")[0];
 let modalC = document.querySelectorAll(".modal-container")[0];
 
@@ -11,23 +11,31 @@ addEventListener("load", function (e) {
     modal.classList.toggle("modal-close");
 });
 
-cerrar.addEventListener("click", function () {
+aceptar.addEventListener("click", function () {
     modal.classList.toggle("modal-close");
     modalC.style.opacity = "0";
     modalC.style.visibility = "hidden";
-    setTimeout(function(){
+    setTimeout(function () {
 
-    },850)
+    }, 850)
 })
 
-window.addEventListener("click", function(e){
-   
+aceptar.addEventListener("click", function () {
+    modal.classList.toggle("modal-close");
+    setTimeout(function () {
+    }, 850)
+})
+
+
+
+/*window.addEventListener("click", function(e){
+
     if(e.target == modalC){
         modal.classList.toggle("modal-close");
         modalC.style.opacity = "0";
         modalC.style.visibility = "hidden";
         setTimeout(function(){
-    
+
         },900)
     }
-})
+})*/

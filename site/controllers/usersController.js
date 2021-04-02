@@ -20,7 +20,7 @@ const usersController = {
                 errores: errores.errors
             })
         } else {
-            const { name, lastName, email, password, date } = req.body
+            const { name, lastName, email, password, date, sex_id } = req.body
             const passHash = bcrypt.hashSync(password, 12);
 
             db.Users.create({
@@ -31,6 +31,7 @@ const usersController = {
                 date_of_birth: date,
                 avatar: req.files[0] ? req.files[0].filename : 'default.png',
                 category_id: 1,
+                sex_id
 
             })
                 .then(() => res.redirect('/ingreso'))
@@ -70,6 +71,7 @@ const usersController = {
                             admin: user.admin,
                             avatar: user.avatar,
                             category_id: user.category_id,
+                            sex_id: user.sex_id,
                         }
                         if (recordar != undefined) {
                             res.cookie('userConect', req.session.user, {
