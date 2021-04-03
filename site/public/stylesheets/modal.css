@@ -24,6 +24,7 @@
     flex-direction:column ;
     justify-content: space-evenly;
     position: relative;
+    align-items: center;
     transition: transform 1s;
     transform: translateY(0%);
     border-radius: 10px;
@@ -35,10 +36,10 @@
     margin: 10px 0;
     position: absolute;
     bottom: 2px;
-    right: 38%;
+    /*right: 38%;*/
     display: inline-block;
-    width: 25%;
-    height: 5vh;
+    /*width: 25%;
+    height: 5vh;*/
     background-color: #0980bf;
     color: var(--color-gris);
     line-height: 25px;
@@ -86,6 +87,21 @@
   
   
   .modal > img{
-    height: 50%;
+    height: 30%;
   }
   
+
+  @media (min-width: 768px) {
+    
+  .modal > img{
+    height: 50%;
+  }
+  }
+
+
+  @media (min-width: 1024px) {
+    
+  .modal > img{
+    height: 50%;
+  }
+  }
