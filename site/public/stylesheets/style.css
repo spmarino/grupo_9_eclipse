@@ -444,12 +444,13 @@ header nav ul li a:hover {
 /*-------RESENIA--------*/
 
 .caja-res {
-  padding        : 0;
+  margin: 30px 0;
   height         : 100%;
-  background     : rgba(0, 0, 0, .7);
+  background     : rgba(0, 0, 0, .4);
   display        : flex;
   flex-direction : column;
   justify-content: center;
+  padding        : 30px;
 
 }
 
@@ -827,10 +828,12 @@ ul {
 /* LANZAMIENTO */
 
 .wine-blue-container {
+
+margin: 30px 0;
   display    : flex;
   flex-wrap  : wrap;
   align-items: center;
-  width: 100%;
+  width      : 100%;
 
 }
 
@@ -855,39 +858,40 @@ ul {
 
 .wine-blue-filter {
   background-color: rgba(0, 0, 0, .3);
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
+  height          : 100%;
+  display         : flex;
+  justify-content : center;
+  flex-flow       : row wrap;
+  padding: 30px;
 }
 
-.wine-blue-filter > h2 {
-text-decoration: underline;
-  margin-top: 15px;
+.wine-blue-filter>h2 {
+  text-decoration: underline;
+  margin-top     : 15px;
 }
 
-.wine-blue-filter > p {
+.wine-blue-filter>p {
   text-align: center;
 }
 
-.wine-blue-filter > a {
-background-color: #02363d;
-    border: #e9ecef 2px solid;
-    padding: 5px;
-    border-radius: 30px;
-    font-size: 16px;
-    text-decoration: none;
-    
-    color: white;
-    height: 40px;
-    transition: all 0.3s ease-in-out;
+.wine-blue-filter>a {
+  background-color: #19648a;
+  border          : #e9ecef 2px solid;
+  padding         : 5px;
+  border-radius   : 30px;
+  font-size       : 16px;
+  text-decoration : none;
+
+  color     : white;
+  height    : 40px;
+  transition: all 0.3s ease-in-out;
 }
 
 
-.wine-blue-filter > a:hover{
-background-color: white;
-border: #02363d 2px solid;
-color: #02363d;
+.wine-blue-filter>a:hover {
+  background-color: white;
+  border          : #19648a 2px solid;
+  color           : #19648a;
 
 
 }
@@ -895,42 +899,44 @@ color: #02363d;
 
 @media (min-width: 768px) {
   .wine-blue-container {
-      height: 450px;
-}
+    height: 450px;
+  }
 
-.wine-blue-img {
-  width: 40%;
-  height: 100%;
-}
-.wine-blue-description {
- 
-  height: 100%;
-  width: 60%;
-}
+  .wine-blue-img {
+    width : 40%;
+    height: 100%;
+  }
 
-.wine-blue-img>img {
- 
-  width           : auto;
-}
+  .wine-blue-description {
+
+    height: 100%;
+    width : 60%;
+  }
+
+  .wine-blue-img>img {
+
+    width: auto;
+  }
 }
 
 @media (min-width: 1024px) {
   .wine-blue-container {
-    height: 450px;
-}
+    height: 550px;
+  }
 
-.wine-blue-img {
-width: 40%;
-height: 100%;
-}
-.wine-blue-description {
+  .wine-blue-img {
+    width : 40%;
+    height: 100%;
+  }
 
-height: 100%;
-width: 60%;
-}
+  .wine-blue-description {
 
-.wine-blue-img>img {
+    height: 100%;
+    width : 60%;
+  }
 
-width           : auto;
-}
+  .wine-blue-img>img {
+
+    width: auto;
+  }
 }
