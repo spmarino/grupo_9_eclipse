@@ -1,93 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
   <%-include("partials/head")%>
-
+  <body>
 <%-include("partials/header")%>
 
+<main class="container-register-login">
+<form action="" method="post" class="form-register"id="form">
+  <div class="form-register-div">
+    <h1>CREAR CUENTA</h1>
+    <p>Si todavia no tienes una Cuenta en Eclipse, registrate ingresando estos datos:</p>
+
+    <div class="gruop-register">
+      <input type="text" name="" id="name" required><span class="barra"></span>
+      <label class="label-register" for="">Nombre</label>
+    </div> 
+
+    <div class="gruop-register">
+      <input type="text" name="" id="lastname" required><span class="barra"></span>
+      <label class="label-register" for="">Apellido</label>
+    </div> 
+
+    <div class="gruop-register">
+      <input type="date" name="" id="date" required><span class="barra" placeholder=""></span>
+      <label class="label-register" for="">Fecha de Nacimiento</label></div> 
+
+  
+      <div class="gruop-register">
+        <label class="label-select-register" for="" >Género</label>
+   <select name="discount" id="discount" class="select-register" required>
+    <option value="">Seleccione una opción</option>
+     <option class="form-option" value="1">Masculino</option>
+     <option class="form-option" value="2">Femenino</option></select>
+  </div> 
+  
+   
+
+    <div class="gruop-register">
+      <input type="email" name="" id="email" required><span class="barra"></span>
+      <label class="label-register" for="">Email</label>
+    </div> 
+
+    <div class="gruop-register">
+      <input type="password" name="" id="password1" required><span class="barra"></span>
+      <label class="label-register" for="">Contraseña</label>
+    </div> 
+
+    <div class="gruop-register">
+      <input type="password" name="" id="password2" required><span class="barra"></span>
+      <label class="label-register" for="">Reingrese Contraseña</label>
+    </div> 
+
+  
 
 
-<body>
-<!--login  -->
-    <div class="container-log">
-        <div class="d-flex justify-content-around">
-          <div class="col-10 container-login">
-          
-                  <div class="title-login">
-                    <h1> INGRESAR</h1>
-                  </div>
-                  <div class="login-description">
-                  
-                    Si ya estas registrado en Bodegas Eclipse, ingresa con tu correo electronico y contraseña.
-          
-                  </div>
-                  <form action="/ingreso/login" class="login" action="" method="POST">
-            
-                      <input class="controls-login" type="email" name="email" id="email" placeholder="CORREO ELECTRONICO">
-                      <input class="controls-login" type="password" name="password" id="password" placeholder="CONTRASEÑA">
-                      <input type="checkbox" name= "recordar" id="recordar">
-                      <label for="recordar">Recordar</label>
-                      <% if (typeof errores != "undefined") { %>
-                        <ul>
-                          <% errores.forEach(error => { %>
-                           <li><%= error.msg %> </li>
-                          <% }) %>
-                        </ul>
-                       <% } %>
-                      <input type="submit" class="button-login" value="INGRESAR">
-                   
-      
-                  </form>
-                
-          </div>
-           </div>
-
-<!--registro -->
-          </div>
-          <div class="container-log">
-            <div class="d-flex justify-content-around">
-              <div class="col-10 container-login">
-              
-                      <div class="title-login">
-                        <h1> REGISTRARSE</h1>
-                      </div>
-                      <div class="login-description">
-                      
-                        registrate en BODEGAS ECLIPSE ingresando tus datos.
-              
-                      </div>
-                      <form action="/ingreso/register" action="" method="POST" enctype="multipart/form-data">
+<button class="submit-form-register" type="submit">Registrarse</button>
+    
+  </div>
+</form>
 
 
-                        <input class="controls-login" type="text" name="name" id="name" placeholder="NOMBRE">
-                        <input class="controls-login" type="text" name="lastName" id="lastName" placeholder="APELLIDO">
-                        <input class="controls-login" type="email" name="email" id="email" placeholder="CORREO ELECTRONICO">
-                        <input class="controls-login" type="date" name="date" id="date" placeholder="FECHA DE NACIMIENTO">
-                        <label for="avatar">Foto de perfil</label><br>
-                        <input type="file" name= "avatar" id="avatar">
-                        <input class="controls-login" type="password" name="password" id="password" placeholder="CONTRASEÑA">
-                        <input class="controls-login" type="password" name="password2" id="password" placeholder="REINGRESE SU CONTRASEÑA">
-                        <% if (typeof errores != "undefined") { %>
-                         <ul>
-                           <% errores.forEach(error => { %>
-                            <li><%= error.msg %> </li>
-                           <% }) %>
-                         </ul>
-                        <% } %>
-                        <input type="submit" class="button-login" value="REGISTRARSE">
-              
-                       
-          
-                      </form>
-                    
-              </div>
-               </div>
-              </div>
-       
-              <%-include("partials/footer")%>
-          
-          
-          
-          
-         
+
+
+<form action="" method="post" class="form-register"id="form">
+  <div class="form-register-div">
+    <h1>INGRESAR</h1>
+    <p>Si ya estas Registrado en Bodegas Eclipse, ingresa en tu cuenta con tu Email y la contraseña adecuada:</p>
+
+    <div class="gruop-register">
+      <input type="text" name="" id="name" required><span class="barra"></span>
+      <label class="label-register" for="">Nombre</label>
+    </div> 
+
+    <div class="gruop-register">
+      <input type="text" name="" id="lastname" required><span class="barra"></span>
+      <label class="label-register"for="">Apellido</label>
+    </div>  
+<button class="submit-form-register" type="submit">Ingresar</button>
+    
+  </div>
+</form>
+
+
+
+</main>
+<%- include("partials/footer") %>
+<script src="/javascripts/placeholderDate.js"></script> 
 </body>
 </html>

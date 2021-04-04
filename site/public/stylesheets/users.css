@@ -1,4 +1,170 @@
-/*-----------LOGIN------------------ */ 
+
+
+.container-register-login {
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+ 
+  color: var(--color-grisos);
+  font-family: 'Roboto';
+  
+}
+
+.container-register-login form h1 {
+  text-align: center;
+  font-weight: 700;
+}
+
+
+.container-register-login form p {
+  text-align: center;
+  margin: 0 20px;
+  
+}
+
+.container-register-login form {
+  background: rgba(235 244 249 / 95%);
+  padding: 40px 0;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  margin: 50px;
+  width: 40%;
+
+}
+
+.form-register-div{
+  width: 100%;
+  margin: auto;
+}
+
+.gruop-register {
+  position: relative;
+  margin: 45px;
+  
+}
+
+.gruop-register input, .select-register {
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px ;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+.gruop-register input:focus, .select-register {
+  outline: none;
+  color: rgb(94,93,93);
+} 
+
+.label-register{
+ color: #c6c6c6;
+ font-size: 16px;
+ position: absolute;
+ bottom: 0;
+ left: 5px;
+ top:10px;
+ transition: 0.5s ease-in-out all;
+ pointer-events: none;
+}
+
+.gruop-register select:valid~label{
+  color:blue
+}
+
+.gruop-register input:focus~label,
+input:valid~label {
+  top: -14px;
+  font-size: 12px;
+  color: #2196f3;
+}
+
+.barra {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.gruop-register input:focus~.barra::before{
+width: 100%;
+}
+
+.barra::before{
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  position: absolute;
+  background: #00F260;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+transition: 0.3 ease width;
+left: 0;
+}
+
+
+
+.submit-form-register{
+  font-family: 'roboto';
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: #fff;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.submit-form-register:hover{
+  background: #00F260;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.label-select-register{
+  color:#c6c6c6;
+  font-size: 16px;
+  
+  bottom: 0;
+  left: 5px;
+  top: 10px;
+  transition: 0.5s ease-in-out all;
+  pointer-events: none;
+}
+
+@media screen and (max-width:500px){
+  .container-register-login form {
+      width: 80%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------LOGIN------------------ 
 .container-log{
     background-color: #222121;
   }
@@ -144,6 +310,6 @@
         
       }
     
-    }
+    }*/
 
     

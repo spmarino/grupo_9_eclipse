@@ -1,0 +1,82 @@
+<!--login  -->
+    <div class="container-log">
+        <div class="d-flex justify-content-around">
+          <div class="col-10 container-login">
+          
+                  <div class="title-login">
+                    <h1> INGRESAR</h1>
+                  </div>
+                  <div class="login-description">
+                  
+                    Si ya estas registrado en Bodegas Eclipse, ingresa con tu correo electronico y contraseña.
+          
+                  </div>
+                  <form action="/ingreso/login" class="login" action="" method="POST">
+            
+                      <input class="controls-login" type="email" name="email" id="email" placeholder="CORREO ELECTRONICO">
+                      <input class="controls-login" type="password" name="password" id="password" placeholder="CONTRASEÑA">
+                      <input type="checkbox" name= "recordar" id="recordar">
+                      <label for="recordar">Recordar</label>
+                      <% if (typeof errores != "undefined") { %>
+                        <ul>
+                          <% errores.forEach(error => { %>
+                           <li><%= error.msg %> </li>
+                          <% }) %>
+                        </ul>
+                       <% } %>
+                      <input type="submit" class="button-login" value="INGRESAR">
+                   
+      
+                  </form>
+                
+          </div>
+           </div>
+
+<!--registro -->
+          </div>
+          <div class="container-log">
+            <div class="d-flex justify-content-around">
+              <div class="col-10 container-login">
+              
+                      <div class="title-login">
+                        <h1> REGISTRARSE</h1>
+                      </div>
+                      <div class="login-description">
+                      
+                        registrate en BODEGAS ECLIPSE ingresando tus datos.
+              
+                      </div>
+                      <form action="/ingreso/register" action="" method="POST" enctype="multipart/form-data">
+
+
+                        <input class="controls-login" type="text" name="name" id="name" placeholder="NOMBRE">
+                        <input class="controls-login" type="text" name="lastName" id="lastName" placeholder="APELLIDO">
+                        <input class="controls-login" type="email" name="email" id="email" placeholder="CORREO ELECTRONICO">
+                        <input class="controls-login" type="date" name="date" id="date" placeholder="FECHA DE NACIMIENTO">
+                        <label for="avatar">Foto de perfil</label><br>
+                        <input type="file" name= "avatar" id="avatar">
+                        <input class="controls-login" type="password" name="password" id="password" placeholder="CONTRASEÑA">
+                        <input class="controls-login" type="password" name="password2" id="password" placeholder="REINGRESE SU CONTRASEÑA">
+                        <% if (typeof errores != "undefined") { %>
+                         <ul>
+                           <% errores.forEach(error => { %>
+                            <li><%= error.msg %> </li>
+                           <% }) %>
+                         </ul>
+                        <% } %>
+                        <input type="submit" class="button-login" value="REGISTRARSE">
+              
+                       
+          
+                      </form>
+                    
+              </div>
+               </div>
+              </div>
+       
+              <%-include("partials/footer")%>
+          
+          
+          
+          
+         

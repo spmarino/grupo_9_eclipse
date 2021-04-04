@@ -5,22 +5,26 @@ let modalC = document.querySelectorAll(".modal-container")[0];
 let cerrar2 = document.querySelectorAll(".close22")[0];
 let modal2 = document.querySelectorAll(".modal2")[0];
 let modalC2 = document.querySelectorAll(".modal-container2")[0];
+const alreadyShown = window.sessionStorage.getItem('modal');
+const setAlreadyShown = () => window.sessionStorage.setItem('modal', true);
 
-
+if (!alreadyShown){
 addEventListener("load", function (e) {
     e.preventDefault();
-    modalC.style.opacity = "1";
-    modalC.style.visibility = "visible";
-    modal.classList.toggle("modal-close");
+    setTimeout(() => {
+        modalC.style.opacity = "1";
+        modalC.style.visibility = "visible";
+        modal.classList.toggle("modal-close");
+    }, 5000);
+   
 });
 
 aceptar.addEventListener("click", function () {
     modal.classList.toggle("modal-close");
     modalC.style.opacity = "0";
     modalC.style.visibility = "hidden";
-    setTimeout(function(){
 
-    },850)
+    setAlreadyShown();
 })
 
 cerrar.addEventListener("click", function () {
@@ -32,7 +36,7 @@ cerrar.addEventListener("click", function () {
 
 
 })
-
+}
 
 
 /*Original sin modal 2*/
