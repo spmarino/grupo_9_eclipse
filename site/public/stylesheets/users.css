@@ -2,12 +2,13 @@
 
 .container-register-login {
   width: 100%;
-  
-  display: flex;
+    display: flex;
   justify-content: center;
- 
-  color: var(--color-grisos);
+   color: var(--color-grisos);
   font-family: 'Roboto';
+
+
+  flex-flow: row wrap;
   
 }
 
@@ -29,7 +30,8 @@
   box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   margin: 50px;
-  width: 40%;
+  /*width: 40%;*/
+  width: 100%;
 
 }
 
@@ -38,13 +40,13 @@
   margin: auto;
 }
 
-.gruop-register {
+.group-register {
   position: relative;
   margin: 45px;
   
 }
 
-.gruop-register input, .select-register {
+.group-register input, .select-register {
   background: none;
   color: #c6c6c6;
   font-size: 18px;
@@ -53,9 +55,17 @@
   width: 100%;
   border: none;
   border-bottom: 1px solid #c6c6c6;
+  transition: all 0.3s ease-in-out;
 }
 
-.gruop-register input:focus, .select-register {
+
+
+
+
+
+
+
+.group-register input:focus, .select-register {
   outline: none;
   color: rgb(94,93,93);
 } 
@@ -71,11 +81,12 @@
  pointer-events: none;
 }
 
-.gruop-register select:valid~label{
-  color:blue
+.group-register select:valid~label{
+  font-size: 12px;
+  color: #2196f3;
 }
 
-.gruop-register input:focus~label,
+.group-register input:focus~label,
 input:valid~label {
   top: -14px;
   font-size: 12px;
@@ -88,8 +99,12 @@ input:valid~label {
   width: 100%;
 }
 
-.gruop-register input:focus~.barra::before{
+.group-register input:focus~.barra::before{
 width: 100%;
+}
+
+.group-register select:valid~.barra::before{
+  width: 100%;
 }
 
 .barra::before{
@@ -133,17 +148,32 @@ left: 0;
 .label-select-register{
   color:#c6c6c6;
   font-size: 16px;
-  
-  bottom: 0;
+  position: absolute;
+    top: -20px;
+  /*bottom: 0;*/
   left: 5px;
-  top: 10px;
+  /*top: 10px;*/
   transition: 0.5s ease-in-out all;
   pointer-events: none;
 }
 
-@media screen and (max-width:500px){
+.group-register > a {
+  width: 100%;
+  text-emphasis: none;
+  text-decoration: none;
+  color: var(--color-grisos);
+  transition: all 0.3s ease-in-out;
+}
+
+.group-register > a:hover {
+  color: #2196f3;
+
+}
+
+
+@media (min-width: 768px) {
   .container-register-login form {
-      width: 80%;
+    width: 35%;
   }
 }
 
@@ -152,7 +182,11 @@ left: 0;
 
 
 
-
+@media (min-width: 1024px) {
+  .container-register-login form {
+    width: 40%;
+  }
+}
 
 
 

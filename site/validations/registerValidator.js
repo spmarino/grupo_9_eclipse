@@ -7,12 +7,14 @@ const db = require('../database/models');
 module.exports = [
     check('name')
     .notEmpty()
-    .withMessage('Debe ingresar un Nombre'),
+    .withMessage('Debes ingresar un Nombre'),
+
+    check('lastName')
+    .notEmpty()
+    .withMessage('Debe ingresar un Apellido'),
 
     check('email')
-    .notEmpty()
-    .withMessage('Debe ingresar una dirección de mail')
-    .isEmail()
+      .isEmail()
     .withMessage('Ingrese un mail válido'),
 
     body('email').custom(value => {
@@ -48,9 +50,9 @@ module.exports = [
         min:4, 
         max:12
     })
-    .withMessage('La contraseña debe contener un mínimo de 4 y máximo de 12 caracteres'),
+    .withMessage('La contraseña debe contener un mínimo de 4 y máximo de 12 caractéres'),
   
-    body('password2').custom((value,{req})=>{
+    body('password-check').custom((value,{req})=>{
         if(value !== req.body.password){
             return false
         }else{

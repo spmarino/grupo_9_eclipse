@@ -17,7 +17,8 @@ const usersController = {
 
         if (!errores.isEmpty()) {
             return res.render('login', {
-                errores: errores.errors
+                errores: errores.errors,
+                old:req.body
             })
         } else {
             const { name, lastName, email, password, date, sex_id } = req.body
