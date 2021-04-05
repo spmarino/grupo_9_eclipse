@@ -12,49 +12,84 @@
             <p>Si todavia no tienes una Cuenta en Eclipse, registrate ingresando estos datos:</p>
 
             <div class="group-register">
-              <input type="text" name="name" id="name"  value="<%= typeof old != 'undefined' && old.name ? old.name : null %>" required><span class="barra"></span>
+              <input type="text" name="name" id="name"
+                value="<%= typeof old != 'undefined' && old.name ? old.name : null %>" required><span
+                class="barra"></span>
               <label class="label-register" for="">Nombre</label>
+              <span class="error-msg-register">
+                <%= typeof erroresRegister !='undefined' && erroresRegister.name ? erroresRegister.name.msg : null %>
+              </span>
             </div>
 
+
             <div class="group-register">
-              <input type="text" name="lastName" id="lastname" value="<%= typeof old != 'undefined' && old.lastName ? old.lastName : null %>" required><span class="barra"></span>
+              <input type="text" name="lastName" id="lastname"
+                value="<%= typeof old != 'undefined' && old.lastName ? old.lastName : null %>" required><span
+                class="barra"></span>
               <label class="label-register" for="">Apellido</label>
+              <span class="error-msg-register">
+                <%= typeof erroresRegister !='undefined' && erroresRegister.lastName ? erroresRegister.lastName.msg :
+                  null %>
+              </span>
             </div>
 
             <div class="group-register">
-              <input type="date" name="date" min="1900" id="date" placeholder="" value="<%= typeof old != 'undefined' && old.date ? old.date : null %>" required><span class="barra"></span>
+              <input type="date" name="date" min="1900" id="date" placeholder=""
+                value="<%= typeof old != 'undefined' && old.date ? old.date : null %>" required><span
+                class="barra"></span>
               <label class="label-register" for="">Fecha de Nacimiento</label>
+              <span class="error-msg-register">
+                <%= typeof erroresRegister !='undefined' && erroresRegister.date ? erroresRegister.date.msg : null %>
+              </span>
             </div>
 
 
             <div class="group-register">
 
-           
+
 
               <select name="sex_id" id="sex_id" class="select-register" required>
                 <option value="">Seleccione una opción</option>
-                <option class="form-option" value="1" <% if (typeof old != 'undefined' && old.sex_id == 1) { %>selected<% } %> >Masculino</option>
-                <option class="form-option" value="2" <% if (typeof old != 'undefined' && old.sex_id == 2) { %>selected<% } %>>Femenino</option>
+                <option class="form-option" value="1" <% if (typeof old !='undefined' && old.sex_id==1) { %>selected<% }
+                    %> >Masculino</option>
+                <option class="form-option" value="2" <% if (typeof old !='undefined' && old.sex_id==2) { %>selected<% }
+                    %>>Femenino</option>
               </select>
               <label class="label-select-register" for="">Género</label>
               <span class="barra"></span>
+              <span class="error-msg-register">
+                <%= typeof erroresRegister !='undefined' && erroresRegister.sex_id ? erroresRegister.sex_id.msg : null
+                  %>
+              </span>
             </div>
 
 
 
             <div class="group-register">
-              <input type="email" name="email" id="email" value="<%= typeof old != 'undefined' && old.email ? old.email : null %>" required><span class="barra"></span>
+              <input type="email" name="email" id="email"
+                value="<%= typeof old != 'undefined' && old.email ? old.email : null %>" required><span
+                class="barra"></span>
               <label class="label-register" for="">Email</label>
+              <span class="error-msg-register">
+                <%= typeof erroresRegister !='undefined' && erroresRegister.email ? erroresRegister.email.msg : null %>
+              </span>
             </div>
 
             <div class="group-register">
               <input type="password" name="password" id="password-register" required><span class="barra"></span>
               <label class="label-register" for="">Contraseña</label>
+
             </div>
 
             <div class="group-register">
-              <input type="password" name="password-check" id="password-register-check" required><span class="barra"></span>
+              <input type="password" name="passwordCheck" id="password-register-check" required><span
+                class="barra"></span>
               <label class="label-register" for="">Reingrese Contraseña</label>
+
+              <span class="error-msg-register">
+                <%= typeof erroresRegister !='undefined' && erroresRegister.password ? erroresRegister.password.msg :
+                  null %>
+              </span>
             </div>
 
 
@@ -62,30 +97,48 @@
             <button class="submit-form-register" type="submit">Registrarse</button>
 
           </div>
+
+
         </form>
 
 
 
 
-        <form action="/ingreso/login" class="form-register" id="form" method="POST" >
+        <form action="/ingreso/login" class="form-register" id="form" method="POST">
           <div class="form-register-div">
             <h1>INGRESAR</h1>
             <p>Si ya estas Registrado en Bodegas Eclipse, ingresa en tu cuenta con tu Email y la contraseña adecuada:
             </p>
 
             <div class="group-register">
-              <input type="email" name="email" id="" required><span class="barra"></span>
+              <input type="email" name="email" id=""
+                value="<%= typeof old != 'undefined' && old.email ? old.email : null %>" required><span
+                class="barra"></span>
               <label class="label-register" for="">Email</label>
+              <span class="error-msg-register">
+                <%= typeof erroresLogin !='undefined' && erroresLogin.email ? erroresLogin.email.msg : null %>
+              </span>
             </div>
 
             <div class="group-register">
               <input type="password" name="password" id="" required><span class="barra"></span>
               <label class="label-register" for="">Contraseña</label>
+
             </div>
             <button class="submit-form-register" type="submit">Ingresar</button>
             <div class="group-register">
-              <a href="/">Volver a la tienda</a><br><br>
-              <a href="#">¿Olvidó su contraseña?</a>
+
+              <% if (typeof erroresLogin !="undefined" ) { %>
+                <span class="error-msg-register">
+                  <% erroresLogin.forEach(error=> { %>
+                    <%= error.msg %>
+                      <% }) %>
+                </span>
+                <% } %>
+                  <br>
+                  <br>
+                  <a href="/">Volver a la tienda</a><br><br>
+                  <a href="#">¿Olvidó su contraseña?</a>
             </div>
           </div>
         </form>

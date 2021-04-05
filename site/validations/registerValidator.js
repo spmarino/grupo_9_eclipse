@@ -17,6 +17,10 @@ module.exports = [
       .isEmail()
     .withMessage('Ingrese un mail válido'),
 
+    check('sex_id')
+    .notEmpty()
+  .withMessage('Debe seleccionar una opción'),
+
     body('email').custom(value => {
 
         return db.Users.findOne({
@@ -52,7 +56,7 @@ module.exports = [
     })
     .withMessage('La contraseña debe contener un mínimo de 4 y máximo de 12 caractéres'),
   
-    body('password-check').custom((value,{req})=>{
+    body('passwordCheck').custom((value,{req})=>{
         if(value !== req.body.password){
             return false
         }else{

@@ -17,7 +17,7 @@ const usersController = {
 
         if (!errores.isEmpty()) {
             return res.render('login', {
-                errores: errores.errors,
+                erroresRegister: errores.mapped(),
                 old:req.body
             })
         } else {
@@ -53,7 +53,8 @@ const usersController = {
 
         if (!errores.isEmpty()) {
             return res.render('login', {
-                errores: errores.errors
+                erroresLogin: errores.mapped(),
+                old:req.body,
             })
 
         } else {
@@ -84,11 +85,13 @@ const usersController = {
                     }
 
                     res.render('login', {
-                        errores: [
+                        
+                       erroresLogin: [
                             {
                                 msg: 'Credenciales inválidas'
                             }
-                        ]
+                        ],
+                        old:req.body,
                     })
                 })
 
