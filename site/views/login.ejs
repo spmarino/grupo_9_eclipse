@@ -6,7 +6,7 @@
     <%-include("partials/header")%>
 
       <main class="container-register-login">
-        <form action="/ingreso/register" method="POST" enctype="multipart/form-data" class="form-register" id="form">
+        <form action="/ingreso/register" method="POST" enctype="multipart/form-data" class="form-register" id="formRegister">
           <div class="form-register-div">
             <h1>CREAR CUENTA</h1>
             <p>Si todavia no tienes una Cuenta en Eclipse, registrate ingresando estos datos:</p>
@@ -16,18 +16,18 @@
                 value="<%= typeof old != 'undefined' && old.name ? old.name : null %>" required><span
                 class="barra"></span>
               <label class="label-register" for="">Nombre</label>
-              <span class="error-msg-register">
+              <span id="errorName"class="error-msg-register">
                 <%= typeof erroresRegister !='undefined' && erroresRegister.name ? erroresRegister.name.msg : null %>
               </span>
             </div>
 
 
             <div class="group-register">
-              <input type="text" name="lastName" id="lastname"
+              <input type="text" name="lastName" id="lastName"
                 value="<%= typeof old != 'undefined' && old.lastName ? old.lastName : null %>" required><span
                 class="barra"></span>
               <label class="label-register" for="">Apellido</label>
-              <span class="error-msg-register">
+              <span id="errorLastName" class="error-msg-register">
                 <%= typeof erroresRegister !='undefined' && erroresRegister.lastName ? erroresRegister.lastName.msg :
                   null %>
               </span>
@@ -38,7 +38,7 @@
                 value="<%= typeof old != 'undefined' && old.date ? old.date : null %>" required><span
                 class="barra"></span>
               <label class="label-register" for="">Fecha de Nacimiento</label>
-              <span class="error-msg-register">
+              <span id="errorDate" class="error-msg-register">
                 <%= typeof erroresRegister !='undefined' && erroresRegister.date ? erroresRegister.date.msg : null %>
               </span>
             </div>
@@ -57,7 +57,7 @@
               </select>
               <label class="label-select-register" for="">Género</label>
               <span class="barra"></span>
-              <span class="error-msg-register">
+              <span id="errorSex" class="error-msg-register">
                 <%= typeof erroresRegister !='undefined' && erroresRegister.sex_id ? erroresRegister.sex_id.msg : null
                   %>
               </span>
@@ -66,28 +66,30 @@
 
 
             <div class="group-register">
-              <input type="email" name="email" id="email"
+              <input type="email" name="email" id="emailRegister"
                 value="<%= typeof old != 'undefined' && old.email ? old.email : null %>" required><span
                 class="barra"></span>
               <label class="label-register" for="">Email</label>
-              <span class="error-msg-register">
+              <span id="errorEmailRegister" class="error-msg-register">
                 <%= typeof erroresRegister !='undefined' && erroresRegister.email ? erroresRegister.email.msg : null %>
               </span>
             </div>
 
             <div class="group-register">
-              <input type="password" name="password" id="password-register" required><span class="barra"></span>
+              <input type="password" name="password" id="passwordRegister" required><span class="barra"></span>
               <label class="label-register" for="">Contraseña</label>
-
+              <span id="errorPasswordRegister" class="error-msg-register">
+                <%= typeof erroresRegister !='undefined' && erroresRegister.password ? erroresRegister.password.msg :
+                  null %>
             </div>
 
             <div class="group-register">
-              <input type="password" name="passwordCheck" id="password-register-check" required><span
+              <input type="password" name="passwordCheck" id="passwordCheck" required><span
                 class="barra"></span>
               <label class="label-register" for="">Reingrese Contraseña</label>
 
-              <span class="error-msg-register">
-                <%= typeof erroresRegister !='undefined' && erroresRegister.password ? erroresRegister.password.msg :
+              <span id="errorPasswordCheck"class="error-msg-register">
+                <%= typeof erroresRegister !='undefined' && erroresRegister.passwordCheck ? erroresRegister.passwordCheck.msg :
                   null %>
               </span>
             </div>
@@ -104,24 +106,24 @@
 
 
 
-        <form action="/ingreso/login" class="form-register" id="form" method="POST">
+        <form action="/ingreso/login" class="form-register" id="formLogin" method="POST">
           <div class="form-register-div">
             <h1>INGRESAR</h1>
             <p>Si ya estas Registrado en Bodegas Eclipse, ingresa en tu cuenta con tu Email y la contraseña adecuada:
             </p>
 
             <div class="group-register">
-              <input type="email" name="email" id=""
+              <input type="email" name="email" id="emailLogin"
                 value="<%= typeof old != 'undefined' && old.email ? old.email : null %>" required><span
                 class="barra"></span>
               <label class="label-register" for="">Email</label>
-              <span class="error-msg-register">
+              <span id="errorEmailLogin"class="error-msg-register">
                 <%= typeof erroresLogin !='undefined' && erroresLogin.email ? erroresLogin.email.msg : null %>
               </span>
             </div>
 
             <div class="group-register">
-              <input type="password" name="password" id="" required><span class="barra"></span>
+              <input type="password" name="password" id="passwordLogin" required><span class="barra"></span>
               <label class="label-register" for="">Contraseña</label>
 
             </div>
@@ -147,7 +149,12 @@
 
       </main>
       <%- include("partials/footer") %>
+
+      <script src="https://momentjs.com/downloads/moment.min.js"></script>
+      
         <script src="/javascripts/placeholderDate.js"></script>
+        <script src="/javascripts/userValidator.js"></script>
+        
   </body>
 
 </html>
