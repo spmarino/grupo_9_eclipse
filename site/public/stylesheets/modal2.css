@@ -16,7 +16,7 @@
   .modal2 {
     width: 60%;
     height: 60%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(235 244 249 / 95%);;
     text-align: center;
     display: flex;
     flex-direction:column ;
@@ -36,14 +36,16 @@
   }
   
   .modal-textos2 > h2 {
-    color: var(--color-gris);
+    color: #004056;
+    font-family: 'Roboto';
+    font-size: 1.5rem;
   
   }
   
   
   
   .modal2 > img{
-    height: 30%;
+    height: 40%;
   }
   
   

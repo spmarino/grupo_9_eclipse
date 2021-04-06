@@ -16,11 +16,14 @@ const inputEmailRegister = document.getElementById('emailRegister');
 const inputPasswordRegister = document.getElementById('passwordRegister');
 const inputPasswordCheck = document.getElementById('passwordCheck');
 
+
+
+
 inputName.addEventListener('blur',()=>{
     switch (true) {
         case !inputName.value:
             errorName.innerHTML = "Debes ingresar tu nombre"
-            
+                    
             break;
     
         default:
@@ -37,7 +40,7 @@ inputLastName.addEventListener('blur',()=>{
             break;
     
         default:
-            errorLast.innerHTML = ""
+            errorLastName.innerHTML = ""
             break;
     }
 });

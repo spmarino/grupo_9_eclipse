@@ -15,7 +15,7 @@ addEventListener("load", function (e) {
         modalC.style.opacity = "1";
         modalC.style.visibility = "visible";
         modal.classList.toggle("modal-close");
-    }, 10000);
+    }, 5000);
    
 });
 

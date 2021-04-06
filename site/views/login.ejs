@@ -15,6 +15,7 @@
               <input type="text" name="name" id="name"
                 value="<%= typeof old != 'undefined' && old.name ? old.name : null %>" required><span
                 class="barra"></span>
+               
               <label class="label-register" for="">Nombre</label>
               <span id="errorName"class="error-msg-register">
                 <%= typeof erroresRegister !='undefined' && erroresRegister.name ? erroresRegister.name.msg : null %>
