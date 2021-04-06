@@ -7,7 +7,7 @@
 		<!-- Header -->
 		<%- include('partials/header') %>
 			<!-- /Header -->
-			
+
 			<div class="container">
 				<div class="d-flex justify-content-around ">
 					<div class="col-10 col-md-12 caja-detailProduct">
@@ -16,69 +16,83 @@
 						</div>
 						<div class=" parte-descripcion-producto">
 							<div class="title-product-detail">
-								<h4><%-product.title%></h4>
+								<h4>
+									<%-product.title%>
+								</h4>
 							</div>
 							<% if (product.discount> 0) { %>
-							<div class="tachado">
-								<h4>$<%- toThousand(product.price) %></h4>
-							</div><% } %>
-							<div class="precio">
-								<h2>$<%- toThousand(product.price - Math.round(product.price / 100 * product.discount)) %></h4>
-									<% if (product.discount> 0) { %><div class="descuento-detail"><span><%- product.discount %> % off</span>
-									</div><% } %>
-							</div>
-							<div class="medios-de-pago">
-								<div class="title-medios-de-pago">
-									<i class="fas fa-credit-card"></i>
-									<h4>Medios de Pago</h4>
-									<a href="">
-										<p>Ver medios de pago</p>
-									</a>
+								<div class="tachado">
+									<h4>$<%- toThousand(product.price) %>
+									</h4>
 								</div>
-								<div class="iconos-medios-de-pago">
-									<i class="fab fa-cc-visa"></i>
-									<i class="fab fa-cc-mastercard"></i>
-									<i class="fab fa-cc-amex"></i>
-								</div>
-
-							</div>
-							<div class="tiempo-de-envio">
-								<div class="title-tiempos-de-envio">
-									<i class="far fa-clock"></i>
-									<h4>Tiempos de Envio</h4>
-									<a href="">
-										<p>Tiempos de envio</p>
-									</a>
-								</div>
-							</div>
-							<div class="agregar-cantidad">
-								<div class="selector-de-cantidad">
-									<div class="number-input">
-										<button
-											onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-										<input class="quantity" min="0" name="quantity" value="1" type="number">
-										<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-											class="plus"></button>
+								<% } %>
+									<div class="precio">
+										<h2>$<%- toThousand(product.price - Math.round(product.price / 100 *
+												product.discount)) %>
+												</h2>
+												<% if (product.discount> 0) { %><div class="descuento-detail"><span>
+															<%- product.discount %> % off
+														</span>
+													</div>
+													<% } %>
 									</div>
-								</div>
-							</div>
-							<div class="button-confirma-producto">
-								<button type="button" class="button-compra">Agregar al carrito</button>
-							</div>
+									<div class="medios-de-pago">
+										<div class="title-medios-de-pago">
+											<i class="fas fa-credit-card"></i>
+											<h4>Medios de Pago</h4>
+											<a href="">
+												<p>Ver medios de pago</p>
+											</a>
+										</div>
+										<div class="iconos-medios-de-pago">
+											<i class="fab fa-cc-visa"></i>
+											<i class="fab fa-cc-mastercard"></i>
+											<i class="fab fa-cc-amex"></i>
+										</div>
+
+									</div>
+									<div class="tiempo-de-envio">
+										
+										<div class="title-tiempos-de-envio">
+											<i class="far fa-clock"></i>
+											<h4>Tiempos de Envio</h4>
+											<a href="">
+												<p>Tiempos de envio</p>
+											</a>
+										</div>
+									</div>
+
+									
+									<div class="agregar-cantidad">
+										<div class="qty mt-5">
+											<span class="minus bg-dark">-</span>
+											<input type="number" class="count" name="qty" value="1">
+											<span class="plus bg-dark">+</span>
+										</div>
+									</div>
+
+
+
+									<div class="button-confirma-producto">
+										<button type="button" class="button-compra">Agregar al carrito</button>
+									</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			</div>
 
-
+		
+			
 
 
 			<section class="datos-producto">
 				<div class="container">
 					<div class="row">
 						<div class="col-12 descripcion">
-							<p><%- product.description %></p>
+							<p>
+								<%- product.description %>
+							</p>
 						</div>
 						<section class="col-12 especificaciones">
 							<table class="table table-sm table-dark tabla-especificaciones">
@@ -86,35 +100,49 @@
 								<tbody>
 									<tr>
 										<td class="title-table">Varietal</td>
-										<td class="contenido-table"><%- feature.varietal %></td>
+										<td class="contenido-table">
+											<%- feature.varietal %>
+										</td>
 									</tr>
 									<tr>
 										<td class="title-table">Añada</td>
-										<td class="contenido-table"><%- feature.vintage %></td>
+										<td class="contenido-table">
+											<%- feature.vintage %>
+										</td>
 									</tr>
 
 									<tr>
 										<td class="title-table">Tipo de barrica</td>
-										<td class="contenido-table"><%- feature.type_of_barrel %></td>
+										<td class="contenido-table">
+											<%- feature.type_of_barrel %>
+										</td>
 									</tr>
 
 									<tr>
 										<td class="title-table">Tiempo en botella</td>
-										<td class="contenido-table"><%-feature.time_in_bottle %> Meses</td>
+										<td class="contenido-table">
+											<%-feature.time_in_bottle %> Meses
+										</td>
 									</tr>
 
 									<tr>
 										<td class="title-table">Tipo de cosecha</td>
-										<td class="contenido-table"><%-feature.harvest %></td>
+										<td class="contenido-table">
+											<%-feature.harvest %>
+										</td>
 									</tr>
 									<tr>
 										<td class="title-table">Terroir</td>
-										<td class="contenido-table"><%-feature.terroir %></td>
+										<td class="contenido-table">
+											<%-feature.terroir %>
+										</td>
 									</tr>
 
 									<tr>
 										<td class="title-table">Finca</td>
-										<td class="contenido-table"><%- feature.finca %></td>
+										<td class="contenido-table">
+											<%- feature.finca %>
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -134,17 +162,22 @@
 					<tbody>
 						<tr>
 							<th class="title-table" scope="row"><i class="far fa-eye"></i></th>
-							<td><%-tastingNote.color%></td>
+							<td>
+								<%-tastingNote.color%>
+							</td>
 
 						</tr>
 						<tr>
 							<th class="title-table" scope="row"><img src="/images/nose.png" alt=""> </th>
-							<td><%-tastingNote.smell%>
+							<td>
+								<%-tastingNote.smell%>
 							</td>
 
 						<tr>
 							<th class="title-table" scope="row"><img src="/images/lips.png" alt=""> </th>
-							<td><%-tastingNote.taste%></td>
+							<td>
+								<%-tastingNote.taste%>
+							</td>
 
 						</tr>
 					</tbody>
@@ -157,6 +190,8 @@
 			<!-- footer -->
 			<%- include('partials/footer') %>
 				<!-- /footer -->
+
+				<script src="/javascripts/spinner.js"></script>
 	</body>
 
 </html>
