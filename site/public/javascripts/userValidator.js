@@ -53,11 +53,19 @@ inputDate.addEventListener('blur',()=>{
             
             break;
 
+            case moment(inputDate.value)>moment():
+                errorDate.innerHTML = "Fecha inválida";
+                break;
+
             case moment().diff(moment(inputDate.value),'years')<18:
                 errorDate.innerHTML = "Debes ser mayor de 18 años"
 
                        
             break;
+
+            case moment(inputDate.value)<1920:
+                errorDate.innerHTML = "Fecha inválida";
+                break;
     
         default:
             errorDate.innerHTML = ""
