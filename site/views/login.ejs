@@ -6,7 +6,8 @@
     <%-include("partials/header")%>
 
       <main class="container-register-login">
-        <form action="/ingreso/register" method="POST" enctype="multipart/form-data" class="form-register" id="formRegister">
+        <form action="/ingreso/register" method="POST" enctype="multipart/form-data" class="form-register"
+          id="formRegister">
           <div class="form-register-div">
             <h1>CREAR CUENTA</h1>
             <p>Si todavia no tienes una Cuenta en Eclipse, registrate ingresando estos datos:</p>
@@ -15,9 +16,9 @@
               <input type="text" name="name" id="name"
                 value="<%= typeof old != 'undefined' && old.name ? old.name : null %>" required><span
                 class="barra"></span>
-               
+
               <label class="label-register" for="">Nombre</label>
-              <span id="errorName"class="error-msg-register">
+              <span id="errorName" class="error-msg-register">
                 <%= typeof erroresRegister !='undefined' && erroresRegister.name ? erroresRegister.name.msg : null %>
               </span>
             </div>
@@ -85,13 +86,12 @@
             </div>
 
             <div class="group-register">
-              <input type="password" name="passwordCheck" id="passwordCheck" required><span
-                class="barra"></span>
+              <input type="password" name="passwordCheck" id="passwordCheck" required><span class="barra"></span>
               <label class="label-register" for="">Reingrese Contraseña</label>
 
-              <span id="errorPasswordCheck"class="error-msg-register">
-                <%= typeof erroresRegister !='undefined' && erroresRegister.passwordCheck ? erroresRegister.passwordCheck.msg :
-                  null %>
+              <span id="errorPasswordCheck" class="error-msg-register">
+                <%= typeof erroresRegister !='undefined' && erroresRegister.passwordCheck ?
+                  erroresRegister.passwordCheck.msg : null %>
               </span>
             </div>
 
@@ -118,7 +118,7 @@
                 value="<%= typeof old != 'undefined' && old.email ? old.email : null %>" required><span
                 class="barra"></span>
               <label class="label-register" for="">Email</label>
-              <span id="errorEmailLogin"class="error-msg-register">
+              <span id="errorEmailLogin" class="error-msg-register">
                 <%= typeof erroresLogin !='undefined' && erroresLogin.email ? erroresLogin.email.msg : null %>
               </span>
             </div>
@@ -129,15 +129,22 @@
 
             </div>
             <button class="submit-form-register" type="submit">Ingresar</button>
-            <div class="group-register">
-
-              <% if (typeof erroresLogin !="undefined" ) { %>
-                <span class="error-msg-register">
+            
+            <% if (typeof erroresLogin !="undefined" ) { %>
+              <div class="error-credenciales">
+                <span class="span-error-credenciales">
                   <% erroresLogin.forEach(error=> { %>
                     <%= error.msg %>
                       <% }) %>
                 </span>
+              </div>
+            
                 <% } %>
+          
+            <div class="group-register-2">
+              <input class="input-login-checkbox" type="checkbox" name="recordar" id="recordar">
+              <label class="label-login-checkbox" for="recordar">Recordar</label>
+               
                   <br>
                   <br>
                   <a href="/">Volver a la tienda</a><br><br>
@@ -151,11 +158,11 @@
       </main>
       <%- include("partials/footer") %>
 
-      <script src="https://momentjs.com/downloads/moment.min.js"></script>
-      
+        <script src="https://momentjs.com/downloads/moment.min.js"></script>
+
         <script src="/javascripts/placeholderDate.js"></script>
         <script src="/javascripts/userValidator.js"></script>
-        
+
   </body>
 
 </html>

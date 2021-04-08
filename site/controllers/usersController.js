@@ -38,7 +38,7 @@ const usersController = {
                 /*.then(() => res.redirect('/ingreso'))*/
 
                 .then(user => {
-                    {
+                    
                        req.session.user = {
                            id: user.id,
                            name: user.name,
@@ -51,9 +51,10 @@ const usersController = {
                       
                 
                        return res.redirect('/ingreso/users')
-                       .catch(error => res.send(error));
+                       
 
-                   }});
+                   })
+                   .catch(error => res.send(error));
                 
         }
     },

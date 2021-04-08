@@ -115,9 +115,9 @@
           <!--PRODUCTOS 1-->
           <% masVendidos.forEach(product=> { %>
             <section class="col-5 col-md-3 col-lg-2 producto-box">
-              <figure class="imagen-producto">
+              <a href="/products/detail/<%- product.id %>"><figure class="imagen-producto">
                 <img src="/images/<%- product.image %> " alt="">
-              </figure>
+              </figure></a>
               <% if (product.free_shipping> 0) { %>
                 <div class="envio-promo"><span>Envio gratis</span></div>
                 <% } %>
@@ -138,7 +138,7 @@
                                   product.discount)) %> </span>
                         </div>
                         <div class="button-agregar">
-                          <form action="/products/detail/<%- product.id %>" method="GET">
+                          <form action="#" method="GET">
                             <button type="submit" class="button-compra">Agregar</button>
                           </form>
                         </div>
@@ -198,9 +198,10 @@
               <% vinosTintos.forEach(product=> { %>
                 <div class="carousel__elemento">
                   <section class="producto-box">
+                    <a href="/products/detail/<%- product.id %>">
                     <figure class="imagen-producto">
                       <img src="/images/<%- product.image %> " alt="">
-                    </figure>
+                    </figure></a>
                     <% if (product.free_shipping> 0) { %>
                       <div class="envio-promo"><span>Envio gratis</span></div>
                       <% } %>
@@ -221,7 +222,7 @@
                                         100 * product.discount)) %> </span>
                               </div>
                               <div class="button-agregar">
-                                <form action="/products/detail/<%- product.id %>" method="GET">
+                                <form action="#" method="GET">
                                   <button type="submit" class="button-compra">Agregar</button>
                                 </form>
                               </div>
@@ -294,9 +295,9 @@
               <% vinosBlancos.forEach(product=> { %>
                 <div class="carousel__elemento2">
                   <section class="producto-box">
-                    <figure class="imagen-producto">
+                    <a href="/products/detail/<%- product.id %>"><figure class="imagen-producto">
                       <img src="/images/<%- product.image %> " alt="">
-                    </figure>
+                    </figure></a>
                     <% if (product.free_shipping> 0) { %>
                       <div class="envio-promo"><span>Envio gratis</span></div>
                       <% } %>
@@ -317,7 +318,7 @@
                                         100 * product.discount)) %> </span>
                               </div>
                               <div class="button-agregar">
-                                <form action="/products/detail/<%- product.id %>" method="GET">
+                                <form action="#" method="GET">
                                   <button type="submit" class="button-compra">Agregar</button>
                                 </form>
                               </div>
