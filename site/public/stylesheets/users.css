@@ -84,13 +84,13 @@
 
 .group-register select:valid~label{
   font-size: 12px;
-  color: #2196f3;
+  color: var(--color-celeste);
 }
 
 .group-register input:focus~label, .group-register input:valid~label {
   top: -14px;
   font-size: 12px;
-  color: #2196f3;
+  color: var(--color-celeste);
 }
 
 .barra {
@@ -180,7 +180,7 @@ left: 0;
 }
 
 .group-register-2 > a:hover {
-  color: #2196f3;
+  color: var(--color-celeste);
 
 }
 

@@ -1,0 +1,138 @@
+.medios-contenedor {
+    display: flex;
+    width  : 100%;
+    flex-flow: row wrap;
+    font-family: 'Lato';
+    justify-content: center;
+}
+
+.medios-principal > ul li, .medios-sidebar > ul li {
+    list-style:none;
+   
+}
+.medios-sidebar {
+      display: flex;
+    flex-flow:column wrap;
+       width: 25%;
+    margin:50px auto;
+    padding-left: 30px;
+   border-right: 2px solid #ca111296;
+    display: none;
+}
+
+.medios-principal {
+    width: 80%;
+}
+
+.medios-principal > p >img {
+    max-width: 100%;
+    padding-right:20px;
+}
+
+.medios-principal > h1 {
+    font-size: 30px;
+      margin: 30px 0;
+    text-transform:uppercase;
+}
+
+.medios-principal > h3 {
+    font-size: 23px;
+    margin-top:50px;
+text-transform:uppercase;
+color:var(--color-rosa);
+}
+
+.medios-principal > h4 {
+    font-size: 16px;
+    margin-top:20px;
+    text-transform:uppercase;
+}
+
+.medios-principal > p {
+    font-size: 12px;
+}
+
+.medios-sidebar ul h3{
+    font-size: 13px;
+    margin-top:10px;
+    text-transform:uppercase;
+
+
+}
+
+.medios-sidebar ul li a {
+    font-size: 12px;
+    text-decoration: none;
+    color:var(--color-gris);
+    transition: all 3s easy-in-out;
+
+}
+ 
+.medios-sidebar ul li a:hover {
+    color:var(--color-rosa);
+}
+
+.medios-sidebar ul li span a {
+    color: var(--color-rosa);
+}
+
+@media (min-width: 768px) {
+
+.medios-contenedor {
+    display: flex;
+    width  : 100%;
+    flex-flow: row wrap;
+    font-family: 'Lato';
+    justify-content: center;
+}
+
+.medios-sidebar{
+    display:inline-block;
+}
+
+.medios-principal {
+    width: 70%;
+}
+
+}
+
+@media (min-width: 1024px) {
+    .medios-sidebar{
+    width:20%;
+}
+
+.medios-principal {
+    width: 75%;
+}
+
+.medios-principal > h1 {
+    font-size: 30px;
+  
+}
+
+.medios-principal > h3 {
+    font-size: 25px;
+    margin-top:50px;
+
+}
+
+.medios-principal > h4 {
+    font-size: 20px;
+    margin-top:20px;
+    
+}
+
+.medios-principal > p {
+    font-size: 16px;
+}
+
+.medios-sidebar ul h3{
+    font-size: 16px;
+    margin-top:40px;
+   
+}
+
+.medios-sidebar ul li a {
+    font-size: 14px;
+    }
+}

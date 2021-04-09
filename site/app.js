@@ -14,6 +14,7 @@ var adminRouter = require('./routes/adminRouter');
 var productsRouter = require('./routes/productsRouter');
 var ingresoRouter = require('./routes/ingresoRouter');
 var cookieCheck = require('./middlewares/cookieCheck')
+var pagesRouter = require('./routes/pagesRouter');
 
 var app = express();
 dbConnectionTest();
@@ -41,6 +42,7 @@ app.use('/carrito', carritoRouter);
 app.use('/admin', adminRouter);
 app.use('/products', productsRouter);
 app.use('/ingreso', ingresoRouter);
+app.use('/pages/', pagesRouter);
 
 
 
