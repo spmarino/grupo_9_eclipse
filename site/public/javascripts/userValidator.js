@@ -144,6 +144,3 @@ inputPasswordRegister.addEventListener('blur',()=>{
 });
 
 
-
-
-const formLogin = document.getElementById('formLogin');

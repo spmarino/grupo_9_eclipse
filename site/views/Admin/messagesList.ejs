@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Load font awesome icons -->
+
+  <!-- Include Head -->
+  <%- include('./partials/head')%>
+  <body>
+  <!-- Header -->
+	<%- include('./partials/header') %>
+	<!-- /Header -->
+
+<body style="background-color:gray;">
+
+
+  <div class="container-product-list-admin">
+    <% messages.forEach(message => { %>
+     
+    
+    <div class="box-product-list-admin">
+      <h4>ID : <%- message.id %> </h4>
+      <h4 class="form-label">Nombre</h4>
+      <p class="form-input"><%- message.name %></p>
+      <h4 class="form-label">Fecha</h4>
+      <p class="form-input"><%- message.created_at %></p>
+      <h4 class="form-label">Asunto</h4>
+      <p class="form-input"><% if (message.matter_id== 1) { %>
+       Consulta al Ceo
+       
+       <% } else { %>   
+        Otras Consultas
+      <% } %>
+
+      
+   
+    </div>
+    <% }) %>
+
+    
+
+    <
+  </div>
+
+
+  <%- include('./partials/footer')  %> 
+</body>
+
+</html>

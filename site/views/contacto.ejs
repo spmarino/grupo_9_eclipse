@@ -43,33 +43,67 @@
                       
                        <div class="contacto-contenedor-img"><img src="/images/pages/contacto.jpg" alt=""></div>
 
-                       <form action="/pages/contacto" method="POST" class="contacto-form" enctype="">
+                       <form action="/pages/contacto" id="formContact" method="POST" class="contacto-form" enctype="">
                         <div class="form-header">
                           <h1 class="form-title">D<span>ejenos su mensaje</span></h1>
                         </div>
+
+
                         <label for="" class="form-label">Nombre:</label>
-                        <input type="text" id="name" class="form-input" name="name" placeholder="Nombre del producto" required>
-                        
+                        <input type="text" id="name" class="form-input" name="name" placeholder="Nombre del producto" value="<%= typeof old != 'undefined' && old.name ? old.name : null %>" required>
+                        <span id="errorNameContact" class="error-msg-contact">
+                            <%= typeof erroresContacto !='undefined' && erroresContacto.name ? erroresContacto.name.msg : null %>
+                          </span>
+
+
+
+
                         <label for="" class="form-label">Asunto</label>
-                        <select class="form-select" name="matter_id" id="matter" required>
+                        <select class="form-select" name="matter_id" id="matter_id" required>
                             <option class="form-option" value="">Seleccione el Asunto</option>
-                          <option class="form-option" value="1">Consultar al CEO</option>
-                          <option class="form-option" value="2">Consultar al Gerente Comercial</option>
-                          <option class="form-option" value="3">Consultar al Gerente de Marketing</option>
-                          <option class="form-option" value="4">Otras Consultas</option>
+                          <option class="form-option" value="1"<% if (typeof old !='undefined' && old.matter_id==1) { %>selected<% }
+                            %>>Consultar al CEO</option>
+                          <option class="form-option" value="2"<% if (typeof old !='undefined' && old.matter_id==1) { %>selected<% }
+                            %>>Consultar al Gerente Comercial</option>
+                          <option class="form-option" value="3"<% if (typeof old !='undefined' && old.matter_id==1) { %>selected<% }
+                            %>>Consultar al Gerente de Marketing</option>
+                          <option class="form-option" value="4"<% if (typeof old !='undefined' && old.matter_id==1) { %>selected<% }
+                            %>>Otras Consultas</option>
                         </select>
+                        <span id="errorMatterContact" class="error-msg-contact">
+                            <%= typeof erroresContacto !='undefined' && erroresContacto.matter_id ? erroresContacto.matter_id.msg : null %>
+                          </span>
+
+
+
 
                        
-                        <label for="discount" class="form-label">Número de Telefono</label>
-                        <input type="tel" id="tel" class="form-input" name="tel" placeholder="Ingrese su número de teléfono" required>
+                        <label for="" class="form-label">Número de Telefono</label>
+                        <input type="tel" id="tel" class="form-input" name="tel" placeholder="Ingrese su número de teléfono" value="<%= typeof old != 'undefined' && old.tel ? old.tel : null %>" required>
+                        <span id="errorTelContact" class="error-msg-contact">
+                            <%= typeof erroresContacto !='undefined' && erroresContacto.tel ? erroresContacto.tel.msg : null %>
+                          </span>
+
+
 
                         
                         <label for="" class="form-label">Dirección de Email</label>
-                        <input type="email" id="" class="form-input" name="mail" id="mail" placeholder="Ingrese su dirección de email" required>
-                        
-                        <label for="description" class="form-label">Dejenos su mensaje:</label>
+                        <input type="email"  class="form-input" name="mail" id="mail" placeholder="Ingrese su dirección de email" value="<%= typeof old != 'undefined' && old.mail ? old.mail : null %>" required>
+                        <span id="errorMailContact" class="error-msg-contact">
+                            <%= typeof erroresContacto !='undefined' && erroresContacto.mail ? erroresContacto.mail.msg : null %>
+                          </span>
+
+
+
+
+                        <label for="" class="form-label">Dejenos su mensaje:</label>
                         <textarea class="form-textarea" name="message" id="message"
-                          placeholder="Escriba aquí su mensaje, le responderemos a la brevedad"></textarea>
+                          placeholder="Escriba aquí su mensaje, le responderemos a la brevedad" required><%= typeof old != 'undefined' && old.message ? old.message : null %></textarea>
+                          <span id="errorMessageContact" class="error-msg-contact">
+                            <%= typeof erroresContacto !='undefined' && erroresContacto.message ? erroresContacto.message.msg : null %>
+                          </span>
+
+
 
                           <input type="submit" class="btn-submit-admin" value="Enviar">
 
@@ -93,7 +127,7 @@
             <!-- footer -->
             <%- include('partials/footer') %>
                 <!-- /footer -->
-
+                <script src="/javascripts/contactValidator.js"></script>
     </body>
 
 </html>

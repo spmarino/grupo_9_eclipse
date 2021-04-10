@@ -271,7 +271,21 @@ const adminController = {
             })
             .catch(error => res.send(error))
 
-    }
+    },
+
+    'messageList': function (req, res) {
+        db.Messages.findAll()
+            .then(messages => {
+                return res.render('Admin/messagesList', {
+                    messages,
+                })
+
+
+            })
+            .catch(error => res.send(error))
+
+
+    },
 }
 
 

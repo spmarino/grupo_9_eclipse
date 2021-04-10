@@ -1,5 +1,6 @@
 const db = require('../database/models');
-const { Op } = require('sequelize');
+const { validationResult } = require('express-validator');
+
 
 
 const pagesController = {
@@ -24,7 +25,15 @@ const pagesController = {
 
     },
     'message': function (req, res) {
-    
+    let errores = validationResult(req);
+
+
+    if (!errores.isEmpty()) {
+        return res.render('contacto', {
+            erroresContacto: errores.mapped(),
+            old:req.body
+        })
+    } else {
         const { name, matter_id, mail, tel, message } = req.body
 
                  db.Messages.create({
@@ -41,7 +50,7 @@ const pagesController = {
                 })
 
             .catch(error => res.send(error))
-
+            }
   
 },
 
