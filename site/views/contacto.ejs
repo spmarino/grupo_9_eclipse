@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head') %>
+
+    <body>
+        <!-- Header -->
+        <%- include('partials/header') %>
+            <!-- /Header -->
+
+            <div class="medios-contenedor">
+
+                <div class="medios-sidebar">
+                    <ul>
+                        <h3>Tienda Online</h3>
+                        <li><a href="/pages/medios-de-pago">Medios de Pago</a></li>
+                        <li><a href="/pages/costos-de-envio">Costos de Envío</a></li>
+                        <li><a href="/pages/tiempos-de-envio">Tiempos de envío</a></li>
+                    </ul>
+                    <ul>
+                        <h3>Centro de Ayuda</h3>
+                        <li><a href="https://www.andreani.com/#!/personas">Seguimiento de Envios</a></li>
+                        <li><a href="/pages/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+                        <li><a href="https://seguimiento.andreani.com">Estado del Pedido</a></li>
+                        <li><span><a href="/pages/contacto">Contacto</a></span></li>
+
+                    </ul>
+                    <ul>
+                        <h3>Legales</h3>
+
+                        <li><a href="/pages/terminos-y-condiciones">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="medios-principal">
+                    <h1>Contacto Tienda Online</h1>
+                    <p>Por reclamos o consultas sobre sus compras a través la página, escríbanos a través de nuestro chat o mail de contacto.</p> <p>Si necesita comunicarse con otras áreas de la bodega, por favor, complete el formulario.</p>
+                    <div class="contacto-lista">
+                       <h3><i class="far fa-envelope"></i><a target="_blank" href="mailto:contacto@eclipse.com.ar"> contacto@eclipse.com.ar</a></h3>             
+                      <h3><i class="fas fa-phone-alt"></i><a href="tel:0800 - 222 - 3000"> 0800 - 222 - 3000</a></h3> 
+                       <h3><i class="far fa-clock"></i> Lunes a Viernes de 09:00 a 18:00hs.</h3></div>   
+                      
+                       <div class="contacto-contenedor-img"><img src="/images/pages/contacto.jpg" alt=""></div>
+
+                       <form action="/pages/contacto" method="POST" class="contacto-form" enctype="">
+                        <div class="form-header">
+                          <h1 class="form-title">D<span>ejenos su mensaje</span></h1>
+                        </div>
+                        <label for="" class="form-label">Nombre:</label>
+                        <input type="text" id="name" class="form-input" name="name" placeholder="Nombre del producto" required>
+                        
+                        <label for="" class="form-label">Asunto</label>
+                        <select class="form-select" name="matter_id" id="matter" required>
+                            <option class="form-option" value="">Seleccione el Asunto</option>
+                          <option class="form-option" value="1">Consultar al CEO</option>
+                          <option class="form-option" value="2">Consultar al Gerente Comercial</option>
+                          <option class="form-option" value="3">Consultar al Gerente de Marketing</option>
+                          <option class="form-option" value="4">Otras Consultas</option>
+                        </select>
+
+                       
+                        <label for="discount" class="form-label">Número de Telefono</label>
+                        <input type="tel" id="tel" class="form-input" name="tel" placeholder="Ingrese su número de teléfono" required>
+
+                        
+                        <label for="" class="form-label">Dirección de Email</label>
+                        <input type="email" id="" class="form-input" name="mail" id="mail" placeholder="Ingrese su dirección de email" required>
+                        
+                        <label for="description" class="form-label">Dejenos su mensaje:</label>
+                        <textarea class="form-textarea" name="message" id="message"
+                          placeholder="Escriba aquí su mensaje, le responderemos a la brevedad"></textarea>
+
+                          <input type="submit" class="btn-submit-admin" value="Enviar">
+
+
+
+                    </form>  
+                
+                    </div>
+    
+        
+
+
+</div>
+
+
+            </div>
+
+
+
+
+            <!-- footer -->
+            <%- include('partials/footer') %>
+                <!-- /footer -->
+
+    </body>
+
+</html>

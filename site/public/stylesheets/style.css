@@ -59,6 +59,11 @@ background: linear-gradient(to left, #101118, #08080c); /* W3C, IE 10+/ Edge, Fi
 
 }
 
+a:link, a:visited, a:active {
+  text-decoration:none;
+  
+}
+
 /* HEADER*/
 
 header {
@@ -232,7 +237,7 @@ header nav ul li a:hover {
 }
 
 .bordes-derechos {
-  border-bottom: rgba(80, 78, 78, 0.61) 3px solid;
+  border-bottom: rgba(80, 78, 78, 0.61) 1px solid;
 }
 
 
@@ -726,7 +731,7 @@ ul {
   }
 
   .bordes-derechos {
-    border-right : rgba(80, 78, 78, 0.61) 3px solid;
+    border-right : rgba(80, 78, 78, 0.61) 1px solid;
     border-bottom: none;
   }
 
@@ -875,8 +880,7 @@ margin: 30px 0;
 }
 
 .wine-blue-filter>h2 {
-  text-decoration: underline;
-  margin-top     : 15px;
+    margin-top     : 15px;
 }
 
 .wine-blue-filter>p {

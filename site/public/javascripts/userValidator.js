@@ -63,7 +63,7 @@ inputDate.addEventListener('blur',()=>{
                        
             break;
 
-            case moment(inputDate.value)<1920:
+            case moment().diff(moment(inputDate.value),'years')>110:
                 errorDate.innerHTML = "Fecha inválida";
                 break;
     
