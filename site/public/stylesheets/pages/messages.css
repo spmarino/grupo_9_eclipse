@@ -1,3 +1,16 @@
 .message-id{
 width: 100%;
 }
+
+.message-status-new{
+    background-color: var(--color-gris);
+    color: var(--color-rosa);
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 3px;
+    border-radius: 3px;
+    margin: 10px;
+    border: 2px solid var(--color-rosa);
+    position: absolute;
+    top:-25px;
+}

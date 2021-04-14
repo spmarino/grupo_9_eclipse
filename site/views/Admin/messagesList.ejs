@@ -2,63 +2,79 @@
 <html lang="en">
 <!-- Load font awesome icons -->
 
-  <!-- Include Head -->
-  <%- include('./partials/head')%>
+<!-- Include Head -->
+<%- include('./partials/head')%>
+
   <body>
-  <!-- Header -->
-	<%- include('./partials/header') %>
-	<!-- /Header -->
+    <!-- Header -->
+    <%- include('./partials/header') %>
+      <!-- /Header -->
 
-<body style="background-color:gray;">
+      <body style="background-color:gray;">
 
 
-  <div class="container-product-list-admin">
-    <% if (messages.length === 0) { %>
-      <div class="container-title-result"><h2> No tiene mensajes nuevos </h2></div>
-      
-       
-      <% }else{ %>
-      
-      <% messages.forEach(message => { %>      
-    
-        <div class="box-product-list-admin">
-          <h4 class="message-id">N° : <%- message.id %> </h4>
-          <h4 class="form-label">Nombre</h4>
-          <p class="form-input"><%- message.name %></p>
-          <h4 class="form-label">Status</h4>
-          <p class="form-input"><%- message.status ? 1 : 0 %></p>
-          <h4 class="form-label">Fecha</h4>
-          <p class="form-input"><%- message.created_at.toLocaleDateString('zh-HK') + " - " + message.created_at.toLocaleTimeString('zh-HK') %></p>
-          <h4 class="form-label">Asunto</h4>
-          <p class="form-input"><% if (message.matter_id == 1) { %>
-            Consulta al Ceo
-           <% } %>
-           <% if (message.matter_id == 2) { %>
-            Consulta al Gerente Comercial
-           <% } %>
-           <% if (message.matter_id == 3) { %>
-            Consulta al Gerente de Marketing
-           <% } %>
-           <% if (message.matter_id == 4) { %>
-            Otras consultas
-           <% } %>
-        </p>
-        <div class="container-btn-delete"><form action="/admin/message/<%- message.id %>?_method=PUT" method="POST">
-          <input type="submit" class="btn-edit-admin" value="Leer"></form></div>
-        
-        <div class="container-btn-delete"><form action="/admin/message/delete/<%- message.id %>?_method=DELETE" method="POST">
-          <input type="submit" class="btn-delete-admin" value="Eliminar"></form></div>
+        <div class="container-product-list-admin">
+          <% if (messages.length===0) { %>
+            <div class="container-title-result">
+              <h2> Usted no posee mensajes</h2>
+            </div>
 
+
+            <% }else{ %>
+
+              <% messages.forEach(message=> { %>
+
+                <div class="box-product-list-admin">
+                  <% if (message.status !=1) { %>
+                    <span class="message-status-new"> mensaje Nuevo</span>
+
+                      <% } %>
+                      <h4 class="form-label">Nombre</h4>
+                      <p class="form-input">
+                        <%- message.name %>
+                      </p>
+                      <h4 class="form-label">Fecha</h4>
+                      <p class="form-input">
+                        <%- message.created_at.toLocaleDateString('zh-HK') + " - " +
+                          message.created_at.toLocaleTimeString('zh-HK') %>
+                      </p>
+                      <h4 class="form-label">Asunto</h4>
+                      <p class="form-input">
+                        <% if (message.matter_id==1) { %>
+                          Consulta al Ceo
+                          <% } %>
+                            <% if (message.matter_id==2) { %>
+                              Consulta al Gerente Comercial
+                              <% } %>
+                                <% if (message.matter_id==3) { %>
+                                  Consulta al Gerente de Marketing
+                                  <% } %>
+                                    <% if (message.matter_id==4) { %>
+                                      Otras consultas
+                                      <% } %>
+                      </p>
+                      <div class="container-btn-delete">
+                        <form action="/admin/message/<%- message.id %>?_method=PUT" method="POST">
+                          <input type="submit" class="btn-edit-admin" value="Leer">
+                        </form>
+                      </div>
+
+                      <div class="container-btn-delete">
+                        <form action="/admin/message/delete/<%- message.id %>?_method=DELETE" method="POST">
+                          <input type="submit" class="btn-delete-admin" value="Eliminar">
+                        </form>
+                      </div>
+
+
+                </div>
+                <% }) %>
+
+                  <% } %>
 
         </div>
-        <% }) %>
-    
-        <% } %>
-    
-  </div>
 
 
-  <%- include('./partials/footer')  %> 
-</body>
+        <%- include('./partials/footer') %>
+      </body>
 
 </html>
