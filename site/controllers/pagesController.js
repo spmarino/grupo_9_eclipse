@@ -37,7 +37,7 @@ const pagesController = {
         const { name, matter_id, mail, tel, message } = req.body
 
                  db.Messages.create({
-                    name: name,
+                    name,
                     matter_id,
                     mail,
                     tel,
@@ -45,7 +45,7 @@ const pagesController = {
                 
 
                 }).then(() => {
-                    res.redirect('/pages/contacto')
+                    res.render('contacto',{ok:true})
 
                 })
 

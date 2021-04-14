@@ -43,6 +43,9 @@
                       
                        <div class="contacto-contenedor-img"><img src="/images/pages/contacto.jpg" alt=""></div>
 
+                       
+                       
+                       
                        <form action="/pages/contacto" id="formContact" method="POST" class="contacto-form" enctype="">
                         <div class="form-header">
                           <h1 class="form-title">D<span>ejenos su mensaje</span></h1>
@@ -63,18 +66,16 @@
                             <option class="form-option" value="">Seleccione el Asunto</option>
                           <option class="form-option" value="1"<% if (typeof old !='undefined' && old.matter_id==1) { %>selected<% }
                             %>>Consultar al CEO</option>
-                          <option class="form-option" value="2"<% if (typeof old !='undefined' && old.matter_id==1) { %>selected<% }
+                          <option class="form-option" value="2"<% if (typeof old !='undefined' && old.matter_id==2) { %>selected<% }
                             %>>Consultar al Gerente Comercial</option>
-                          <option class="form-option" value="3"<% if (typeof old !='undefined' && old.matter_id==1) { %>selected<% }
+                          <option class="form-option" value="3"<% if (typeof old !='undefined' && old.matter_id==3) { %>selected<% }
                             %>>Consultar al Gerente de Marketing</option>
-                          <option class="form-option" value="4"<% if (typeof old !='undefined' && old.matter_id==1) { %>selected<% }
+                          <option class="form-option" value="4"<% if (typeof old !='undefined' && old.matter_id==4) { %>selected<% }
                             %>>Otras Consultas</option>
                         </select>
                         <span id="errorMatterContact" class="error-msg-contact">
                             <%= typeof erroresContacto !='undefined' && erroresContacto.matter_id ? erroresContacto.matter_id.msg : null %>
                           </span>
-
-
 
 
                        
@@ -85,7 +86,6 @@
                           </span>
 
 
-
                         
                         <label for="" class="form-label">Dirección de Email</label>
                         <input type="email"  class="form-input" name="mail" id="mail" placeholder="Ingrese su dirección de email" value="<%= typeof old != 'undefined' && old.mail ? old.mail : null %>" required>
@@ -94,21 +94,23 @@
                           </span>
 
 
-
-
-                        <label for="" class="form-label">Dejenos su mensaje:</label>
-                        <textarea class="form-textarea" name="message" id="message"
+                        <label for="" class="form-label">Dejenos su mensaje:</label><textarea class="form-textarea" name="message" id="message"
                           placeholder="Escriba aquí su mensaje, le responderemos a la brevedad" required><%= typeof old != 'undefined' && old.message ? old.message : null %></textarea>
+
                           <span id="errorMessageContact" class="error-msg-contact">
                             <%= typeof erroresContacto !='undefined' && erroresContacto.message ? erroresContacto.message.msg : null %>
                           </span>
 
 
+                          <% if (typeof ok != 'undefined') { %>
+                            <span  class="confirm-msg-contact"> Hemos recibido su mensaje en breve responderemos sus consultas</span>
+                          <% } %>
+
 
                           <input type="submit" class="btn-submit-admin" value="Enviar">
 
 
-
+                         
                     </form>  
                 
                     </div>
@@ -128,6 +130,8 @@
             <%- include('partials/footer') %>
                 <!-- /footer -->
                 <script src="/javascripts/contactValidator.js"></script>
+
+                
     </body>
 
 </html>

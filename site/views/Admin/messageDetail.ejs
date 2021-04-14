@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Load font awesome icons -->
+
+<!-- Include Head -->
+<%- include('./partials/head')%>
+
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+      <!-- /Header -->
+
+      <body style="background-color:gray;">
+
+
+        <div class="contenedor-formulario-admin">
+
+          <form action="/admin/message/delete/<%- message.id %>?_method=DELETE" method="POST" class="form-admin">
+            <div class="form-header">
+              <h1 class="form-title">M<span>ensaje</span> N° <%- message.id %>
+              </h1>
+            </div>
+            <label for="" class="form-label">Fecha:</label>
+            <p class="form-input">
+              <%- message.created_at.toLocaleDateString('zh-HK') + " - " + message.created_at.toLocaleTimeString('zh-HK') %>
+            </p>
+
+            <label for="" class="form-label">Nombre:</label>
+            <p class="form-input">
+              <%- message.name %>
+            </p>
+            <label for="" class="form-label">Mail:</label>
+            <p class="form-input"><%- message.mail %>
+            </p>
+            <label for="" class="form-label">Teléfono de Contacto:</label>
+            <p class="form-input">
+              <%- message.tel %>
+            </p>
+            <label for="" class="form-label">Asunto:</label>
+            <p class="form-input">
+              <% if (message.matter_id == 1) { %>
+                Consulta al Ceo
+               <% } %>
+               <% if (message.matter_id == 2) { %>
+                Consulta al Gerente Comercial
+               <% } %>
+               <% if (message.matter_id == 3) { %>
+                Consulta al Gerente de Marketing
+               <% } %>
+               <% if (message.matter_id == 4) { %>
+                Otras consultas
+               <% } %>
+            </p>
+           
+            <label for="" class="form-label">Mensaje:</label>
+            <p class="form-input">
+              <%- message.message %>
+            </p>
+         
+
+                <div class="container-btn-delete" action="">
+                  <input type="submit" class="btn-delete-admin" value="Eliminar"></div>
+          </form>
+        </div>
+
+        <%- include('./partials/footer') %>
+      </body>
+
+</html>

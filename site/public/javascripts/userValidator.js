@@ -19,11 +19,12 @@ const inputPasswordCheck = document.getElementById('passwordCheck');
 
 
 
+
 inputName.addEventListener('blur',()=>{
     switch (true) {
         case !inputName.value:
-            errorName.innerHTML = "Debes ingresar tu nombre"
-                    
+            errorName.innerHTML = "Debes ingresar tu nombre";
+           
             break;
     
         default:

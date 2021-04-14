@@ -99,6 +99,7 @@
   width: 100%;
 }
 
+
 .group-register input:focus~.barra::before{
 width: 100%;
 }

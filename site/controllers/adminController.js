@@ -2,6 +2,10 @@
 const db = require('../database/models');
 const { Op } = require('sequelize');
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const moment = require('moment');
+const message = require('../database/models/message');
+
+
 
 
 const adminController = {
@@ -185,7 +189,7 @@ const adminController = {
 
         db.Products.findByPk(id)
             .then(product => {
-                db.Features.update({
+                const features = db.Features.update({
                     varietal,
                     vintage,
                     type_of_barrel,
@@ -202,7 +206,7 @@ const adminController = {
 
 
                 );
-                db.TastingNotes.update({
+                const tastingNotes = db.TastingNotes.update({
                     smell,
                     taste,
                     color
@@ -215,7 +219,7 @@ const adminController = {
 
                 );
 
-                db.Products.update({
+                const products = db.Products.update({
                     title,
                     price,
                     discount,
@@ -230,20 +234,19 @@ const adminController = {
                             id: id
                         }
                     })
+                Promise.all([features, tastingNotes, products])
+                    .then(() => {
 
-
-
-
-            }).then(product => {
-                console.log(product)
-                return res.redirect('/Admin/products/' + id)
+                        return res.redirect('/Admin/products/' + id)
+                    })
+                    .catch(error => res.send(error))
             })
             .catch(error => res.send(error))
     },
     'productDestroit': function (req, res) {
         const id = req.params.id
         db.Products.findByPk(id)
-            .then(product => {
+            .then((product) => {
                 db.Products.destroy({
 
                     where: {
@@ -252,32 +255,38 @@ const adminController = {
 
                 })
 
-                db.Features.destroy({
-                    where: {
-                        id: product.features_id
-                    }
-                })
-                db.TastingNotes.destroy({
-                    where: {
-                        id: product.tasting_notes_id
-                    }
-                })
+                    .then(() => {
+                        const features = db.Features.destroy({
+                            where: {
+                                id: product.features_id
+                            }
+                        })
+                        const tastingNotes = db.TastingNotes.destroy({
+                            where: {
+                                id: product.tasting_notes_id
+                            }
+                        })
 
+                        Promise.all([features, tastingNotes])
+                            .then(() => {
+                                return res.redirect('/admin/products')
+                            })
+                            .catch(error => res.send(error))
 
-
-            }).then(product => {
-                console.log(product)
-                return res.redirect('/admin/products')
+                    }).catch(error => res.send(error))
             })
             .catch(error => res.send(error))
 
     },
 
     'messageList': function (req, res) {
+
         db.Messages.findAll()
             .then(messages => {
                 return res.render('Admin/messagesList', {
                     messages,
+
+
                 })
 
 
@@ -286,6 +295,64 @@ const adminController = {
 
 
     },
+
+    'messageDetail': function (req, res) {
+        const id = req.params.id
+        db.Messages.findByPk(id)
+            .then(message => {
+                return res.render('Admin/messageDetail', {
+                    message,
+
+
+                })
+            })
+
+            .catch(error => res.send(error))
+    },
+    'messageDestroit': function (req, res) {
+        const id = req.params.id
+        db.Messages.findByPk(id)
+            .then(() => {
+                db.Messages.destroy({
+
+                    where: {
+                        id: id
+                    }
+
+                })
+                    .then(() => {
+                        return res.redirect('/admin/list')
+                    })
+                    .catch(error => res.send(error))
+            })
+
+    },
+
+    'messageUpdate': function (req, res) {
+        const id = req.params.id
+        db.Messages.findByPk(id)
+            .then((message) => {
+                db.Messages.update({
+                   status:1
+                },
+                    {
+                        where: {
+                            id: message.id
+                        }
+                    }
+    
+                )
+                    .then(() => {
+                        return res.redirect('/admin/messageDetail/'+ id )
+                    })
+                    .catch(error => res.send(error))
+            })
+
+
+            
+
+
+    }
 }
 
 

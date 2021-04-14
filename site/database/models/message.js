@@ -26,7 +26,17 @@ module.exports = (sequelize, dataTypes) => {
         message: {
             type: dataTypes.TEXT,
             allowNull: false,
-        }
+        },
+
+        created_at: {
+            type: dataTypes.DATE,
+            allowNull:true,
+        },
+        status: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+        },
     };
 
 
