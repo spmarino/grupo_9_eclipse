@@ -1,8 +1,7 @@
-
 const db = require('../database/models');
 const { Op } = require('sequelize');
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+const { validationResult } = require('express-validator');
 
 const adminController = {
     'productLoad': function (req, res) {
@@ -176,7 +175,7 @@ const adminController = {
 
             .catch(error => res.send(error))
 
-
+            
     },
 
     'productUpdate': function (req, res) {
