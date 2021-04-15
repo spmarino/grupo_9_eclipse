@@ -15,69 +15,101 @@
       <div class="form-header">
         <h1 class="form-title">C<span>rear Producto</span></h1>
       </div>
-      <label for="title" class="form-label">Nombre:</label>
-      <input type="text" id="title" class="form-input" name="title" placeholder="Nombre del producto" required>
-
-
-
+      <label for="title" class="form-label">Nombre:</label> <!--Nombre-->
+      <input type="text" id="title" class="form-input" name="title" placeholder="Nombre del producto" value="<%= typeof old != 'undefined' && old.title ? old.title : null %>"> <!--Value si hay algo me lo manda, sino va a ser nulo-->
+      <span id="" class="error-msg-contact">
+        <%= typeof erroresProductos !='undefined' && erroresProductos.title ? erroresProductos.title.msg : null %>
+      </span>
       
-      <label for="price" class="form-label">Precio:</label>
+      <label for="price" class="form-label">Precio:</label> <!--Precio-->
       <input type="number" id="price" min="1" step="any" class="form-input" name="price" placeholder="Precio del producto" required>
-      <label for="description" class="form-label">Descripción:</label>
+      
+      <label for="description" class="form-label">Descripción:</label> <!--Descripcion-->
       <textarea class="form-textarea" name="description" id="description"
         placeholder="Breve descripción del producto"></textarea>
-      <label for="product_category_id" class="form-label">Tipo de Vino:</label>
+      
+      <label for="product_category_id" class="form-label">Tipo de Vino:</label> <!--Tipo de vino-->
       <select class="form-select" name="product_category_id" id="product_category_id" required>
-        <% categories.forEach(category => { %>
-          <option class="form-option" value="<%- category.id %> "><%- category.category %> </option>
-        <% }) %>
-               
-     
-      </select>
-      <label for="discount" class="form-label">Descuento:</label>
+         <option class="form-option" value="1">Tintos</option>   
+          <option class="form-option" value="2">Blancos</option>   
+            </select>
+      
+
+      <label for="discount" class="form-label">Descuento:</label> <!--Descuento-->
       <select class="form-select" name="discount" id="discount" required>
-        <option class="form-option" value="0">Sin Descuento</option>
-        <option class="form-option" value="5">5% OFF</option>
-        <option class="form-option" value="10">10% OFF</option>
-        <option class="form-option" value="15">15% OFF</option>
-        <option class="form-option" value="20">20% OFF</option>
-        <option class="form-option" value="25">25% OFF</option>
-        <option class="form-option" value="35">35% OFF</option>
+        <option class="form-option" value="0"<% if  (typeof old != 'undefined' && old.discount == 0)  { %>selected<% } %>>Sin Descuento</option>
+        <option class="form-option" value="5"<% if  (typeof old != 'undefined' && old.discount == 5)  { %>selected<% } %>>5% OFF</option>
+        <option class="form-option" value="10"<% if (typeof old != 'undefined' && old.discount == 10) { %>selected<% } %>>10% OFF</option>
+        <option class="form-option" value="15"<% if (typeof old != 'undefined' && old.discount == 15) { %>selected<% } %>>15% OFF</option>
+        <option class="form-option" value="20"<% if (typeof old != 'undefined' && old.discount == 20) { %>selected<% } %>>20% OFF</option>
+        <option class="form-option" value="25"<% if (typeof old != 'undefined' && old.discount == 25) { %>selected<% } %>>25% OFF</option>
+        <option class="form-option" value="35"<% if (typeof old != 'undefined' && old.discount == 35) { %>selected<% } %>>35% OFF</option>
       </select>
-      <div class="form-checkbox"><label for="free_shipping" class="form-label">Envío gratis:</label>
-        <input class="form-radio" type="checkbox" name="free_shipping" id="free_shipping" value="1">
+
+      <span id="" class="error-msg-contact">
+        <%= typeof erroresProductos !='undefined' && erroresProductos.discount ? erroresProductos.discount.msg : null %>
+      </span>
+
+      <div class="form-checkbox"><label for="free_shipping" class="form-label">Envío gratis:</label> <!--Envio gratis-->
+        <input class="form-radio" type="checkbox" name="free_shipping" id="free_shipping" value="1" <% if  (typeof old != 'undefined' && old.free_shipping == 1)  { %> checked <% } %>>
         <br>
         <br>
-        <div class="form-checkbox"><label for="cover_page" class="form-label">Producto en portada:</label>
-          <input class="form-radio" type="checkbox" name="cover_page" id="cover_page" value="1">
+        <div class="form-checkbox"><label for="cover_page" class="form-label">Producto en portada:</label> <!--Producto portada-->
+          <input class="form-radio" type="checkbox" name="cover_page" id="cover_page" value="1" <% if  (typeof old != 'undefined' && old.cover_page == 1)  { %> checked <% } %>>
       </div>
       
       <h2 class="form-title">C<span>aracterísticas</span></h2>
-      <label for="varietal" class="form-label">Varietal:</label>
+      <label for="varietal" class="form-label">Varietal:</label> <!--Varietal-->
       <input type="text" id="varietal" class="form-input" name="varietal" placeholder="Tipo de uva" required>
-      <label for="vintage" class="form-label">Añada:</label>
+      <span id="" class="error-msg-contact">
+        <%= typeof erroresProductos !='undefined' && erroresProductos.varietal ? erroresProductos.varietal.msg : null %>
+      </span>
+
+      <label for="vintage" class="form-label">Añada:</label> <!--Añada-->
       <input type="number" id="vintage" min="1900" step="any" class="form-input" name="vintage" placeholder="Año de cosecha" required>
-      <label for="type_of_barrel" class="form-label">Tipo de Barrica:</label>
+      <span id="" class="error-msg-contact">
+        <%= typeof erroresProductos !='undefined' && erroresProductos.vintage ? erroresProductos.vintage.msg : null %>
+      </span>
+
+      <label for="type_of_barrel" class="form-label">Tipo de Barrica:</label> <!--Tipo de barrica-->
       <input type="text" id="type_of_barrel" class="form-input" name="type_of_barrel" placeholder="Tipo de barrica" required>
-      <label for="time_in_bottle" class="form-label">Tiempo en botella:</label>
+      <span id="" class="error-msg-contact">
+        <%= typeof erroresProductos !='undefined' && erroresProductos.type_of_barrel ? erroresProductos.type_of_barrel.msg : null %>
+      </span>
+
+      <label for="time_in_bottle" class="form-label">Tiempo en botella:</label> <!--Tiempo en botella-->
       <input type="number" id="time_in_bottle" class="form-input" name="time_in_bottle" placeholder="Tiempo en botella" required>
-      <label for="harvest" class="form-label">Tipo de Cosecha:</label>
+      <span id="" class="error-msg-contact">
+        <%= typeof erroresProductos !='undefined' && erroresProductos.time_in_bottle ? erroresProductos.time_in_bottle.msg : null %>
+      </span>
+
+      <label for="harvest" class="form-label">Tipo de Cosecha:</label> <!--Tipo de cosecha-->
       <select class="form-select" name="harvest" id="harvest" required>
         <option class="form-option" value="Manual">Manual</option>
         <option class="form-option" value="Mecánica">Mecánica</option>
       </select>
-      <label for="terroir" class="form-label">Terroir:</label>
+
+      <label for="terroir" class="form-label">Terroir:</label> <!--Terroir-->
       <input type="text" id="terroir" class="form-input" name="terroir" placeholder="Lugar Geográfico" required>
-      <label for="finca" class="form-label">Finca:</label>
+      <span id="" class="error-msg-contact">
+        <%= typeof erroresProductos !='undefined' && erroresProductos.terroir ? erroresProductos.terroir.msg : null %>
+      </span>
+
+      <label for="finca" class="form-label">Finca:</label> <!--Finca-->
       <input type="text" id="finca" class="form-input" name="finca"placeholder="Finca" required>
+      <span id="" class="error-msg-contact">
+        <%= typeof erroresProductos !='undefined' && erroresProductos.finca ? erroresProductos.finca.msg : null %>
+      </span>
 
 
       <h2 class="form-title">N<span>otas de Cata</span></h2>
-      <label for="color" class="form-label">Color:</label>
+      <label for="color" class="form-label">Color:</label> <!--Color-->
       <textarea class="form-textarea" name="color" id="color" placeholder="Breve descripción del producto"></textarea>
-      <label for="smell" class="form-label">Aroma:</label>
+
+      <label for="smell" class="form-label">Aroma:</label> <!--Aroma-->
       <textarea class="form-textarea" name="smell" id="smell" placeholder="Breve descripción del producto"></textarea>
-      <label for="taste" class="form-label">Sabor:</label>
+
+      <label for="taste" class="form-label">Sabor:</label> <!--Sabor-->
       <textarea class="form-textarea" name="taste" id="taste" placeholder="Breve descripción del producto"></textarea>
 
 
@@ -88,7 +120,7 @@
 
       <div class="file-upload">
         <input class="file-upload__input" type="file" name="image" id="myFile" >
-        <button class="file-upload__button" type="button">Seleccione una imagen</button>
+        <button class="file-upload__button" type="button">Seleccione una imagen</button> <!--Imagen-->
         <span class="file-upload__label"></span>
       </div>
 

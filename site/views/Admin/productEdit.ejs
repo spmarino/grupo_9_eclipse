@@ -50,31 +50,31 @@
          <% } %>>
     </div>
     <h2 class="form-title">C<span>aracterísticas</span></h2>
-    <label for="varietal" class="form-label">Varietal:</label>
+    <label for="varietal" class="form-label">Varietal:</label> <!--Varietal-->
     <input type="text" id="varietal" class="form-input" name="varietal" placeholder="Tipo de uva" value="<%- feature.varietal %> " required>
-    <label for="vintage" class="form-label">Añada:</label>
+    <label for="vintage" class="form-label">Añada:</label> <!--Añada-->
     <input type="number" id="vintage" min="1800" step="any" class="form-input" name="vintage" placeholder="Año de cosecha" value="<%- feature.vintage %>"required>
-    <label for="type_of_barrel" class="form-label">Tipo de Barrica:</label>
+    <label for="type_of_barrel" class="form-label">Tipo de Barrica:</label> <!--Tipo de barrica-->
     <input type="text" id="type_of_barrel" class="form-input" name="type_of_barrel" placeholder="Tipo de barrica" value="<%- feature.type_of_barrel %> "required>
-    <label for="time_in_bottle" class="form-label">Tiempo en botella:</label>
+    <label for="time_in_bottle" class="form-label">Tiempo en botella:</label> <!--Tiempo en botella-->
     <input type="number" id="time_in_bottle" min="1" step="any" class="form-input" name="time_in_bottle" placeholder="Tiempo en botella" value="<%- feature.time_in_bottle %>"required>
-    <label for="harvest" class="form-label">Tipo de Cosecha:</label>
+    <label for="harvest" class="form-label">Tipo de Cosecha:</label> <!--Tipo de cosecha-->
     <select class="form-select" name="harvest" id="harvest" required>
       <option class="form-option" value="Manual"<%- feature.harvest=== "Manual" ? "selected" : null %> >Manual</option>
       <option class="form-option" value="Mecánica"<%- feature.harvest === "Mecánica" ? "selected" : null %>>Mecánica</option>
     </select>
-    <label for="terroir" class="form-label">Terroir:</label>
+    <label for="terroir" class="form-label">Terroir:</label> <!--Terroir-->
     <input type="text" id="terroir" class="form-input" name="terroir" placeholder="Lugar Geográfico" value="<%- feature.terroir %> "required>
-    <label for="finca" class="form-label">Finca:</label>
+    <label for="finca" class="form-label">Finca:</label> <!--Finca-->
     <input type="text" id="finca" class="form-input" name="finca"placeholder="Finca" value="<%- feature.finca %> "required>
 
 
     <h2 class="form-title">N<span>otas de Cata</span></h2>
-    <label for="color" class="form-label">Color:</label>
+    <label for="color" class="form-label">Color:</label> <!--Color-->
     <textarea class="form-textarea" name="color" id="color" placeholder="Breve descripción del producto"><%- tastingNote.color %> </textarea>
-    <label for="smell" class="form-label">Aroma:</label>
+    <label for="smell" class="form-label">Aroma:</label> <!--Aroma-->
     <textarea class="form-textarea" name="smell" id="smell" placeholder="Breve descripción del producto"><%- tastingNote.smell %> </textarea>
-    <label for="taste" class="form-label">Sabor:</label>
+    <label for="taste" class="form-label">Sabor:</label> <!--Sabor-->
     <textarea class="form-textarea" name="taste" id="taste" placeholder="Breve descripción del producto"><%- tastingNote.taste %> </textarea>
 
 

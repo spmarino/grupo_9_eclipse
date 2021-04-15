@@ -15,16 +15,7 @@ module.exports = [
     })
     .withMessage('Debe ingresar un precio mayor a 0'),
 
-    //Descuento
-    check('discount')
-    .notEmpty()
-    .isInt({
-        min:0
-    })
-    .withMessage('Si tiene descuento debe ser mayor a cero, si no lo tiene debe ser cero'),
-
-
-
+    
     //Descripcion
     check('description')
     .notEmpty()
@@ -37,6 +28,62 @@ module.exports = [
     check('product_category_id')
     .notEmpty()
     .withMessage('Debe ingresar el tipo de vino'),
+
+    //Varietal
+    check('varietal')
+    .notEmpty()
+    .withMessage('Debe ingresar el varietal'),
+
+    //Añada
+    check('vintage')
+    .notEmpty()
+    .isFloat({
+        gt: -1
+    })
+    .withMessage('Debe ingresar el año de cosecha'),
+
+    //Tipo de barrica
+    check('type_of_barrel')
+    .notEmpty()
+    .withMessage('Debe ingresar el tipo de barrica'),
+
+    //Tiempo en botella
+    check('vintage')
+    .notEmpty()
+    .isFloat({
+        gt: -1
+    })
+    .withMessage('Debe ingresar el tiempo en botella, mayor a cero'),
+
+    //Tipo de cosecha
+    check('harvest')
+    .notEmpty()
+    .withMessage('Debe ingresar el tipo de cosecha'),
+
+    //Terroir
+    check('terroir')
+    .notEmpty()
+    .withMessage('Debe ingresar el terroir'),
+
+    //Finca
+    check('finca')
+    .notEmpty()
+    .withMessage('Debe ingresar la finca'),
+
+    //Color
+    check('color')
+    .notEmpty()
+    .withMessage('Debe ingresar el color'),
+
+    //Aroma
+    check('smell')
+    .notEmpty()
+    .withMessage('Debe ingresar el aroma'),
+
+    //Sabor
+    check('taste')
+    .notEmpty()
+    .withMessage('Debe ingresar el sabor'),
 
     //Consultar a Ser sobre la imagen//
     body('imagen')

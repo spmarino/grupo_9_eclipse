@@ -131,6 +131,16 @@ const adminController = {
     },
     'productNew': function (req, res) {
         const { title, price, discount, product_category_id, free_shipping, cover_page, description, varietal, vintage, type_of_barrel, time_in_bottle, harvest, finca, terroir, smell, taste, color } = req.body
+        let errores = validationResult(req)
+
+        if (!errores.isEmpty()) { //ErroresProduct - Si hay errores
+            return res.render('Admin/productLoad', { // Retorname la vista
+                erroresProductos: errores.mapped(),
+                old:req.body //Devuelve lo cargado anteriormente
+            })
+        } else { 
+
+
 
         const feature = db.Features.create({
             varietal,
@@ -164,7 +174,7 @@ const adminController = {
                     image: req.files[0] ? req.files[0].filename : 'producto1.png',
 
                 }).then(producto => {
-                    res.redirect('/admin/products')
+                    res.redirect('/admin/products') // Es una ruta, viaja por get
 
                 })
 
@@ -173,7 +183,7 @@ const adminController = {
             })
 
 
-            .catch(error => res.send(error))
+            .catch(error => res.send(error))} //Fin erroresProduct
 
             
     },

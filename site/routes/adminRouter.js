@@ -3,6 +3,7 @@ var router = express.Router();
 let adminController = require('../controllers/adminController')
 const userCheck = require('../middlewares/userCheck')
 const adminNotCheck = require('../middlewares/adminNotCheck')
+const productValidator= require('../validations/productValidator')
 
 
 /*MIDDLEWARES*/
@@ -16,7 +17,7 @@ router.get('/search',userCheck,adminNotCheck, adminController.adminSearch)
 router.get('/products',userCheck,adminNotCheck, adminController.productList)
 router.get('/list',userCheck,adminNotCheck, adminController.messageList)
 router.get('/products/create',userCheck,adminNotCheck, adminController.productLoad)
-router.post('/products/create',userCheck,adminNotCheck, upload.any(), adminController.productNew)
+router.post('/products/create',userCheck,adminNotCheck, productValidator, upload.any(), adminController.productNew) //Lo que viaja por post es algo que se va a crear, puede ser un usuario, un producto
 router.get('/products/edit/:id',userCheck,adminNotCheck,  adminController.productEdit)
 router.put('/products/edit/:id',userCheck,adminNotCheck, upload.any(), adminController.productUpdate)
 router.get('/products/:id',userCheck,adminNotCheck,  adminController.productDetailAdmin)
