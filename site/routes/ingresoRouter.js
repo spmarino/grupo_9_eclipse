@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const{processRegister, processLogin, home, logout, user}= require('../controllers/usersController')
+const{processRegister, processLogin, home, logout, user, perfil, perfilUpdate}= require('../controllers/usersController')
 
 /*MIDDLEWARES*/
 const loginValidator = require('../validations/loginValidator')
@@ -9,7 +9,7 @@ const upload = require('../middlewares/uploadImg');
 const userNotCheck = require('../middlewares/userNotCheck');
 const userCheck = require('../middlewares/userCheck');
 const adminCheck = require('../middlewares/adminCheck');
-
+const editValidator = require('../validations/editValidator')
 
 
 
@@ -19,6 +19,9 @@ router.post('/register',upload.any(),registerValidator, processRegister)
 router.post('/login',loginValidator, processLogin)
 router.delete('/logout',logout)
 router.get('/users',userCheck,adminCheck, user)
+router.get('/perfil/edit',userCheck,adminCheck,registerValidator, perfil)
+router.put('/perfil/edit/',userCheck,adminCheck, upload.any(), editValidator, perfilUpdate)
+
 
 
 

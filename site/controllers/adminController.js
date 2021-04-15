@@ -2,7 +2,7 @@
 const db = require('../database/models');
 const { Op } = require('sequelize');
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const moment = require('moment');
+
 const message = require('../database/models/message');
 
 

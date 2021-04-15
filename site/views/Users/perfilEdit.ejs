@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Load font awesome icons -->
+
+  <!-- Include Head -->
+  <%- include('./partials/head')%>
+  <body>
+  <!-- Header -->
+	<%- include('./partials/header') %>
+	<!-- /Header -->
+
+<body style="background-color:gray;">
+<div class="contenedor-formulario-admin">
+  <form action="/ingreso/perfil/edit/?_method=PUT" method="POST" class="form-admin" enctype="multipart/form-data">
+    <div class="form-header">
+      <h1 class="form-title">D<span>atos Personales</span></h1>
+    </div>
+   
+    <label for="name" class="form-label">Nombre:</label>
+    <input type="text" id="name" class="form-input" name="name"  value="<%- user.name %> "required>
+    
+    <span id="errorName" class="error-msg-contact">
+      <%= typeof erroresEdit !='undefined' && erroresEdit.name ? erroresEdit.name.msg : null %>
+    </span>
+
+    
+    
+    
+    <label for="lastname" class="form-label">Apellido:</label>
+    <input type="text" id="lastName" class="form-input" name="lastname" value="<%- user.lastname %> "required>
+    <span id="errorLastName" class="error-msg-contact">
+      <%= typeof erroresEdit !='undefined' && erroresEdit.lastName ? erroresEdit.lastName.msg : null %>
+    </span>
+
+   
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" id="email" class="form-input" name="email" value="<%- user.email %> "required>
+    <span id="errorEmail" class="error-msg-contact">
+      <%= typeof erroresEdit !='undefined' && erroresEdit.email ? erroresEdit.email.msg : null %>
+    </span>
+    
+    
+    
+    <label for="date_of_birth" class="form-label">Fecha de Nacimiento:</label>
+    <input type="date" id="date" class="form-input" name="date" value="<%-user.date_of_birth%> " required>
+    <span id="errorDate" class="error-msg-contact">
+      <%= typeof erroresEdit !='undefined' && erroresEdit.date ? erroresEdit.date.msg : null %>
+    </span>
+
+    
+    
+    <label for="sex_id" class="form-label">Sexo:</label>
+    <select class="form-select" name="sex_id" id="sex_id" required>
+    <option class="form-option" value="1"<%- user.sex_id=== "1" ? "selected" : null %> >Masculino</option>
+      <option class="form-option" value="2"<%- user.sex_id === "2" ? "selected" : null %>>Femenino</option>
+    </select>
+  
+    
+    
+    <label for="" class="form-label">Contraseña Nueva:</label>
+    <input type="password" id="password" class="form-input" name="password" value="<%-user.password %> "required>
+    <span id="errorPassword" class="error-msg-contact">
+      <%= typeof erroresEdit !='undefined' && erroresEdit.password ? erroresEdit.password.msg : null %>
+    </span>
+
+   
+   
+    <label for="" class="form-label">Repita su contraseña:</label>
+    <input type="password" id="passwordCheck" class="form-input" name="passwordCheck" value="<%-user.password %> "required>
+    <span id="errorPasswordCheck" class="error-msg-contact">
+      <%= typeof erroresEdit !='undefined' && erroresEdit.passwordCheck ? erroresEdit.passwordCheck.msg : null %>
+    </span>
+
+    
+   
+   
+    <div class="file-upload">
+      <input class="file-upload__input" type="file" name="image" id="myFile" >
+      <button class="file-upload__button" type="button">Cambia tu foto de perfil</button>
+      <span class="file-upload__label"></span>
+    </div>
+
+
+
+    <input type="submit" class="btn-submit-admin" value="Actualizar Datos Personales">
+
+
+  </form>
+</div>
+<%- include('./partials/footer')  %>
+<script src="/javascripts/ButtonImage.js"></script>
+<script src="/javascripts/userEdit.js"></script> 
+</body>
+
+</html>

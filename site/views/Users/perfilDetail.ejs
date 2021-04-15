@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Load font awesome icons -->
+
+<!-- Include Head -->
+<%- include('./partials/head')%>
+
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+      <!-- /Header -->
+
+      <body style="background-color:gray;">
+
+
+        <div class="contenedor-formulario-admin">
+<div class="form-admin">
+  <div class="form-header">
+    <h1 class="form-title">B<span>ienvenido</span> <%- user.name %>
+    </h1>
+  </div>
+  <img src="/images/<%- user.avatar %> " alt="">
+  <label for="nombre" class="form-label">Nombre:</label>
+  <p class="form-input">
+    <%- user.name %>
+  </p>
+  <label for="precio" class="form-label">Apellido:</label>
+  <p class="form-input">$<%- user.lastname %>
+  </p>
+  <label for="descripcio" class="form-label">Fecha de Nacimiento:</label>
+  <p class="form-input">
+    <%- user.date_of_birth %>
+  </p>
+  <label for="clase-de-vino" class="form-label">Sexo:</label>
+  <p class="form-input">
+    <% if (user.sex_id == 1) { %>
+      Masculino
+      <% } else { %>   
+       Femenino
+     <% } %>        
+  </p>
+  <label for="descuento" class="form-label">email:</label>
+  <p class="form-input">
+    <%- user.email %> 
+  </p>
+ 
+
+      <div class="container-btn-delete"><form action="/perfil/edit" method="GET">
+        <input type="submit" class="btn-edit-admin" value="Editar"></form></div>
+      
+</div>
+</div>     
+    
+        <%- include('./partials/footer') %>
+      </body>
+
+</html>

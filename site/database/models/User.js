@@ -37,6 +37,12 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true,
             defaultValue: 1,
         },
+        sex_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            
+        },
+
     };
     const config = {
         tableName: 'users',

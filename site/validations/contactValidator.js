@@ -22,7 +22,7 @@ module.exports = [
   check('message')
   .notEmpty()
   .isLength({ min:49, max: 255 })
-.withMessage('Debe ingresar al menos 49 caracteres'),
+.withMessage('Debe ingresar al menos 50 caracteres'),
    
     
 ]
