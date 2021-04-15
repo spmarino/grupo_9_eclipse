@@ -207,7 +207,10 @@ top: 0px;
 }
 
 
-
+.perfil-detail-img {
+  width: 150px;
+  height: 150px;
+}
 
 
 @media (min-width: 768px) {

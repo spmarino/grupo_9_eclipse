@@ -16,7 +16,7 @@
         <div class="contenedor-formulario-admin">
 <div class="form-admin">
   <div class="form-header">
-    <h1 class="form-title">B<span>ienvenido</span> <%- user.name %>
+    <h1 class="form-title">U<span>suario</span> <%- user.id %>
     </h1>
   </div>
   
@@ -46,10 +46,33 @@
   <p class="form-input">
     <%- user.email %> 
   </p>
- 
+  <label for="clase-de-vino" class="form-label">Categoría:</label>
+  <p class="form-input">
+    <% if (user.category_id == 1) { %>
+      Usuario
+      <% } else { %>   
+       Administrador
+     <% } %>        
+  </p>
+  
 
-      <div class="container-btn-delete"><form action="/ingreso/perfil/edit" method="GET">
-        <input type="submit" class="btn-edit-admin" value="Editar"></form></div>
+  <h3 class="form-title"><span>Desea convertir a </span><%- user.name.toUpperCase() %><span> en un </span><% if (user.category_id == 1) { %>
+      ADMINISTRADOR
+       <% } else { %>   
+        USUARIO SIN PRIVILEGIOS
+      <% } %>?</h3>         
+
+
+<form action="/admin/userList/detail/<%- user.id %>?_method=PUT" method="POST">
+      <select class="form-select" name="category_id" id="" required>
+        <option class="form-option" value="<% if (user.category_id == 2){ %>1<% }else{ %>2<% } %>">SI</option>
+        <option class="form-option" value="<% if (user.category_id == 2){ %>2<% }else{ %>1<% } %>" selected>NO</option>
+      </select>
+
+
+  
+
+      <input type="submit" class="btn-submit-admin" value="Actualizar"></form>
       
 </div>
 </div>     

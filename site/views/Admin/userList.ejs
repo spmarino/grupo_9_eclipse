@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Load font awesome icons -->
+
+  <!-- Include Head -->
+  <%- include('./partials/head')%>
+  <body>
+  <!-- Header -->
+	<%- include('./partials/header') %>
+	<!-- /Header -->
+
+<body style="background-color:gray;">
+
+
+  <div class="container-product-list-admin">
+   
+   
+   
+    <% users.forEach(user => { %>
+     
+    
+    <div class="box-product-list-admin">
+      <h4>ID : <%- user.id %> </h4>
+      <a href="/admin/userList/detail/<%- user.id %>"><img src="/images/<%- user.avatar %> " alt=""></a>
+      <h4 class="form-label">Nombre</h4>
+      <p class="form-input"><%- user.name.toUpperCase()%> <%- user.lastname.toUpperCase() %> </p>
+      <h4 class="form-label">Categoría</h4>
+      <p class="form-input">
+        <% if (user.category_id == 1) { %>
+         Usuario sin privilegios
+        <% }else{ %>
+          Administrador
+          <% } %>
+     </p>        
+      <div class="container-btn-delete"><form  action="/admin/userList/delete/<%- user.id %>?_method=DELETE " method="POST">
+        <input type="submit" class="btn-delete-admin" value="Eliminar"></form></div>
+
+    </div>
+    <% }) %>
+
+    
+
+    
+  </div>
+
+
+  <%- include('./partials/footer')  %> 
+</body>
+
+</html>

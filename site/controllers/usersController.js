@@ -1,6 +1,7 @@
 
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
+
 const db = require('../database/models');
 
 
@@ -86,7 +87,6 @@ const usersController = {
                 .then(user => {
                     if (user && bcrypt.compareSync(password.trim(), user.password)) {
 
-                        const dateBirth = user.date_of_birth.toLocaleDateString('es-ES')
 
 
                         req.session.user = {
@@ -95,7 +95,7 @@ const usersController = {
                             lastname: user.lastname,
                             password: password,
                             email: user.email,
-                            date_of_birth: dateBirth,
+                            date_of_birth: user.date_of_birth,
                             admin: user.admin,
                             avatar: user.avatar,
                             category_id: user.category_id,
@@ -139,7 +139,10 @@ const usersController = {
     'user': function (req, res) {
         res.render('Users/usersIndex')
     },
-    'perfil': function (req, res) {
+    'perfil': function (req,res){
+res.render('Users/perfilDetail')
+    },
+    'perfilEdit': function (req, res) {
         res.render('Users/perfilEdit')
 
         /* db.Users.findByPk(req.session.user.id)
@@ -157,6 +160,7 @@ const usersController = {
         const { name, lastName, email, password, date, sex_id } = req.body
         const passHash = bcrypt.hashSync(password, 12);
         let errores = validationResult(req);
+        const id = req.session.user.id
 
         if (!errores.isEmpty()) {
             return res.render('Users/perfilEdit', {
@@ -166,8 +170,8 @@ const usersController = {
 
         } else {
 
-            db.Users.findByPk(req.session.user.id)
-                .then((user) => {
+            db.Users.findByPk(id)
+                .then(() => {
                     db.Users.update({
                         name: name.trim(),
                         lastname: lastName.trim(),
@@ -181,13 +185,14 @@ const usersController = {
                     },
                         {
                             where: {
-                                id: req.session.user.id
+                                id: user.id
                             }
                         })
+
                         .then(() => {
 
-                            return res.redirect('/perfil/edit/',{
-                                user
+                            return res.redirect('/perfil/',{
+                                
                             })
                         })
                         .catch(error => res.send(error))

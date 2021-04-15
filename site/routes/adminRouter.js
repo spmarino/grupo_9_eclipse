@@ -30,4 +30,10 @@ router.get('/messageDetail/:id',userCheck,adminNotCheck,  adminController.messag
 router.delete('/message/delete/:id',userCheck,adminNotCheck, adminController.messageDestroit)
 
 
+/*Control Usuarios*/
+router.get('/userList',userCheck, adminNotCheck, adminController.userList)
+router.get('/userList/detail/:id',userCheck, adminNotCheck, adminController.userDetail)
+router.put('/userList/detail/:id',userCheck, adminNotCheck, adminController.userUpdated)
+router.delete('/userList/delete/:id',userCheck,adminNotCheck, adminController.userDestroit)
+
 module.exports = router;

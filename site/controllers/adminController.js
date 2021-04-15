@@ -352,6 +352,71 @@ const adminController = {
             
 
 
+    },
+
+    'userList': function (req, res) {
+        db.Users.findAll()
+            .then(users => {
+                return res.render('Admin/userList', {
+                    users,
+                    
+                })
+
+
+            })
+            .catch(error => res.send(error))
+
+
+    },
+
+    'userDetail': function (req, res) {
+        const id = req.params.id
+        db.Users.findByPk(id)
+        .then(user => {
+            res.render('Admin/userDetail',{
+                user
+            })
+        })
+        .catch(error => res.send(error));
+    },
+
+    'userUpdated': function (req, res) {
+        const id = req.params.id
+        const {category_id} = req.body
+        db.Users.findByPk(id)
+            .then((user) => {
+                db.Users.update({
+                   category_id: category_id
+                },
+                    {
+                        where: {
+                            id: user.id
+                        }
+                    }
+    
+                )
+                    .then(() => {
+                        return res.redirect('/Admin/userList')
+                    })
+                    .catch(error => res.send(error))
+            })
+    },
+
+    'userDestroit': function (req,res){
+        const id = req.params.id
+        db.Users.findByPk(id)
+            .then((user) => {
+                db.Users.destroy({
+
+                    where: {
+                        id: id
+                    }
+
+                }).then(() => {
+                    return res.redirect('/admin/userList')
+                }).catch(error => res.send(error))
+                 
+             }).catch(error => res.send(error)) 
     }
 }
 

@@ -268,7 +268,7 @@
   align-items     : center;
   justify-content : center;
   display         : flex;
-  position: relative;
+  position        : relative;
 
 }
 
@@ -345,12 +345,18 @@
 
 
 .contenedor-formulario-admin img {
-  display         : inline;
+  /*display         : inline;
   width           : 100%;
   padding         : 30px;
-  background-color: grey;
+  
   margin          : 10px 0;
-  display         : flex;
+  display         : flex;*/
+
+  background-color: grey;
+  max-width    : 150px;
+  margin       : 10px auto;
+  display      : flex;
+  border-radius: 20px;
 }
 
 
@@ -400,7 +406,7 @@
 
 @media (min-width: 768px) {
   .contenedor-formulario-admin img {
-    margin: 0 20%;
+    margin: auto;
     width : 60%;
   }
 
