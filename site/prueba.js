@@ -1,61 +1,45 @@
-   db.Products.findByPk(id)
-            .then(() => {
-                db.Features.update({
-                    varietal,
-                    vintage,
-                    type_of_barrel,
-                    time_in_bottle,
-                    harvest,
-                    finca,
-                    terroir,
-                },
-                    {
-                        where: {
-                            id: product.features_id
-                        }
+const { name, lastName, email, password, date, sex_id } = req.body
+const passHash = bcrypt.hashSync(password, 12);
+let errores = validationResult(req);
+const id = req.params.id
+
+if (!errores.isEmpty()) {
+    return res.render('Users/perfilEdit', {
+        erroresEdit: errores.mapped(),
+        old: req.body,
+    })
+
+} else {
+
+    db.Users.findByPk(id)
+        .then((user) => {
+            db.Users.update({
+                name: name,
+                lastname: lastName,
+                email: email,
+                password: passHash,
+                date_of_birth: date,
+                avatar: req.files[0] ? req.files[0].filename : 'default.png',
+                category_id: 1,
+                sex_id
+
+            },
+                {
+                    where: {
+                        id: user.id
                     }
+                })
 
-
-                )
-            })
-
-            .then(() => {
-                db.TastingNotes.update({
-                    smell,
-                    taste,
-                    color
-                },
-                    {
-                        where: {
-                            id: product.tasting_notes_id
-                        }
-                    }
-
-                )
-            })
                 .then(() => {
-                db.Products.update({
-                    title,
-                    price,
-                    discount,
-                    description,
-                    product_category_id,
-                    free_shipping: free_shipping ? 1 : 0,
-                    cover_page: cover_page ? 1 : 0,
-                    image: req.files[0] ? req.files[0].filename : undefined
-                },
-                    {
-                        where: {
-                            id: id
-                        }
-                    })
 
+                    req.session.destroy();
+                    if (req.cookies.userConect) {
+                        res.cookie('userConect', '', { maxAge: -1 })
+                    }
+                    res.redirect('/');
 
+                })
+                .catch(error => res.send(error))
 
-
-            }).then(product => {
-                console.log(product)
-                return res.redirect('/Admin/products/' + id)
-            })
-            .catch(error => res.send(error))
-    },
+        })
+}

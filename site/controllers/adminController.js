@@ -21,7 +21,13 @@ const adminController = {
 
     },
     'adminIndex': function (req, res) {
-        res.render('Admin/adminIndex')
+        db.Users.findByPk(req.session.user.id)
+        .then(user => {
+            res.render('Admin/adminIndex', {
+                user
+            })
+        })
+        .catch(error => res.send(error))
     },
     'productList': function (req, res) {
         db.Products.findAll()
@@ -417,7 +423,82 @@ const adminController = {
                 }).catch(error => res.send(error))
                  
              }).catch(error => res.send(error)) 
+    },
+
+   /* 'perfil': function (req, res) {
+        db.Users.findByPk(req.session.user.id)
+        .then(user => {
+            res.render('Users/perfilDetail', {
+                user
+            })
+        })
+        .catch(error => res.send(error))
+},
+
+'perfilEdit': function (req, res) {
+
+    db.Users.findByPk(req.session.user.id)
+        .then(user => {
+
+            let date_of_birth = moment(user.date_of_birth).format('YYYY-MM-DD')
+            res.render('Users/perfilEdit', {
+                user,
+                date_of_birth
+            })
+        })
+        .catch(error => res.send(error))
+},
+
+'perfilUpdate': function (req, res) {
+    const { name, lastname, password, date, sex_id } = req.body
+
+    let errores = validationResult(req);
+
+
+    if (!errores.isEmpty()) {
+        db.Users.findByPk(req.session.user.id)
+            .then(user => {
+                let date_of_birth = moment(user.date_of_birth).format('YYYY-MM-DD')
+
+                res.render('Users/perfilEdit', {
+                    user,
+                    date_of_birth,
+                    erroresEdit: errores.mapped(),
+                    old:req.body,
+                })
+            })
+            .catch(error => res.send(error));
+    } else {
+
+        db.Users.update(
+            {
+                name: name.trim(),
+                lastname: lastname.trim(),
+                password: password.length != 0 ? bcrypt.hashSync(password, 12) : undefined,
+                date_of_birth: date,
+                avatar: req.files[0] ? req.files[0].filename : 'default.png',
+                category_id: 1,
+                sex_id
+
+            },
+            {
+                where: {
+                    id: req.session.user.id
+                }
+            })
+            .then(() => {
+                return res.redirect('/ingreso/perfil')
+            })
+            .catch(error => res.send(error))
     }
+}*/
+
+
+
+
+
+
+
 }
 
 

@@ -1,7 +1,7 @@
 
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
-
+const moment = require('moment');
 const db = require('../database/models');
 
 
@@ -49,8 +49,7 @@ const usersController = {
                         date_of_birth: user.date_of_birth,
                         admin: user.admin,
                         avatar: user.avatar,
-                        category_id: user.category_id,
-                        sex_id: user.sex_id,
+
                     }
 
 
@@ -87,16 +86,11 @@ const usersController = {
                 .then(user => {
                     if (user && bcrypt.compareSync(password.trim(), user.password)) {
 
-
-
                         req.session.user = {
                             id: user.id,
                             name: user.name,
                             lastname: user.lastname,
-                            password: password,
-                            email: user.email,
                             date_of_birth: user.date_of_birth,
-                            admin: user.admin,
                             avatar: user.avatar,
                             category_id: user.category_id,
                             sex_id: user.sex_id,
@@ -109,8 +103,9 @@ const usersController = {
 
                         return res.redirect('/ingreso/users')
                     }
+                    
 
-                    res.render('login', {
+                   /* res.render('login', {
 
                         erroresLogin: [
                             {
@@ -118,7 +113,7 @@ const usersController = {
                             }
                         ],
                         old: req.body,
-                    })
+                    })*/
                 })
 
         }
@@ -137,68 +132,80 @@ const usersController = {
     },
 
     'user': function (req, res) {
-        res.render('Users/usersIndex')
-    },
-    'perfil': function (req,res){
-res.render('Users/perfilDetail')
-    },
-    'perfilEdit': function (req, res) {
-        res.render('Users/perfilEdit')
-
-        /* db.Users.findByPk(req.session.user.id)
+        db.Users.findByPk(req.session.user.id)
         .then(user => {
-            res.render('Users/perfilEdit',{
+            res.render('Users/usersIndex', {
                 user
             })
         })
-        .catch(error => res.send(error));*/
-    
+        .catch(error => res.send(error))
+    },
 
+    'perfil': function (req, res) {
+            db.Users.findByPk(req.session.user.id)
+            .then(user => {
+                res.render('Users/perfilDetail', {
+                    user
+                })
+            })
+            .catch(error => res.send(error))
+    },
+
+    'perfilEdit': function (req, res) {
+
+        db.Users.findByPk(req.session.user.id)
+            .then(user => {
+
+                let date_of_birth = moment(user.date_of_birth).format('YYYY-MM-DD')
+                res.render('Users/perfilEdit', {
+                    user,
+                    date_of_birth
+                })
+            })
+            .catch(error => res.send(error))
     },
 
     'perfilUpdate': function (req, res) {
-        const { name, lastName, email, password, date, sex_id } = req.body
-        const passHash = bcrypt.hashSync(password, 12);
+        const { name, lastname, password, date, sex_id } = req.body
+
         let errores = validationResult(req);
-        const id = req.session.user.id
+
 
         if (!errores.isEmpty()) {
-            return res.render('Users/perfilEdit', {
-                erroresEdit: errores.mapped(),
-                old: req.body,
-            })
+            db.Users.findByPk(req.session.user.id)
+                .then(user => {
+                    let date_of_birth = moment(user.date_of_birth).format('YYYY-MM-DD')
 
+                    res.render('Users/perfilEdit', {
+                        user,
+                        date_of_birth,
+                        erroresEdit: errores.mapped(),
+                        old:req.body,
+                    })
+                })
+                .catch(error => res.send(error));
         } else {
 
-            db.Users.findByPk(id)
+            db.Users.update(
+                {
+                    name: name.trim(),
+                    lastname: lastname.trim(),
+                    password: password.length != 0 ? bcrypt.hashSync(password, 12) : undefined,
+                    date_of_birth: date,
+                    avatar: req.files[0] ? req.files[0].filename : undefined,
+                    category_id: 1,
+                    sex_id
+
+                },
+                {
+                    where: {
+                        id: req.session.user.id
+                    }
+                })
                 .then(() => {
-                    db.Users.update({
-                        name: name.trim(),
-                        lastname: lastName.trim(),
-                        email: email.trim(),
-                        password: passHash,
-                        date_of_birth: date,
-                        avatar: req.files[0] ? req.files[0].filename : 'default.png',
-                        category_id: 1,
-                        sex_id
-
-                    },
-                        {
-                            where: {
-                                id: user.id
-                            }
-                        })
-
-                        .then(() => {
-
-                            return res.redirect('/perfil/',{
-                                
-                            })
-                        })
-                        .catch(error => res.send(error))
-
-
-                }).catch(error => res.send(error))
+                    return res.redirect('/ingreso/perfil')
+                })
+                .catch(error => res.send(error))
         }
     }
 

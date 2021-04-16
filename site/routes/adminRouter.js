@@ -3,6 +3,7 @@ var router = express.Router();
 let adminController = require('../controllers/adminController')
 const userCheck = require('../middlewares/userCheck')
 const adminNotCheck = require('../middlewares/adminNotCheck')
+const editValidator = require('../validations/editValidator')
 
 
 /*MIDDLEWARES*/
@@ -35,5 +36,12 @@ router.get('/userList',userCheck, adminNotCheck, adminController.userList)
 router.get('/userList/detail/:id',userCheck, adminNotCheck, adminController.userDetail)
 router.put('/userList/detail/:id',userCheck, adminNotCheck, adminController.userUpdated)
 router.delete('/userList/delete/:id',userCheck,adminNotCheck, adminController.userDestroit)
+
+
+/*Mi perfil
+
+router.get('/perfil/edit',userCheck,adminNotCheck,adminController.perfilEdit)
+router.put('/perfil/edit/:id',userCheck,adminNotCheck, upload.any(), editValidator, adminController.perfilUpdate)
+router.get('/perfil',userCheck,adminNotCheck,adminController.perfil)*/
 
 module.exports = router;

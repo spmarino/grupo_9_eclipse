@@ -23,14 +23,8 @@ module.exports = [
 
     
 
-    check('password')
-    .notEmpty()
-    .withMessage('Debe ingresar su contraseña')
-    .isLength({
-        min:4, 
-        max:12
-    })
-    .withMessage('La contraseña debe contener un mínimo de 4 y máximo de 12 caractéres'),
+    check('password'),
+    
   
     body('passwordCheck').custom((value,{req})=>{
         if(value !== req.body.password){
