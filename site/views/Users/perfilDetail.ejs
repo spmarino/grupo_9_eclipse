@@ -7,11 +7,15 @@
 
   <body>
     <!-- Header -->
+    <% if (user.category_id == 2) { %>
+      <%- include('../admin/partials/header') %>
+    <% }else{ %>
     <%- include('./partials/header') %>
+    <% } %>
       <!-- /Header -->
-
-      <body style="background-color:gray;">
-
+      <div class="management-index-background-6">
+        <div class="filter-black-management">
+    
 
         <div class="contenedor-formulario-admin">
 <div class="form-admin">
@@ -53,7 +57,7 @@
       
 </div>
 </div>     
-    
+    </div></div>
         <%- include('./partials/footer') %>
       </body>
 

@@ -11,17 +11,27 @@
 	<%- include('./partials/header') %>
 	<!-- /Header -->
 
-
+  
 <div class="management-index-background">
   <div class="filter-black-management">
+
+
   <div class="container-management-index">
-<div class="conteiner-index-admin">
+
+<div class="conteiner-index-admin2">
+
   <h1>BIENVENID<% if (user.sex_id == 1) { %>O<% }else{ %>A<%}  %>   <span style="color: crimson;"><%= user.name.toUpperCase() %></span></h1>
 </div>
-<div class="avatar-usuario"><img src="/images/<%- user.avatar %> " alt=""></div></div>
+
+<a class="avatar-usuario" href="/ingreso/perfil"><img src="/images/<%- user.avatar %> " alt=""></a>
+
+
+</div>
 
 
 
-</div></div></body>
+</div>
+</div>
+</body>
 
 </html> 

@@ -6,10 +6,15 @@
   <%- include('./partials/head')%>
   <body>
   <!-- Header -->
-	<%- include('./partials/header') %>
+  <% if (user.category_id == 2) { %>
+    <%- include('../admin/partials/header') %>
+  <% }else{ %>
+  <%- include('./partials/header') %>
+  <% } %>
 	<!-- /Header -->
+  <div class="management-index-background-2">
+    <div class="filter-black-management">
 
-<body style="background-color:gray;">
 <div class="contenedor-formulario-admin">
   <form action="/ingreso/perfil/edit/<%-user.id%>?_method=PUT" method="POST" class="form-admin" enctype="multipart/form-data">
     <div class="form-header">
@@ -87,7 +92,7 @@
 
   </form>
 </div>
-
+</div></div>
 <script src="/javascripts/userEdit.js"></script>
 <script src="/javascripts/ButtonImage.js"></script> 
 </body>

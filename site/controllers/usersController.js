@@ -193,7 +193,6 @@ const usersController = {
                     password: password.length != 0 ? bcrypt.hashSync(password, 12) : undefined,
                     date_of_birth: date,
                     avatar: req.files[0] ? req.files[0].filename : undefined,
-                    category_id: 1,
                     sex_id
 
                 },

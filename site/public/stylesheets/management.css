@@ -1,7 +1,7 @@
 /*=============== Administración - Carga de producto ===================*/
 
 .filter-black-management {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
   height          : 100%;
 }
 
@@ -24,6 +24,46 @@
 
 }
 
+.management-index-background-2 {
+  background-image: url(../images/fondoadmin2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  width: 100%;
+  background-attachment: fixed;
+}
+.management-index-background-3 {
+  background-image: url(../images/fondoadmin3.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  width: 100%;
+  background-attachment: fixed;
+}
+.management-index-background-4 {
+  background-image: url(../images/fondoadmin4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  width: 100%;
+  background-attachment: fixed;
+
+}.management-index-background-5 {
+  background-image: url(../images/fondoadmin5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  width: 100%;
+  background-attachment: fixed;
+
+}.management-index-background-6 {
+  background-image: url(../images/fondoadmin6.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  width: 100%;
+  background-attachment: fixed;
+}
 
 
 /*Menu navbar admin*/
@@ -111,7 +151,7 @@
 
 .contenedor-formulario-admin {
   display   : flex;
-  margin-top: 50px;
+ /* margin-top: 50px;*/
   flex-wrap : wrap;
 
 }
@@ -134,7 +174,8 @@
 /*Fondo formulario*/
 
 .form-admin {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgb(53 53 60 / 70%);
+  /*background-color: rgba(0, 0, 0, 0.6);*/
   color           : var(--color-grisos);
   width           : 90%;
   max-width       : 650px;
@@ -259,7 +300,8 @@
 }
 
 .box-product-list-admin {
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgb(53 53 60 / 70%);
+  /*background-color: rgba(0, 0, 0, .7);*/
   border-radius   : 10px;
   margin          : 20px;
   padding         : 20px;
@@ -338,7 +380,7 @@
 
 .conteiner-index-admin {
 
-  margin-top: 15%;
+  padding: 15%;
   text-align: center;
   width     : 100%;
 }
@@ -425,9 +467,16 @@
 
 
 .avatar-usuario img {
+ color: var(--color-gris);
   height       : 120px;
   border-radius: 10px;
   margin-top   : 25px;
   border-style : ridge;
   border-width : 7px;
+}
+
+.conteiner-index-admin2 {
+  margin: 50px;
+  text-align: center;
+  width: 100%;
 }

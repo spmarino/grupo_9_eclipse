@@ -26,6 +26,7 @@
   --color-violeta: #631224;
 --color-celeste: #2196f3;
   --fuente       : 'Lato';
+  --color-gris2: rgb(91, 91, 94);
 }
 
 
@@ -47,7 +48,7 @@
 }
 
 body {
-background-color: var(--color-grisos);
+
   
   background: #0F2027;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to left #101118, #08080c);  /* Chrome 10-25, Safari 5.1-6 */

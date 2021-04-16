@@ -9,7 +9,8 @@
 	<%- include('./partials/header') %>
 	<!-- /Header -->
 
-<body style="background-color:gray;">
+  <div class="management-index-background-5">
+    <div class="filter-black-management">
 <div class="contenedor-formulario-admin">
   <form action="/admin/products/edit/<%- product.id %>?_method=PUT" method="POST" class="form-admin" enctype="multipart/form-data">
     <div class="form-header">
@@ -95,7 +96,7 @@
 
 
   </form>
-</div>
+</div></div></div>
 <%- include('./partials/footer')  %>
 <script src="/javascripts/ButtonImage.js"></script> 
 </body>

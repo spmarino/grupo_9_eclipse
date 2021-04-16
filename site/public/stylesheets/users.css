@@ -49,13 +49,13 @@
 
 .group-register input, .select-register {
   background: none;
-  color: #c6c6c6;
+  color: var(--color-gris2);
   font-size: 18px;
   padding: 10px 10px 10px 5px ;
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 1px solid #c6c6c6;
+  border-bottom: 1px solid var(--color-gris2);
   transition: all 0.3s ease-in-out;
 }
 
@@ -72,7 +72,7 @@
 } 
 
 .label-register{
- color: #c6c6c6;
+ color: var(--color-gris2);
  font-size: 16px;
  position: absolute;
  bottom: 0;
@@ -114,9 +114,10 @@ width: 100%;
   width: 0%;
   bottom: 0;
   position: absolute;
-  background: #00F260;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000046;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 
 transition: 0.3 ease width;
 left: 0;
@@ -141,13 +142,14 @@ left: 0;
 }
 
 .submit-form-register:hover{
-  background: #00F260;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000046;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .label-select-register{
-  color:#c6c6c6;
+  color:var(--color-gris2);
   font-size: 16px;
   position: absolute;
     top: -20px;
@@ -176,7 +178,7 @@ left: 0;
   width: 100%;
   text-emphasis: none;
   text-decoration: none;
-  color: var(--color-grisos);
+  color: var(--color-gris2);
   transition: all 0.3s ease-in-out;
 }
 
