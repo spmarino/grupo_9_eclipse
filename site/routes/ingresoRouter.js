@@ -19,9 +19,9 @@ router.post('/register',upload.any(),registerValidator, processRegister)
 router.post('/login',loginValidator, processLogin)
 router.delete('/logout',logout)
 router.get('/users',userCheck,adminCheck, user)
-router.get('/perfil/edit', perfilEdit)
-router.put('/perfil/edit/:id',upload.any(),editValidator, perfilUpdate)
-router.get('/perfil',perfil)
+router.get('/perfil/edit',userCheck, perfilEdit)
+router.put('/perfil/edit/:id',userCheck,upload.any(),editValidator, perfilUpdate)
+router.get('/perfil',userCheck,perfil)
 
 
 

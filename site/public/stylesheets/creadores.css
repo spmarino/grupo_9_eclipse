@@ -1,0 +1,93 @@
+.contenedor-principal-creadores{
+    display: flex;
+    flex-flow: row wrap ;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contenedor-principal-creadores h2 {
+    width: 100%;
+}
+.contenedor-perfil-creadores {
+    width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    
+
+}
+
+.contenedor-creador{
+  
+    width: 30%;
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.39);
+    border-radius: 20px;
+   box-shadow: rgba(0, 0, 0, 0.39);
+    padding: 20px;
+    margin: 50px;
+}
+
+.contenedor-creador p {
+    font-size: 14px;
+
+}
+
+.contenedor-creador h4 {
+    width: 100%;
+    font-family: 'Roboto';
+}
+
+.contenedor-creador img {
+    max-width: 150px;
+    padding: 10px;
+    margin: auto;
+}
+
+.contenedor-palabras {
+    width: 80%;
+    margin: auto;
+}
+
+.logos-patrocinadores {
+    width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.logos-patrocinadores img {
+    width: 200px;
+    margin: auto;
+    
+}
+
+.fotos-profes {
+   
+    width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 30px auto;
+}
+
+.fotos-profes img {
+    width: 150px;
+    height: 150px;
+}
+.logo-eclipse {
+    width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.logo-eclipse img {
+    width: 200px;
+}

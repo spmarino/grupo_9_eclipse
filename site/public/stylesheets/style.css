@@ -12,6 +12,8 @@
 @import 'spinner.css';
 @import 'pages/medios.css';
 @import 'pages/messages.css';
+@import 'buscador.css';
+@import 'creadores.css';
 /*VARIABLES*/
 
 :root {
