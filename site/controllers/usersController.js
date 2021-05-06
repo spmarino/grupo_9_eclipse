@@ -47,7 +47,7 @@ const usersController = {
                         lastname: user.lastname,
                         email: user.email,
                         date_of_birth: user.date_of_birth,
-                        admin: user.admin,
+                        category_id: user.category_id,
                         avatar: user.avatar,
 
                     }
